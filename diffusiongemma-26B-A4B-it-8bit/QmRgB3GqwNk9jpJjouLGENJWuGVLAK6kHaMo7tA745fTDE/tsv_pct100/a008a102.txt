@@ -1,0 +1,7 @@
+```tsv
+205,303,755,435	horizontal stroke	above
+285,550,715,625	horizontal stroke	middle
+35,725,955,845	horizontal stroke	bellow
+415,365,545,785	vertical stroke	center
+725,505,845,625	dot	right
+```

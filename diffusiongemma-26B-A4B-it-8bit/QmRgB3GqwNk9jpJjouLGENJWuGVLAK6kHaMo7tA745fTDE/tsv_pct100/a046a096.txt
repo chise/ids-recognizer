@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>172	23	843	856	月	left
+415	102	966	818	见	right

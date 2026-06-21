@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>96	43	786	497	女	left
+106	497	735	959	里	right

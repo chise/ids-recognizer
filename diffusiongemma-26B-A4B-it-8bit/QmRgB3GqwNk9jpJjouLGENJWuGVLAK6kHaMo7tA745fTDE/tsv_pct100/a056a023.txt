@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>169	169	442	755	�	left
+433	137	959	915	攔	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33	237	563	856	足	left
+535	169	986	908	各	right

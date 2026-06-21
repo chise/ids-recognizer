@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>95	100	775	775	扌	left
+410	210	975	715	母	right

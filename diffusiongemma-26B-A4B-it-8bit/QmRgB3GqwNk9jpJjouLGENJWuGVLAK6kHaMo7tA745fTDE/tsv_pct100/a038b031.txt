@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	196	563	893	米	left
+423	85	966	893	頁	right

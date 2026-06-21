@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>15	155	467	693	礻	left
+467	155	936	672	祝	right

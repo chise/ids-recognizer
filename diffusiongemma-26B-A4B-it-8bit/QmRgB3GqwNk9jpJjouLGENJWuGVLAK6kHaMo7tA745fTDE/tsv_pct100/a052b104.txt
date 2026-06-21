@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	237	335	545	口	left
+126	126	946	929	余	right

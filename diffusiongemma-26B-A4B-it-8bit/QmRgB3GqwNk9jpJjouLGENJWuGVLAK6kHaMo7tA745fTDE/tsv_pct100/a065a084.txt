@@ -1,0 +1,4 @@
+<|channel>thought
+<channel|>48	48	513	363	艹	left
+513	48	959	545	夂	right
+48	545	959	956	夊	bellow

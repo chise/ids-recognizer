@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	185	563	836	耳	left
+463	85	946	874	戈	right

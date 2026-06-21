@@ -1,0 +1,2 @@
+59	68	946	290	horizontal	above
+437	137	563	755	vertical	bellow

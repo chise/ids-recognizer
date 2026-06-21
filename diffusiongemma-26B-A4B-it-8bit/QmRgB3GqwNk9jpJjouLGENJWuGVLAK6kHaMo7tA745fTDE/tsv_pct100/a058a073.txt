@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>31,116	365,866	扌	left
+319,31	981,874	册	right

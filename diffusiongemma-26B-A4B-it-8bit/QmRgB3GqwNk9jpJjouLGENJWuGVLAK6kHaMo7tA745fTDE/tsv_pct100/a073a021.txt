@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>218	219	442	915	月	left
+458	51	925	951	ยก	right

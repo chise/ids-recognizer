@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	151	335	915	亻	left
+363	93	977	868	復	right

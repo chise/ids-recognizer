@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>108	23	831	521	曼	left
+103	497	755	977	攵	right

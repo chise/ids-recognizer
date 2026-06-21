@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	41	755	786	阝	left
+91	597	946	937	阝	right

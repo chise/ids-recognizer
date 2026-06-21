@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	196	315	915	心	left
+315	245	966	916	坂	right

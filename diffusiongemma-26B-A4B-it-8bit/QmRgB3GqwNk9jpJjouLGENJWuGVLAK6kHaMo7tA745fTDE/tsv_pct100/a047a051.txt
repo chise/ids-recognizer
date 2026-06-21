@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>111	23	483	680	土	left
+477	53	915	959	聲	right

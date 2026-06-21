@@ -1,0 +1,2 @@
+39	159	477	836	月 (moon radical)	left
+477	203	977	737	元 (origin/first)	right

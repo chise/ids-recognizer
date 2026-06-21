@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>50	102	396	878	扌	left
+422	78	959	946	弗	right

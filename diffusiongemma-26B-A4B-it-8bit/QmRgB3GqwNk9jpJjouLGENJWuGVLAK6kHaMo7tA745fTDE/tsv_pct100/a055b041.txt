@@ -1,0 +1,5 @@
+```tsv
+180	47	755	417	component	above
+180	345	755	663	component	bellow
+603	617	804	866	component	bellow
+```

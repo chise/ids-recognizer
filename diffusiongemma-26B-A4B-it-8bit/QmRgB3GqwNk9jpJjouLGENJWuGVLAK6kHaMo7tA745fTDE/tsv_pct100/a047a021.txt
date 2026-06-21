@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>233	31	814	467	眼	left
+126	442	977	796	票	right

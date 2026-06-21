@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	102	856	467	亻	left
+447	203	878	977	力	right

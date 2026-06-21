@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	237	412	775	王	left
+280	48	966	936	璟	right

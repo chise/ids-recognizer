@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	38	959	497	血	above
+56	513	966	966	亨	bellow

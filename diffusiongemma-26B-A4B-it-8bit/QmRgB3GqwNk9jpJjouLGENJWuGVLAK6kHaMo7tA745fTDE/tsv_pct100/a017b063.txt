@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>43	298	385	755	田	left
+326	131	966	856	圭	right

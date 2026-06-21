@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>53	137	467	936	力	left
+477	137	966	936	功	right

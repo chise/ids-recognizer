@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56,56	563,874	黃	left
+563,178	966,825	元	right

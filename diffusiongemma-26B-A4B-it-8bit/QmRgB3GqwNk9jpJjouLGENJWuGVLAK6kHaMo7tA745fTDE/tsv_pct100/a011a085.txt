@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>103	219	477	755	瑶	left
+396	126	959	786	露	right

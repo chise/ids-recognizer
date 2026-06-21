@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>14	137	638	936	翡	left
+532	116	966	856	力	right

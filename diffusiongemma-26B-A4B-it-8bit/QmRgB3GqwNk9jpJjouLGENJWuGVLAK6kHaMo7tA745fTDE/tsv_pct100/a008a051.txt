@@ -1,0 +1,7 @@
+```tsv
+118	269	252	765	horizontal stroke	above
+278	44	483	966	horizontal stroke	middle
+234	439	654	513	vertical stroke	center
+606	169	706	765	horizontal stroke	bellow
+439	659	765	765	vertical stroke	right
+```

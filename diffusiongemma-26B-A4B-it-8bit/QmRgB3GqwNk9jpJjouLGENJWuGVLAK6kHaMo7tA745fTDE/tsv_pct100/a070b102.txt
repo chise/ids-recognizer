@@ -1,0 +1,4 @@
+```tsv
+113	203	439	936	月	left
+449	126	966	856	including	right
+```

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	203	375	755	土	left
+313	172	967	936	堆	right

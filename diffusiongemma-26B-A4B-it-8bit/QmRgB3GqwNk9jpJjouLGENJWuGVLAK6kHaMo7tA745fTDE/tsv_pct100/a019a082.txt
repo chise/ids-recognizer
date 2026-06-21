@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>103	93	449	715	土	left
+445	137	966	878	同	right

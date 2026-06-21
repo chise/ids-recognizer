@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>159	159	335	725	土	left
+230	230	856	977	母	right

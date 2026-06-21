@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	80	335	893	亻	left
+333	75	966	903	suffix	right

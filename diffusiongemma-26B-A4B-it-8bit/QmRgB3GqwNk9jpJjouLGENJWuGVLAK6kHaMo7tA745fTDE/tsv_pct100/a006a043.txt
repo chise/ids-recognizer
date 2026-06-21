@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>31	31	966	461	女	above
+102	102	966	955	方	bellow

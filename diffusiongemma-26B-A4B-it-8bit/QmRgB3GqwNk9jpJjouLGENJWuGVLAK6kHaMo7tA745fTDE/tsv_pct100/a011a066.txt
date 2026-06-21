@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>53	203	417	755	王	left
+335	52	915	959	韋	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>178	48	545	886	門	left
+513	31	856	959	關	right

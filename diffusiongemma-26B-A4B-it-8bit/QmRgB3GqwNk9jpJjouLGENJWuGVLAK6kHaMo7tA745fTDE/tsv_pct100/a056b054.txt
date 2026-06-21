@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>83	85	497	608	糸	left
+513	48	959	986	票	right

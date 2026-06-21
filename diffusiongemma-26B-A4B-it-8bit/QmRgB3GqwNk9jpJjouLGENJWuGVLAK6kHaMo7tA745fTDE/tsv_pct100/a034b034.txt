@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	258	439	866	女	left
+413	127	977	915	俞	right

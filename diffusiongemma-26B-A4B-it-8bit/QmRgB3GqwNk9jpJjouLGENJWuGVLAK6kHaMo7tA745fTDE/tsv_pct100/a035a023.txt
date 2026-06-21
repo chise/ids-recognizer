@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>66	245	442	893	女	left
+458	159	966	874	臨	right

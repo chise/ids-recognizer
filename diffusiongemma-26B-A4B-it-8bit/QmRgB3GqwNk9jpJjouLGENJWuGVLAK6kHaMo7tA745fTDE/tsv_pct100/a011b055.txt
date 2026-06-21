@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>137	276	485	755	王	left
+353	149	983	888	炎	right

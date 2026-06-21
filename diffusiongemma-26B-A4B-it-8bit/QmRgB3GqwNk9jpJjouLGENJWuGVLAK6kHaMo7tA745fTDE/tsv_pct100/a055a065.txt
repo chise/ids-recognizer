@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>75	60	876	545	齒	left
+103	563	903	966	歷	right

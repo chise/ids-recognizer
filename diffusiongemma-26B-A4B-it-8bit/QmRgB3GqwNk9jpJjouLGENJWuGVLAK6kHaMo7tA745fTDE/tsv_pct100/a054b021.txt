@@ -1,0 +1,4 @@
+```tsv
+52	52	678	893	Chinese character	left
+146	663	966	966	Chinese character	right
+```

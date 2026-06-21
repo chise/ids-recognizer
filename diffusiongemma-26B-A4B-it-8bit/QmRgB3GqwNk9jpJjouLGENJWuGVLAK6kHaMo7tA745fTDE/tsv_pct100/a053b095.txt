@@ -1,0 +1,4 @@
+```tsv
+178	178	335	452	口	left
+73	73	876	876	 distinct	right
+```

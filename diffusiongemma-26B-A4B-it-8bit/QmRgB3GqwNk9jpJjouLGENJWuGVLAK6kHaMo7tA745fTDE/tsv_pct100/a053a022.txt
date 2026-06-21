@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>34	303	362	663	口	left
+178	178	966	856	及	right

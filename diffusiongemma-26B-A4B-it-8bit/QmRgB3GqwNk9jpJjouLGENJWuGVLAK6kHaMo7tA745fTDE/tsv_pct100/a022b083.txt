@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>18	85	563	896	部	left
+153	584	946	936	部	right

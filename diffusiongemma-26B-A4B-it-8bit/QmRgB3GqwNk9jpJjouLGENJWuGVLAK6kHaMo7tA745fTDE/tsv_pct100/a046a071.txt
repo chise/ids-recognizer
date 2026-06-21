@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>54	85	513	856	觀	left
+133	132	966	755	見	right

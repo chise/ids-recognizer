@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>16	169	396	831	目	left
+396	52	966	936	義	right

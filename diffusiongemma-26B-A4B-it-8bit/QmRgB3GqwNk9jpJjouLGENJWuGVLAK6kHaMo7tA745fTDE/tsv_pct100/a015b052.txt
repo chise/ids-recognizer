@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>158	56	935	915	陆	left
+48	172	946	856	陆	right

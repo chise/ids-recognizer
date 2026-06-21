@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>116	126	558	882	鼎	left
+126	532	966	866	頁	right

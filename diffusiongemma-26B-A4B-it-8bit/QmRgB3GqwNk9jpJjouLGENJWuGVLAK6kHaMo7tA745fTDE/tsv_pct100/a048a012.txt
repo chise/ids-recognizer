@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	252	532	866	王	left
+532	137	959	874	淼	right

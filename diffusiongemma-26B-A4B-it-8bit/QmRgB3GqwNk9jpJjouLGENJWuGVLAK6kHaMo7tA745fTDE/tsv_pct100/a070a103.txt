@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>193	203	775	477	舟	left
+193	467	755	966	各	right

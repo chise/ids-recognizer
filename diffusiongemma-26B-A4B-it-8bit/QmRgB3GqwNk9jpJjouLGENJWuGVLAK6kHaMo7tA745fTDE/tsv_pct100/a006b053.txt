@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>76	269	461	856	衤	left
+447	196	951	843	升	right

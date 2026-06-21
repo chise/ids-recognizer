@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>115	126	345	563	田	left
+43	43	966	866	栗	right

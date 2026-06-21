@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>11	116	532	843	女	left
+433	149	966	725	隹	right

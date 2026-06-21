@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>66	62	946	946	孰	left
+169	169	915	725	止	right

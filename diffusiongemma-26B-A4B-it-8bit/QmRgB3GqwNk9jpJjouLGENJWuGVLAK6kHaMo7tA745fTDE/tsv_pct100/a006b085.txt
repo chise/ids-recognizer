@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	13	497	804	衤	left
+497	68	936	755	危	right

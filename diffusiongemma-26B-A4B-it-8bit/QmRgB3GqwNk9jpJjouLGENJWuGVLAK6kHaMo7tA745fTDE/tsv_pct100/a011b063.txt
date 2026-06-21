@@ -1,0 +1,4 @@
+```tsv
+66	203	439	775	王	left
+442	51	977	915	 immediately	right
+```

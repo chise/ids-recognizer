@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>103	85	381	915	扌	left
+381	85	966	915	採	right

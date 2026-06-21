@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>128	131	487	775	土	left
+396	196	946	866	坏	right

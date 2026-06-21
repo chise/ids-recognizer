@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	43	497	915	車	left
+116	126	966	888	頁	right

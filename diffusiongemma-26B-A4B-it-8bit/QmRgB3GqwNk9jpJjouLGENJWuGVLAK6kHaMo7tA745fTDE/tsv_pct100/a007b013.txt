@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>77	81	545	946	肅	left
+253	513	946	814	妃	right

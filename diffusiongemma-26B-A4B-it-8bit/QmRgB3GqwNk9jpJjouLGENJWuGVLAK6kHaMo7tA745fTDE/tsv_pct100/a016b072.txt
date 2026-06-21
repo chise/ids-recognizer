@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>48	93	365	608	土	left
+313	29	966	959	庸	right

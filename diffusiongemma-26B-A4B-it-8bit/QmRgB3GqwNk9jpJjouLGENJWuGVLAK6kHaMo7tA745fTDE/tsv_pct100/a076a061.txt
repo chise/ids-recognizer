@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>15	169	335	915	忄	left
+273	75	959	959	莫	right

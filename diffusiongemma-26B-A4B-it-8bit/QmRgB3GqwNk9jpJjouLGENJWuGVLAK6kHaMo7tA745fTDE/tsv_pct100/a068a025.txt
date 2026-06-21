@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	237	483	804	⻮	left
+31	31	959	966	⍃	right

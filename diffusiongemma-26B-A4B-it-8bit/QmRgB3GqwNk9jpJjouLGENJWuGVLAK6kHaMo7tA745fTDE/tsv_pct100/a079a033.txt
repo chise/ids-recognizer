@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>70	75	365	966	亻	left
+368	31	929	905	富	right

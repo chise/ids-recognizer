@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33	185	638	831	册	left
+563	126	946	856	解	right

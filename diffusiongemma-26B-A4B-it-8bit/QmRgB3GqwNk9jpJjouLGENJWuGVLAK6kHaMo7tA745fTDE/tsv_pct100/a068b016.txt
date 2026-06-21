@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>29	185	360	715	足	left
+335	126	981	786	雀	right

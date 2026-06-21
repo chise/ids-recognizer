@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>137	137	442	755	是	left
+116	117	936	715	見	right

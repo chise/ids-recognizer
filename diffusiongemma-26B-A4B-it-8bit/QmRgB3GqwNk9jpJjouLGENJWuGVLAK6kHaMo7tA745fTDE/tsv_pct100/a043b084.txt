@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	219	381	915	月	left
+366	48	966	866	臨	right

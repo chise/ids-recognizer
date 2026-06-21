@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	142	362	915	扌	left
+363	107	977	915	擔	right

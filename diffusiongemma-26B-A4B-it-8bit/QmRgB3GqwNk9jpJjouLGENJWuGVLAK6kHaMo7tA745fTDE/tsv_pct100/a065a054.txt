@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>235	237	452	715	取	left
+437	235	966	856	取	right

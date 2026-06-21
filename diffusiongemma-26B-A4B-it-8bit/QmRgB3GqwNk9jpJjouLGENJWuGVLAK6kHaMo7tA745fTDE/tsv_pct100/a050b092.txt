@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33,142	467,796	吩	left
+439,137	986,786	族	right

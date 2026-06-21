@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>41	212	608	893	永	left
+437	151	977	897	真	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>189	17	885	888	亻	left
+253	269	977	915	从	right

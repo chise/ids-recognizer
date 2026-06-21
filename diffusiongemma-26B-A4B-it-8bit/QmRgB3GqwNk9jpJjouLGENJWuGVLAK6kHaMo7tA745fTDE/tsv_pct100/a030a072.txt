@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	196	584	908	彳	left
+563	169	966	856	攵	right

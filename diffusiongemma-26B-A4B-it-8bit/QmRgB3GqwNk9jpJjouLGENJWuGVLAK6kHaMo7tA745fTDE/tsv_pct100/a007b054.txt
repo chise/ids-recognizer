@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>103	107	831	412	艹	above
+333	335	959	946	木	bellow

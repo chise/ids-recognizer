@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>248	75	778	362	亠	above
+313	335	706	915	月	bellow

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>73	107	755	786	亚	left
+333	219	946	936	艮	right

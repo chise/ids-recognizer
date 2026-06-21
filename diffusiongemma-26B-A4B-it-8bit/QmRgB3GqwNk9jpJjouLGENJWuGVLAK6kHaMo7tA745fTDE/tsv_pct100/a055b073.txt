@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>78	335	563	725	口	left
+513	102	936	946	戈	right

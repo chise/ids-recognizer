@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	31	532	946	郑	left
+513	103	936	959	阝	right

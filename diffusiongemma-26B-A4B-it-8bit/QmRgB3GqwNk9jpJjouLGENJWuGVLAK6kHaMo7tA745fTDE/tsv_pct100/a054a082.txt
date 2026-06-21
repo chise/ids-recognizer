@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>196	196	477	856	危	left
+477	142	971	715	世	right

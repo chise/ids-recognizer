@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>78	31	477	966	黍	left
+477	31	936	966	叢	right

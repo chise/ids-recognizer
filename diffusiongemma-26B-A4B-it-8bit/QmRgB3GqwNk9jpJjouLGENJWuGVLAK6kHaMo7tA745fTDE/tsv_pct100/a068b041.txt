@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>114	114	458	866	函	left
+472	276	936	936	足	right

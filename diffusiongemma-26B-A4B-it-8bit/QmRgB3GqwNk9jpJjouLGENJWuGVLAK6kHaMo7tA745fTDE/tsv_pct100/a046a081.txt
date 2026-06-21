@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>45	125	545	755	見	left
+435	155	965	785	見	right

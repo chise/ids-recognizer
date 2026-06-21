@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>63	137	497	755	頁	left
+26	532	856	966	見	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>145	85	608	866	備	left
+613	142	971	915	離	right

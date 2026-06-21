@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>73	31	966	966	盡	left
+603	203	965	936	力	right

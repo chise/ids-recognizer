@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>27	137	412	922	扌	left
+383	126	966	915	臺	right

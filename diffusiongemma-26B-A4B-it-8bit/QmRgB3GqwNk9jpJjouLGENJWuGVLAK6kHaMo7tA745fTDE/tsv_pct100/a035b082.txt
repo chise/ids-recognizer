@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	159	417	804	女	left
+336	126	966	856	鬼	right

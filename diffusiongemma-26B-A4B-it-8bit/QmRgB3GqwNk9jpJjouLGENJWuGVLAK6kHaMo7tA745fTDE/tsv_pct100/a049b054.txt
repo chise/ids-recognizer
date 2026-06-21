@@ -1,0 +1,4 @@
+```tsv
+143	142	412	532	口 (mouth)	left
+412	53	966	903	甲 (first/heavenly stem)	right
+```

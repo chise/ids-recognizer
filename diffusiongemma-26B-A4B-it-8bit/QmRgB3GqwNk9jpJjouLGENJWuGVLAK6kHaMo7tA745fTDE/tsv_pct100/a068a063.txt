@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>242	237	362	792	足	left
+131	131	981	796	京	right

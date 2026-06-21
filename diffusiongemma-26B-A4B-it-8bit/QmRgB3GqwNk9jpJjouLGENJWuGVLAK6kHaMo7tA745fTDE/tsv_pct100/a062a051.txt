@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>30	102	396	836	扌	left
+335	102	959	887	曷	right

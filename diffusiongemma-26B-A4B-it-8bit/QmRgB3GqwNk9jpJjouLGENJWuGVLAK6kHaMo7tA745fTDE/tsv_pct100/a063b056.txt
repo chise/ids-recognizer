@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>219	219	915	915	儿	left
+219	362	866	866	刂	right

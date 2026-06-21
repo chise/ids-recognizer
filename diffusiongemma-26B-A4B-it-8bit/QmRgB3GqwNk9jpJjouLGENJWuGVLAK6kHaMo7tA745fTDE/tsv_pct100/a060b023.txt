@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	142	396	796	扌	left
+386	196	966	755	採	right

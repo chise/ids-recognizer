@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>113	114	563	936	親	left
+563	142	977	915	見	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>79	81	765	435	口	above
+33	335	959	814	三	bellow

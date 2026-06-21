@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	48	417	786	瑶	left
+75	75	966	915	瑜	right

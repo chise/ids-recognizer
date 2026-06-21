@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	44	574	831	邵	left
+116	116	959	959	阝	right

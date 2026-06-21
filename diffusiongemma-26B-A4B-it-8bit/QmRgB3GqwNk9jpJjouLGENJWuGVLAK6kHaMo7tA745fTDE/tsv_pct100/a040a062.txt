@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>103	43	804	439	首	left
+97	442	804	960	艮	right

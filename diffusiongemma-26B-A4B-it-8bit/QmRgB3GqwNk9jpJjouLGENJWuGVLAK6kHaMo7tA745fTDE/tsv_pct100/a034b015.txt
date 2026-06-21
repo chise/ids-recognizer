@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	203	477	946	女	left
+76	439	936	966	喜	right

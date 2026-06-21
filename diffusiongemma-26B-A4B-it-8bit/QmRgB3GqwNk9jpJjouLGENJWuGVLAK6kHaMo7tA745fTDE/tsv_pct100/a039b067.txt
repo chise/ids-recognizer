@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>30	85	513	856	愿	left
+497	87	966	929	真	right

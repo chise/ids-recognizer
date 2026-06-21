@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>31	116	455	765	女	left
+442	114	986	655	此	right

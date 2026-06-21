@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>48	48	715	563	貝	above
+17	563	977	976	寸	bellow

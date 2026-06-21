@@ -1,0 +1,4 @@
+153,203	269,686	horizontal stroke	above
+303,137	427,725	horizontal stroke	below
+437,85	747,467	left slanted stroke	left
+437,497	747,966	right slanted stroke	right

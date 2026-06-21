@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>100	85	520	608	列	left
+250	545	755	965	田	bellow

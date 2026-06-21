@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33	31	608	946	焦	left
+614	102	966	959	鄭	right

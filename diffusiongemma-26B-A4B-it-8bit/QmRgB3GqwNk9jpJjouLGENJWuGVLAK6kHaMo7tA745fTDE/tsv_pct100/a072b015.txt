@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>0	163	487	735	月	left
+487	222	966	532	工	right

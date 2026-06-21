@@ -1,0 +1,2 @@
+149	155	455	715	立	left
+83	442	966	915	 registration	right

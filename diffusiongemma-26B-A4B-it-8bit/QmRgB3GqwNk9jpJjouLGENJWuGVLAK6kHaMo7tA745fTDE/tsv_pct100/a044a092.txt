@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>29	203	355	874	目	left
+114	114	966	926	登	right

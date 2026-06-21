@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	98	566	874	齒	left
+573	149	966	936	可	right

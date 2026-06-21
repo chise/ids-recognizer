@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>53	237	335	563	口	left
+335	155	977	807	册	right

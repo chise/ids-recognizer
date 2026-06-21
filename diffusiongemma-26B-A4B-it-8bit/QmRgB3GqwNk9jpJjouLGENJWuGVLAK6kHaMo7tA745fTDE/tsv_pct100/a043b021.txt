@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>52	237	417	843	目	left
+413	114	977	804	臨	right

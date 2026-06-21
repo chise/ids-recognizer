@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	142	513	893	親	left
+437	137	981	843	見	right

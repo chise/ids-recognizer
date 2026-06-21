@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	21	417	996	侯	left
+335	38	981	959	鄭	right

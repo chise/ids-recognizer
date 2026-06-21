@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44,137	437,829	女	left
+442,85	986,831	戀	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>178	68	545	856	女	left
+178	442	976	856	波	right

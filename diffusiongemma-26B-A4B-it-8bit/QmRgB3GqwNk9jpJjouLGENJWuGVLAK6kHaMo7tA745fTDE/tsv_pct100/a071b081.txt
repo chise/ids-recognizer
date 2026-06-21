@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>188	185	497	856	月	left
+73	71	966	725	共	right

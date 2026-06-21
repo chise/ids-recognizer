@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33	196	497	915	女	left
+442	169	977	966	官	right

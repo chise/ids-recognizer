@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	116	439	856	米	left
+335	98	966	915	丰	right

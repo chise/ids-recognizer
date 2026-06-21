@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	41	966	563	韋	left
+178	475	915	936	頁	right

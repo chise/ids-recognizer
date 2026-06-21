@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23,23	936,936	亻	left
+381,43	959,959	魔	right

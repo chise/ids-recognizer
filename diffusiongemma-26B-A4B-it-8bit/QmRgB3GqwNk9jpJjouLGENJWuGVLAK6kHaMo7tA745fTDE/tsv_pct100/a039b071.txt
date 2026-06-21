@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>53,137	467,893	舟	left
+442,126	966,856	頁	right

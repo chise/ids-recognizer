@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23,126	532,882	压	left
+439,107	975,917	力	right

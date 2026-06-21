@@ -1,0 +1,2 @@
+188	85	396	396	口	left
+0	0	999	999	 whistling	surrounding

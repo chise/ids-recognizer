@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	169	345	532	口	left
+226	75	966	946	鼠	right

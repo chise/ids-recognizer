@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>52	52	874	874	木	left
+66	335	966	866	交	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>42	226	362	915	目	left
+365	73	966	906	羨	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	219	381	856	足	left
+363	159	966	946	襄	right

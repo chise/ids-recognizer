@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>37	276	396	775	田	left
+163	169	966	946	夫	right

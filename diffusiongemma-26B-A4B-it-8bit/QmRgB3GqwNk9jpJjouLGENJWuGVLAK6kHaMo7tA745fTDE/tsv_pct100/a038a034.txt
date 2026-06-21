@@ -1,0 +1,4 @@
+```tsv
+125	75	513	903	radical	left
+403	75	966	856	component	right
+```

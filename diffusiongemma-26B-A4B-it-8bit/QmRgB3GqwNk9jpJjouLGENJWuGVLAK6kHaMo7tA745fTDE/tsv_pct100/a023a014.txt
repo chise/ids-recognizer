@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>48	41	563	874	黍	left
+573	41	966	960	部	right

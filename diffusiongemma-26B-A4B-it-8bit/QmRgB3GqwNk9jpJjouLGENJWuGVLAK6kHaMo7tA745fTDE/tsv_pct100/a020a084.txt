@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>188	31	893	638	糸	left
+196	597	903	946	阝	right

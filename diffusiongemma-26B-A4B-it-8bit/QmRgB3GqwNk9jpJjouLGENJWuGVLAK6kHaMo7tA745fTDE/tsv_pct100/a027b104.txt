@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>166	23	814	444	亻	left
+114	114	829	981	从	right

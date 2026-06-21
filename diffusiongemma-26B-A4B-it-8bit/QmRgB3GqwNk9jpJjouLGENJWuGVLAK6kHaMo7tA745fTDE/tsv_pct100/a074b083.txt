@@ -1,0 +1,4 @@
+```tsv
+238,38	963,960	鹿 radical	left
+444,44	976,856	力 component	right
+```

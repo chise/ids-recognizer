@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>27	237	396	831	足	left
+413	93	966	888	也	right

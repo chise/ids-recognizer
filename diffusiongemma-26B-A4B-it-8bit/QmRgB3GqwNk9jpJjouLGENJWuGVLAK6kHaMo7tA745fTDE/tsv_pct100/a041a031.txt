@@ -1,0 +1,4 @@
+```tsv
+118	219	532	874	 components	left
+533	169	977	866	 components	right
+```

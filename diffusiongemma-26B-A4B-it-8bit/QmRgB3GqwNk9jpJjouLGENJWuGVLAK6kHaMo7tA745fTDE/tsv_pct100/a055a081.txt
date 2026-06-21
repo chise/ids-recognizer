@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>116	26	814	497	齒	left
+139	442	876	959	廠	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>43	252	442	755	足	left
+313	196	966	903	炎	right

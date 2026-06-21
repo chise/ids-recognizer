@@ -1,0 +1,4 @@
+```tsv
+33	313	237	686	component	left
+237	196	966	515	component	right
+```

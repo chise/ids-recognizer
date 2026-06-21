@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38,203	417,903	亻	left
+366,114	986,866	具	right

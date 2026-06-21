@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>50	97	439	829	月	left
+416	85	966	946	韋	right

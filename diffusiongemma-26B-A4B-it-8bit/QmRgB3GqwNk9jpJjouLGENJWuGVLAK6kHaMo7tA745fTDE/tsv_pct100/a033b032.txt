@@ -1,0 +1,4 @@
+```tsv
+30	137	477	856	女 (woman)	left
+477	114	966	856	周 (enclose)	right
+```

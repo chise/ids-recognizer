@@ -1,0 +1,6 @@
+```tsv
+138	137	461	368	四	left
+473	91	981	412	車	right
+153	449	468	882	月	bellow left
+503	423	929	893	貝	bellow right
+```

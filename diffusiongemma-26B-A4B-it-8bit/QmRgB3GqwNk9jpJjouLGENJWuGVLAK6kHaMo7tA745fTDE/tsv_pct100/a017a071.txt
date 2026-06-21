@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>14	14	775	595	葉	above
+110	535	960	915	base	bellow

@@ -1,0 +1,3 @@
+```tsv
+56	56	936	936	every components of the Chinese character	position (above/bellow/left/right/surrounding/covered/overlapped)
+```

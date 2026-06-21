@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	219	439	792	王	left
+383	68	966	915	令	right

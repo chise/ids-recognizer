@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	102	439	903	月	left
+26	411	960	966	叢	right

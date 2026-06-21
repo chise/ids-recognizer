@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>203	43	415	775	土	left
+66	155	966	856	澳	right

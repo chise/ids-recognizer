@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	93	269	874	亻	left
+266	68	946	915	建	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>21	219	946	946	扌	left
+146	305	936	915	虚	right

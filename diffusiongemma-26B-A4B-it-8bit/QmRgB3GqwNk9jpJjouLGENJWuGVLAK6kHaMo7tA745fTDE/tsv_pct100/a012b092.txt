@@ -1,0 +1,4 @@
+<|channel>thought
+<channel|>53	52	477	686	監	left
+139	477	959	638	見	right
+638	102	915	936	土	bellow

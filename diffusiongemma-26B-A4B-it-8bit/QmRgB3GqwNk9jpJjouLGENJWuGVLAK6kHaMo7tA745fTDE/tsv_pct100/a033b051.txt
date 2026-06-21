@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>12	126	477	804	女	left
+333	137	981	908	采	right

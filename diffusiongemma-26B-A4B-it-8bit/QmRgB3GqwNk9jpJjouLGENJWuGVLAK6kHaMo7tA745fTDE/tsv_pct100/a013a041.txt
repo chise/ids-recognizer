@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>66	142	365	650	土	left
+315	31	915	946	墳	right

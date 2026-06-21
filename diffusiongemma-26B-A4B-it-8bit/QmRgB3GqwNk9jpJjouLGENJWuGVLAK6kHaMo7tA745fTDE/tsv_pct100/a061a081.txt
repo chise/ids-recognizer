@@ -1,0 +1,4 @@
+```tsv
+48	116	335	856	扌	left
+315	75	977	888	推 (right part of character)	right of 扌
+```

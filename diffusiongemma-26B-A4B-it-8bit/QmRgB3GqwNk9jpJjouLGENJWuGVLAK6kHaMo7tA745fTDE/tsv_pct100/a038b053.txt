@@ -1,0 +1,4 @@
+<|channel>thought
+<channel|>68	68	960	269	宀	above
+133	335	563	856	頁	left
+563	269	966	831	真	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	305	439	755	王	left
+413	75	977	936	蛊	right

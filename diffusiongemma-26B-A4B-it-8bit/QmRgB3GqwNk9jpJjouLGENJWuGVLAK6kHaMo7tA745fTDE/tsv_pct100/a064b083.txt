@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>196	23	977	513	專	left
+153	452	878	977	孰	right

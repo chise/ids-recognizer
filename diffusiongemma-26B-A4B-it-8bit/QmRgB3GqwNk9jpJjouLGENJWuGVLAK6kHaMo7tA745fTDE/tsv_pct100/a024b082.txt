@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>26	78	439	936	亻	left
+280	41	960	959	煎	right

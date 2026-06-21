@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>153	48	908	417	目	left
+48	439	959	966	向	right

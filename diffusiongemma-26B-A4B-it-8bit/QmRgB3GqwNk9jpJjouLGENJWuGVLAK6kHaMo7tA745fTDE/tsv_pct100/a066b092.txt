@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>27	196	417	775	足	left
+415	85	966	946	番	right

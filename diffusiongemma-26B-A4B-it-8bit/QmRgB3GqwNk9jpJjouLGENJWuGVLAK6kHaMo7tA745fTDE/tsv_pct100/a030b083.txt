@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>136	12	335	843	亻	left
+153	255	966	796	风	right

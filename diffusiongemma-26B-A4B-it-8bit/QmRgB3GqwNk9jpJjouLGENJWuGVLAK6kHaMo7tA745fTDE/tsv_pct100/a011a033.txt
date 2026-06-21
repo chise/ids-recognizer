@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>116	116	365	638	言	left
+33	23	888	936	豈	right

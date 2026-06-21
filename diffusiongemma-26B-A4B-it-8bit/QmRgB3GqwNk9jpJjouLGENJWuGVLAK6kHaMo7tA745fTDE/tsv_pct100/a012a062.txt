@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>169	169	497	856	土	left
+393	203	977	818	址	right

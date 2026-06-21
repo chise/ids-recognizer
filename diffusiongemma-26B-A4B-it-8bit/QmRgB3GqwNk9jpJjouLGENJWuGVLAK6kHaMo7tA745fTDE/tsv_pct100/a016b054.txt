@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>48	48	715	715	土	left
+381	38	936	936	崩	right

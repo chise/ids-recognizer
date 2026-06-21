@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>153	98	545	866	彳	left
+398	102	966	725	冊	right

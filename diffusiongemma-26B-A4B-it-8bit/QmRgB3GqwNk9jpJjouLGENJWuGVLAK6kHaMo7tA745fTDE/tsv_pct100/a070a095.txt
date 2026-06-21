@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	203	513	775	月	left
+114	114	989	735	麻	right

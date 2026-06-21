@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>182	11	362	856	扌	left
+237	237	977	804	宜	right

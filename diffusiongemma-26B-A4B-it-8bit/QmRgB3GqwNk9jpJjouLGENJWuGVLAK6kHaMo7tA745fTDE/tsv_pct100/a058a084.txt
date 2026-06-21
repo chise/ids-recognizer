@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	93	335	936	扌	left
+335	93	966	915	具	right

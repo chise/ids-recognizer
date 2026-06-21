@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	203	375	735	王	left
+385	65	915	915	磊	right

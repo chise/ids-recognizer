@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>118	52	467	946	龍	left
+467	153	977	866	危	right

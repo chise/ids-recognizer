@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>73	76	513	856	叢	left
+14	14	966	966	�	right

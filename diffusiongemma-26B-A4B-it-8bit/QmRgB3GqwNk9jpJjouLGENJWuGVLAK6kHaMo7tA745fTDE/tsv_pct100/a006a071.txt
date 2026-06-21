@@ -1,0 +1,7 @@
+```tsv
+318	43	765	149	component	above
+43	219	966	381	component	above
+137	395	365	680	component	left
+383	395	563	846	component	center
+693	395	915	663	component	right
+```

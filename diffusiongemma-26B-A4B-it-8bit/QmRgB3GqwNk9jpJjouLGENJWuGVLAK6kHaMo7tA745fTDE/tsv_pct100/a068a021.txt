@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>105	23	747	452	足	left
+133	237	781	981	止	right

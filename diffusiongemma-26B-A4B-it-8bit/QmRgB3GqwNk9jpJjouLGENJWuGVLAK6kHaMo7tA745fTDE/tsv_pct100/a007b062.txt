@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>183	185	467	792	礻	left
+163	442	977	814	辰	right

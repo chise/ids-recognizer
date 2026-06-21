@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>29	31	313	903	亻	left
+313	31	977	903	隹	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	51	365	893	扌	left
+442	43	966	874	授	right

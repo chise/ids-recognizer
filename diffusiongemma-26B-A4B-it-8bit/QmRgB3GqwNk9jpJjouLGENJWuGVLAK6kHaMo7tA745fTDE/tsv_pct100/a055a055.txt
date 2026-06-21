@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>58	98	584	874	喆	left
+597	107	966	893	名	right

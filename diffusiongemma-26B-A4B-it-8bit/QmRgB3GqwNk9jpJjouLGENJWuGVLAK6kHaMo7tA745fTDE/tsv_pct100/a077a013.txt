@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33	38	365	986	心	left
+368	102	989	981	俗	right

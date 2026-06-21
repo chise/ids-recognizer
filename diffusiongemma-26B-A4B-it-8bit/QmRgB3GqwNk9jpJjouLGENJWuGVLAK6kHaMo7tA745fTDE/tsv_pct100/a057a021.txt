@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>31	114	477	936	糸	left
+442	85	960	966	婁	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>14	142	335	874	亻	left
+315	98	946	836	極	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>27	203	831	856	女	left
+133	442	966	856	適	right

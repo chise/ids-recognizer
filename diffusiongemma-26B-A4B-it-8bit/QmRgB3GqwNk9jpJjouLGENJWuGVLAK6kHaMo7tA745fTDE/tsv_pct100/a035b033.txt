@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	196	477	831	女	left
+442	163	977	915	 complex	right

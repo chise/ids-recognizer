@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>137	137	483	755	土	left
+116	116	959	946	頗	right

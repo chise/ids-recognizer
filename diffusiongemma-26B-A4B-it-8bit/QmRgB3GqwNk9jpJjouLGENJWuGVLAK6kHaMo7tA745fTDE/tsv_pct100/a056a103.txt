@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>115	85	477	786	馬	left
+31	467	888	893	復	right

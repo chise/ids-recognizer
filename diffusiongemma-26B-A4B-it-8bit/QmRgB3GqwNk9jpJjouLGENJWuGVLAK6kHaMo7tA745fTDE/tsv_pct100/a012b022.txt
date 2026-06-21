@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>193	43	786	786	土	left
+105	105	959	915	豈	right

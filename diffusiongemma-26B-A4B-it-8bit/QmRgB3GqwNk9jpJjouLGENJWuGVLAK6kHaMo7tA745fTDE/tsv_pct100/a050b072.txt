@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>64	68	866	318	top	above
+64	303	966	882	bottom	below

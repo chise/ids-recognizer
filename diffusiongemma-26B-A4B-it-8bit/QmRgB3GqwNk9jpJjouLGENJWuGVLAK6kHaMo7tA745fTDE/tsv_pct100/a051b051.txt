@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	226	335	563	口	left
+250	41	977	966	各	right

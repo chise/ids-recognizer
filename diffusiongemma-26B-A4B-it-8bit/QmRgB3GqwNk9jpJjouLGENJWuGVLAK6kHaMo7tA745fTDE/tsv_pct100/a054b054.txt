@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>107	107	563	856	喆	left
+513	107	959	946	車	right

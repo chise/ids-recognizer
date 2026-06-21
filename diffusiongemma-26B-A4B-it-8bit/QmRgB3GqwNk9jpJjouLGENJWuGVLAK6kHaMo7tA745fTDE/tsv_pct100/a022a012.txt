@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>30	62	638	816	部	left
+638	137	977	946	儿	right

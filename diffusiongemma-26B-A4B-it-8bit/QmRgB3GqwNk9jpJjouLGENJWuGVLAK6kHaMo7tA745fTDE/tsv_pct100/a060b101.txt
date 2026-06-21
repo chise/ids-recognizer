@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>137	137	439	876	木	left
+412	114	977	878	从	right

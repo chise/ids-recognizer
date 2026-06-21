@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>25	281	365	725	田	left
+266	137	966	915	彧	right

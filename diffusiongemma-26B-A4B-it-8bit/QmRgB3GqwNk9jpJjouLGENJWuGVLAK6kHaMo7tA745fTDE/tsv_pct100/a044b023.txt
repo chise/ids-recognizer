@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>215	48	915	429	目	left
+77	442	843	981	陀	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	142	303	467	口	left
+313	48	977	878	襄	right

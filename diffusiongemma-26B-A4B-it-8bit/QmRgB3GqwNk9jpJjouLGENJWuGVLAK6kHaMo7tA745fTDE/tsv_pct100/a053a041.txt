@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	237	365	563	口	left
+313	85	966	936	豈	right

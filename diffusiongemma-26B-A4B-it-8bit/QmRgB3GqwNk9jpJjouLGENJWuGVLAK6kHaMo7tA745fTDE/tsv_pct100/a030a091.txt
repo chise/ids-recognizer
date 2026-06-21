@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>73	38	866	866	亻	left
+313	73	936	936	儀	right

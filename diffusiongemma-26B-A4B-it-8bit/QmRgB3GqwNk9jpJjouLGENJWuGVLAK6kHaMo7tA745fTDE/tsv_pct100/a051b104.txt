@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>142	142	335	439	口	left
+175	175	951	686	伊	right

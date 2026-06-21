@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>146	0	831	526	佐 (left)
+166	362	818	988	圭 (right)

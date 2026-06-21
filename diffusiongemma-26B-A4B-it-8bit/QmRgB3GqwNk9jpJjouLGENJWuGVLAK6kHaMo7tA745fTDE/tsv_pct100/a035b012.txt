@@ -1,0 +1,4 @@
+<|channel>thought
+<channel|>193	196	483	804	女	left
+203	219	659	477	田	above
+163	563	977	866	攵	right

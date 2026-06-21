@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>20	203	467	936	女	left
+366	73	981	856	襄	right

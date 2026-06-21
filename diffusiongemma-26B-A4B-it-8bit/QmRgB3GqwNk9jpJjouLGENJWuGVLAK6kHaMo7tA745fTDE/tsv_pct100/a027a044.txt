@@ -1,0 +1,4 @@
+<|channel>thought
+<channel|>29	185	365	856	亻	left
+149	149	545	831	口	center
+513	126	966	843	攵	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>263	269	497	856	耳	left
+483	187	989	915	勝	right

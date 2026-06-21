@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>53	203	755	735	土	left
+142	142	977	915	墨	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>153	48	874	355	目	left
+86	362	831	966	迹	right

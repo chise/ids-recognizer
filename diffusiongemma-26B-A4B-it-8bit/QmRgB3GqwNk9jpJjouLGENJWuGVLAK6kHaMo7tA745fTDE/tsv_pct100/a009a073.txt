@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	52	417	755	王	left
+243	203	936	831	儿	right

@@ -1,0 +1,4 @@
+<|channel>thought
+<channel|>38	303	237	597	口	left
+219	114	977	532	晓	right
+368	563	693	887	目	bellow

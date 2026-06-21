@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>43	237	375	856	目	left
+403	196	981	804	欠	right

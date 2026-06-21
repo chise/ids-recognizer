@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>43	43	563	755	必	left
+313	107	959	755	見	right

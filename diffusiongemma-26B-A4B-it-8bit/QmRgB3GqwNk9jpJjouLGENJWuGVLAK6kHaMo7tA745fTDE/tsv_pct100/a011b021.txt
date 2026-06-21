@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>66	237	497	715	王	left
+396	142	946	966	襄	right

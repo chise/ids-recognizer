@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>196	196	417	836	月	left
+75	75	966	966	膜	surrounding

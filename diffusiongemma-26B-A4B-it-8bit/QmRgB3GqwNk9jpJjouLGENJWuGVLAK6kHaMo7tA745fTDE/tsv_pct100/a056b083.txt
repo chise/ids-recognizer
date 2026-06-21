@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>68	127	463	563	馬	left
+68	442	936	966	桑	right

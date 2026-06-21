@@ -1,0 +1,4 @@
+```tsv
+11	203	335	936	衤	left
+311	126	966	856	definition	right
+```

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>146	62	831	532	齒	left
+523	98	977	847	虚	right

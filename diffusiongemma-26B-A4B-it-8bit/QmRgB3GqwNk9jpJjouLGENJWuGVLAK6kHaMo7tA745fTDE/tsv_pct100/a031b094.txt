@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	56	452	959	頁	left
+215	467	977	936	長	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>133	131	755	467	女	left
+131	442	735	966	夭	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>105	43	574	765	冊	left
+584	116	915	959	部	right

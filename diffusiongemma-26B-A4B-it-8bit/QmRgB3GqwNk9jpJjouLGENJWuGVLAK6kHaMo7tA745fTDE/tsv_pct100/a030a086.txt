@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>113	27	903	381	亻	left
+113	335	936	966	幼	right

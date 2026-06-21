@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>175	172	545	755	召	left
+165	165	965	765	見	right

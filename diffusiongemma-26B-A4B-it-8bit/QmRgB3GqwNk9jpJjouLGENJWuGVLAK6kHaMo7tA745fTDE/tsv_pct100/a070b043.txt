@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>43	142	903	467	月	left
+56	467	893	959	易	right

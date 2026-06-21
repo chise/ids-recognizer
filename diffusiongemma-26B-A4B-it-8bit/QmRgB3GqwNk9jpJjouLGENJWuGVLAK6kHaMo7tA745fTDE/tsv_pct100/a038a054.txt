@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>54	114	497	814	貝	left
+61	477	977	843	共	right

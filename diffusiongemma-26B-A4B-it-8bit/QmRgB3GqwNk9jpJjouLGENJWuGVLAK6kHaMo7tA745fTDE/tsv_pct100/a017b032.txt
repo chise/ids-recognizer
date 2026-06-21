@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>31	31	986	526	人	above
+196	319	663	946	番	bellow

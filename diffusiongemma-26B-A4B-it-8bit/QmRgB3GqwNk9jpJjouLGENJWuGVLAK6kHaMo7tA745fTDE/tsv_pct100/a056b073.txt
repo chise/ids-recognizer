@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>102,93	467,659	left	left
+438,38	915,966	right	right

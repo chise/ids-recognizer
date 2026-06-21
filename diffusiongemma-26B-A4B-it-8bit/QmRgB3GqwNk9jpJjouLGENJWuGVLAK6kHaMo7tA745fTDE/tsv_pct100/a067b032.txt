@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>103	203	517	829	足	left
+467	206	959	796	丁	right

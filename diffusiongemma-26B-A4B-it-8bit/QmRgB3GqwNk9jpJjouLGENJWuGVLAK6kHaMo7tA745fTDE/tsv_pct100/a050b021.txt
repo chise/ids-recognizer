@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>142	142	856	856	厂	left
+142	142	966	856	艮	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>53	52	487	786	王	left
+403	75	951	893	耑	right

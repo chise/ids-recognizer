@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>11	212	442	831	女	left
+435	102	960	915	kyo	right

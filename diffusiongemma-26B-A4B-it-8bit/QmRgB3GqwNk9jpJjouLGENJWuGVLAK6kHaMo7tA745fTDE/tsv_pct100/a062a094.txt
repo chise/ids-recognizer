@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	137	381	831	扌	left
+355	131	986	856	襄	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>135	75	915	608	耶	left
+185	622	835	970	阝	right

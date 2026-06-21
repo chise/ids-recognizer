@@ -1,0 +1,2 @@
+100,23	893,893	扌 (扌/hand radical)	left
+365,23	966,966	操 (grass/operate component)	right

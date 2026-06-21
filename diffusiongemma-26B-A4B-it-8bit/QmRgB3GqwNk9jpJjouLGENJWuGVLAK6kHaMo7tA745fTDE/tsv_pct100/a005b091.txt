@@ -1,0 +1,2 @@
+<|channel>thought
+<channel|>178	178	936	706	Chinese character	none

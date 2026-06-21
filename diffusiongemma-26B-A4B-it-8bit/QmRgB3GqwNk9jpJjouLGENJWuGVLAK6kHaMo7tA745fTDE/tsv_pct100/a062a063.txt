@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>30	149	442	893	扌	left
+437	185	966	898	底	right

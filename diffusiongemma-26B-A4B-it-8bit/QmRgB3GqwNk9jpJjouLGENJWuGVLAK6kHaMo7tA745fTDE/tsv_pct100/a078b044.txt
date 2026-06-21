@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>75	137	365	888	忄	left
+18	18	977	966	憩	right

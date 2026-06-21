@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	203	417	868	亻	left
+333	137	971	856	夂	right

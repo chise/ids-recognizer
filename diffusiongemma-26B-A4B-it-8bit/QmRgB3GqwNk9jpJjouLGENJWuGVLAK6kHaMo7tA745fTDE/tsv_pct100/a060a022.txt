@@ -1,0 +1,8 @@
+```tsv
+227	137	355	936	component	left
+513	126	616	843	component	middle
+673	81	792	908	component	right
+83	335	915	532	component	above
+26	560	513	755	component	below
+385	563	986	735	component	below
+```

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33	137	442	915	亻	left
+442	85	966	936	令	right

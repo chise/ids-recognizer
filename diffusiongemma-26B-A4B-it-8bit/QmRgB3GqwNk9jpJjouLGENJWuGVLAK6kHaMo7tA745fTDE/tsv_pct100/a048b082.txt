@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>86	142	335	439	口	left
+311	27	946	936	齊	right

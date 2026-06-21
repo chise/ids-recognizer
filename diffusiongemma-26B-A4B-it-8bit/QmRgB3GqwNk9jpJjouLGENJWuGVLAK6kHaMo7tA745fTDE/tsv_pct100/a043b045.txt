@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>218	41	888	888	目	left
+78	335	946	946	臨	right

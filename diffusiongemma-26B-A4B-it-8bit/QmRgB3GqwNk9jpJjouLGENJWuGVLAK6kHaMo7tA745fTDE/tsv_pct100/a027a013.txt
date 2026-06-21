@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>30	147	465	917	人	left
+413	153	977	959	牛	right

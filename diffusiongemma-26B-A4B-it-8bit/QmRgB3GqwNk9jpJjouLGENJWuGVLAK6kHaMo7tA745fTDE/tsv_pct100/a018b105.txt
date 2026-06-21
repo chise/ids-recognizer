@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>43	43	856	856	黃	left
+147	147	915	915	畢	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>115	23	915	545	郭	left
+98	417	966	888	建	right

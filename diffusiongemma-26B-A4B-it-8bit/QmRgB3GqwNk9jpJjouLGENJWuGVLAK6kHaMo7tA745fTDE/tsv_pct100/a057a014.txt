@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>115	38	888	966	頁	surrounding
+115	38	515	715	音	left

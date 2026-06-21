@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>137	27	638	866	鄭	left
+646	149	959	999	阝	right

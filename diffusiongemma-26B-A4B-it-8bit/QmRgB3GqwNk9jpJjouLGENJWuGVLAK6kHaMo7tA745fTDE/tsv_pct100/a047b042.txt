@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>155	31	843	442	耳	left
+85	442	915	966	寧	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>269	23	818	439	舟	left
+273	417	755	986	冈	right

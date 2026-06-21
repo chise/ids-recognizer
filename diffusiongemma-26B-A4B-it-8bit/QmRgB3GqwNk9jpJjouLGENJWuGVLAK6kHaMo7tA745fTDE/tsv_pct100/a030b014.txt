@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>146	31	856	362	亻	left
+146	281	946	878	谷	right

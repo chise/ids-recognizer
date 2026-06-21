@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>133	137	452	831	兆	left
+467	196	966	829	色	right

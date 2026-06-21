@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>26	219	355	915	扌	left
+396	178	966	893	國	right

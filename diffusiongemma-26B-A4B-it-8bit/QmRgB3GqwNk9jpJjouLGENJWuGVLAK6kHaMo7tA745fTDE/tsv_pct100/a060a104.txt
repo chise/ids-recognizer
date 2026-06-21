@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>212	31	903	893	扌	left
+212	219	966	866	進	right

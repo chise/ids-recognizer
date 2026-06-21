@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>287	44	663	362	口	left
+128	137	792	966	圣	right

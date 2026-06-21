@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>28	185	375	915	月	left
+396	51	966	946	袁	right

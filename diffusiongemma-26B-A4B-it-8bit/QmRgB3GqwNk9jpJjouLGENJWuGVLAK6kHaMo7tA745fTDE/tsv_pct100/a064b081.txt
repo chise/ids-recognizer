@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>143	23	903	532	圭	left
+116	396	915	966	九	right

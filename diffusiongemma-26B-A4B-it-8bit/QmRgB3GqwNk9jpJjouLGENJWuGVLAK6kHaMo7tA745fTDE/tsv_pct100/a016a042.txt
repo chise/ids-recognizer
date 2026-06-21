@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>131	43	638	439	土	left
+76	417	856	946	内	right

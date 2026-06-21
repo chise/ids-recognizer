@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>188	43	836	836	女	left
+172	429	915	911	年	right

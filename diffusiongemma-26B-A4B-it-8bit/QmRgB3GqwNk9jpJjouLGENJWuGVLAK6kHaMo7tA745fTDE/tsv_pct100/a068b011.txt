@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>226	44	804	461	足	left
+196	477	843	966	舌	right

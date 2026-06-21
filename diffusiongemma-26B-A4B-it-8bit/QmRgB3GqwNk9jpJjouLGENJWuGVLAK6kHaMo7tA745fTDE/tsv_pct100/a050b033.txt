@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>139	137	417	417	口	left
+62	62	335	335	上	right

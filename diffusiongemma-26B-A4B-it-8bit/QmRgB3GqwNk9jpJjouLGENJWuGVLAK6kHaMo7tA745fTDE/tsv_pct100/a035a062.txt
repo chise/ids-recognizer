@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>148	149	461	831	女	left
+437	126	989	804	夭	right

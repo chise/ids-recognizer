@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	137	497	856	周	left
+442	98	831	856	攵	right

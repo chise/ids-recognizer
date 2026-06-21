@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	116	362	882	亻	left
+273	85	966	915	保	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23,23	915,915	忄	left
+363,78	946,946	罐	right

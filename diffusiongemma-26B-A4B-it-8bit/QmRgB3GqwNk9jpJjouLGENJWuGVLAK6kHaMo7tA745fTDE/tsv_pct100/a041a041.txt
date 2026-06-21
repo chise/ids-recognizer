@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>108,62	467,877	亠	left
+315,237	946,936	口	surrounding

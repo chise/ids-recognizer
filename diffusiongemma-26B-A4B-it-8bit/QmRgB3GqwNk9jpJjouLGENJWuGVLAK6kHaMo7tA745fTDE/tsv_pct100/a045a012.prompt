@@ -1,0 +1,3 @@
+<image> Locate every components of the Chinese character.
+Report each component with bbox coordinates as TSV format like:
+X0	Y0	X1	Y1	component	position (above/bellow/left/right/surrounding/covered/overlapped)

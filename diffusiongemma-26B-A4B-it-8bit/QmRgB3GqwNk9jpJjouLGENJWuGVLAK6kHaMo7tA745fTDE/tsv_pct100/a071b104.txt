@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>203	203	442	936	月	left
+78	458	959	959	庸	right

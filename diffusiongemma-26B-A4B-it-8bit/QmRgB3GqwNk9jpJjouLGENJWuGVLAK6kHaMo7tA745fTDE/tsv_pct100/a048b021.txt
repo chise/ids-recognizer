@@ -1,0 +1,6 @@
+```
+93,107,477,429	口 above left
+535,23,882,313	口 above right
+93,584,513,966	口 below left
+545,545,929,915	口 below right
+```

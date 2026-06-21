@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	52	508	866	黃	left
+467	52	966	860	령	right

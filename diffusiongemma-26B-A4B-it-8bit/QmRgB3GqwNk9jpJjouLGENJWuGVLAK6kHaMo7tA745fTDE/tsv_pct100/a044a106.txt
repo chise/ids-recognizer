@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	237	497	856	目	left
+48	48	936	966	臨	right

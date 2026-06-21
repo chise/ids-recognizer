@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	237	375	755	王	left
+199	142	966	856	圭	right

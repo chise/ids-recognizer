@@ -1,0 +1,3 @@
+```tsv
+23	52	966	966	image> locate every components of the Chinese character.	surrounding
+```

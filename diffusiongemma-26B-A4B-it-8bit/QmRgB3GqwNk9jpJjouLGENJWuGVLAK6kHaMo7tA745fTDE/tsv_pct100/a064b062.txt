@@ -1,0 +1,4 @@
+```tsv
+269	17	866	396	艹 (grass)	above
+175	335	946	966	 bút (brush/write)	bellow
+```

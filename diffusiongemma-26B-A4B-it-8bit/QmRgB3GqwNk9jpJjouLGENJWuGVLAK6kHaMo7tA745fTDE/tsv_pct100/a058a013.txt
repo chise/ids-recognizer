@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>39	169	439	874	扌	left
+417	114	960	775	姒	right

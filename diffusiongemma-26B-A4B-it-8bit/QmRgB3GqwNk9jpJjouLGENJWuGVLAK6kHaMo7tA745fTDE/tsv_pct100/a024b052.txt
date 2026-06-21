@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	48	936	335	彳	left
+71	335	878	977	後	right

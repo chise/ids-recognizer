@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>18,185	381,781	目	left
+66,68	966,736	谷	right

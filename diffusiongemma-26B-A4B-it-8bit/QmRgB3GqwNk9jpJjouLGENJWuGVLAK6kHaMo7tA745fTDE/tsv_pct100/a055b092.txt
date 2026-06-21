@@ -1,0 +1,4 @@
+```tsv
+126	107	608	946	radical	left
+38	107	960	874	component	right
+```

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>142	197	818	818	亻	left
+335	142	977	735	也	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>115	169	365	755	辶	left
+368	85	866	831	⻌	right

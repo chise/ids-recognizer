@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>73	73	915	315	心	left
+149	149	966	966	舌	right

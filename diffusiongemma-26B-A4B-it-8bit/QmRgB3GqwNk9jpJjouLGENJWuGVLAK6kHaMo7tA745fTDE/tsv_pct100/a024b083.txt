@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	23	563	936	隹	left
+563	23	989	951	隹	right

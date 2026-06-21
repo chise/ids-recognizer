@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>30	196	467	959	扌	left
+463	142	959	874	襄	right

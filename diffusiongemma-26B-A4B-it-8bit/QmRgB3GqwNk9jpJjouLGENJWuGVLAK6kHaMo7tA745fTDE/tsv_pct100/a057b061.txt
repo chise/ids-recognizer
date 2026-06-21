@@ -1,0 +1,2 @@
+<|channel>thought
+<channel|>I did not find any bounding box detections for the Chinese character.

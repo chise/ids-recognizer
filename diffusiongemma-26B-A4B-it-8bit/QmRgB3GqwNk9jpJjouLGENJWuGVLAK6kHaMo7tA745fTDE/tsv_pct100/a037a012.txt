@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>78	237	856	856	威	left
+126	545	878	888	或	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	276	381	650	口	left
+386	149	966	908	合	right

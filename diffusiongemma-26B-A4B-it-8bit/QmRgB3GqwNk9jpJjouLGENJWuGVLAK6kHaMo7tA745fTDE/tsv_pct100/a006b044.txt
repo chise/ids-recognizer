@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>139	17	755	856	禾	left
+143	626	831	977	阿	right

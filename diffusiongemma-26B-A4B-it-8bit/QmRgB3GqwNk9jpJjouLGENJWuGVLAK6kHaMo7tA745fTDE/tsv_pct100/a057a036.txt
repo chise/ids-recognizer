@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>31	116	650	650	馬	left
+26	237	977	977	爵	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	172	439	878	由	left
+442	142	836	545	田	above

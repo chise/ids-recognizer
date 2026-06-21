@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>196	51	396	878	目	left
+429	51	981	878	善	right

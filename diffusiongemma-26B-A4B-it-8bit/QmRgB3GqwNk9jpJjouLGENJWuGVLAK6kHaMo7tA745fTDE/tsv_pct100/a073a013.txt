@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>51	116	497	977	月	left
+523	43	946	946	勺	right

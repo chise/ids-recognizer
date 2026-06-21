@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	31	638	893	黍	left
+183	195	981	888	阝	right

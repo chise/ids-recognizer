@@ -1,0 +1,4 @@
+<|channel>thought
+<channel|>46	169	362	888	扌	left
+396	178	638	888	 slanted	center
+655	203	977	804	乞	right

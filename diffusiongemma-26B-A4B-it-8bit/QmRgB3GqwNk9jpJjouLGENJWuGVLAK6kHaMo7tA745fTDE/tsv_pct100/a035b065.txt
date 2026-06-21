@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>43	142	335	755	女	left
+313	102	966	781	妾	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>149	41	804	796	廣	left
+233	85	888	977	羅	right

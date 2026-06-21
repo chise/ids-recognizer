@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	102	335	814	人	left
+368	175	977	814	何	right

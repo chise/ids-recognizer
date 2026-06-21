@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>53	137	452	876	朋	left
+452	114	959	735	臨	right

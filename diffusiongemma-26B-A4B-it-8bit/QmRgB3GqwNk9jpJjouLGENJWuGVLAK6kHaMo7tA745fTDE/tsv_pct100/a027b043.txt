@@ -1,0 +1,2 @@
+103	98	439	843	亻	left
+448	89	977	874	 consistency	right

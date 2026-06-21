@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>118	126	456	862	舟	left
+467	151	977	735	肤	right

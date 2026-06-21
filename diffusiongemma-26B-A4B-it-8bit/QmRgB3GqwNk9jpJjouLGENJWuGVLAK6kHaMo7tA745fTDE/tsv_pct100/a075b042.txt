@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>115	85	966	966	砭	left
+395	137	915	936	襄	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>213	31	796	804	目	left
+81	442	966	856	樂	right

@@ -1,0 +1,5 @@
+```tsv
+77	114	365	735	water radical	left
+313	52	638	831	base	center
+633	85	946	725	component	right
+```

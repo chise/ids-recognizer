@@ -1,0 +1,4 @@
+```tsv
+114	258	513	735	Chinese character	left
+477	178	966	706	Chinese character	right
+```

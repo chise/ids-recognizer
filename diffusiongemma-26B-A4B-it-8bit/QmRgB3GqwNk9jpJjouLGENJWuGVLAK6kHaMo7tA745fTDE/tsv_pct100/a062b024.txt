@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>203	43	878	878	扌	left
+139	137	963	860	摄	right

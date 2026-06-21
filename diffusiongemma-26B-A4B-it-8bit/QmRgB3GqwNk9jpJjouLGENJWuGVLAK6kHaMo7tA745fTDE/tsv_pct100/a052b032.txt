@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>78	85	638	860	動	left
+415	85	966	966	力	right

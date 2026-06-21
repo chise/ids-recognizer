@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>47	227	319	843	扌	left
+333	137	966	804	攵	right

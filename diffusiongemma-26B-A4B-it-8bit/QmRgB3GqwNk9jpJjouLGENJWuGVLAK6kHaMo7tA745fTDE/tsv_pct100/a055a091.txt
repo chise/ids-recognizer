@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>30	85	532	856	储	left
+513	107	959	856	成	right

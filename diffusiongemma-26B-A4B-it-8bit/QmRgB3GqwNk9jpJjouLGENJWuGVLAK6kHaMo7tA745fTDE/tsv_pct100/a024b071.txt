@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>133	31	878	439	仙	left
+146	335	755	966	必	right

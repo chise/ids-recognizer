@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33	159	513	829	女	left
+483	85	960	765	危	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	196	477	866	足	left
+38	381	966	960	俞	right

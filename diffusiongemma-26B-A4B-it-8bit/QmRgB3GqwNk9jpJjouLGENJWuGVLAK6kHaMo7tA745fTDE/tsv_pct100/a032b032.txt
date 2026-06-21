@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>53	48	497	755	父	left
+483	85	966	866	女	right

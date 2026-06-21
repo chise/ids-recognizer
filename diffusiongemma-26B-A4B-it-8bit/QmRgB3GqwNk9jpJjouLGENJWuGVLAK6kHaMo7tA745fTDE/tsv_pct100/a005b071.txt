@@ -1,0 +1,3 @@
+```tsv
+139	137	876	831	Chinese character	center
+```

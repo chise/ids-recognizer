@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>19	126	335	903	亻	left
+313	107	977	915	借	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	137	513	866	女	left
+467	131	977	878	右	right

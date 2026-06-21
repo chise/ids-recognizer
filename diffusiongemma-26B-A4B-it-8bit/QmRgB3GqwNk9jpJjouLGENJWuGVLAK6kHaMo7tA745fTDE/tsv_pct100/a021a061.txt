@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>115	13	563	866	鄭	left
+563	185	888	968	邵	right

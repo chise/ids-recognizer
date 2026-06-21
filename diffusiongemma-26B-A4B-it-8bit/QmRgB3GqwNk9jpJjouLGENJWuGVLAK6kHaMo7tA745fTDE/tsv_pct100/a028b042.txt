@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	68	532	804	女	left
+166	412	960	762	既	right

@@ -1,0 +1,4 @@
+```tsv
+238	38	563	608	口	left
+113	107	893	951	 equivalent	right
+```

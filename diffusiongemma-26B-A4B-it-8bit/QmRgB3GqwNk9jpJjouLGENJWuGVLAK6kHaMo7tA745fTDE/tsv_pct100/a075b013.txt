@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>66	66	966	966	兼	left
+173	172	966	792	米	right

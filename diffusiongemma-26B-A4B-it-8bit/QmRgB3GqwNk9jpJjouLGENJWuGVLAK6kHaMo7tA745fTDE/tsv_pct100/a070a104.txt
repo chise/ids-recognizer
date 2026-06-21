@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>30	151	477	781	月	left
+473	73	960	680	具	right

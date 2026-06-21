@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>94	98	497	856	册	left
+626	126	966	814	土	right

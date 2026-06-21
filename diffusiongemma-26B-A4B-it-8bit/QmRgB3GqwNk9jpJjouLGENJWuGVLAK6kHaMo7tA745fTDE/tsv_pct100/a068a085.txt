@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>131	31	680	439	足	left
+41	185	960	876	厲	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>135	78	439	856	田	left
+477	75	966	796	参	right

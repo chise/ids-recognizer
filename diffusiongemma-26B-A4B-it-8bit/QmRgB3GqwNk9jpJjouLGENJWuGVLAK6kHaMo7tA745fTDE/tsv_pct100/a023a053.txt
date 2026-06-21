@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	23	545	843	蜀	left
+563	68	946	960	阝	right

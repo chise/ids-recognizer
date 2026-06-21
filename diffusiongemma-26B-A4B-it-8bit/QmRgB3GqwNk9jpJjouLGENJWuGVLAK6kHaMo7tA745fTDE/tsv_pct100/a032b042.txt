@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>48	178	856	856	女	left
+312	102	936	936	義	right

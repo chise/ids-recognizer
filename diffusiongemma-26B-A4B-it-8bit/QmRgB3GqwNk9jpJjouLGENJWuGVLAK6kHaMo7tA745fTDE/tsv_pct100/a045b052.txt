@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>96	44	836	563	龍	left
+133	532	836	977	見	right

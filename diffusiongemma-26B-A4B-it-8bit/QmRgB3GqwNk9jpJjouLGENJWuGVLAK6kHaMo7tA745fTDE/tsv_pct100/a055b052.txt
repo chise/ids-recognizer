@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>315	12	725	442	田	above
+206	335	874	966	参	bellow

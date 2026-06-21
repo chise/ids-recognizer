@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>149,151,461,814	月	left
+76,78,983,856	商	right

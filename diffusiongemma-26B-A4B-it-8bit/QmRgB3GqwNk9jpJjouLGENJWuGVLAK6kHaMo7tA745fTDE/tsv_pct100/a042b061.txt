@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>183	38	866	412	户	left
+149	467	843	977	里	right

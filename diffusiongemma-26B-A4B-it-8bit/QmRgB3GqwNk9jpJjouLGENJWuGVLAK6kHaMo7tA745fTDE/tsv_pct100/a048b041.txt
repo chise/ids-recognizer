@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>78	276	362	545	口	left
+78	76	966	946	堯	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	227	365	929	扌	left
+383	203	966	959	戈	right

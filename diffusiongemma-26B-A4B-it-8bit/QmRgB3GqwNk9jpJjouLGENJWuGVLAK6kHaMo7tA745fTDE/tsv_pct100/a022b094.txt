@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>18	62	563	882	郭	left
+463	23	946	986	阝	right

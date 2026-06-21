@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>28	185	477	876	女	left
+77	75	977	868	岳	right

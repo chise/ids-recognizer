@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33	196	381	715	土	left
+335	175	966	810	登	right

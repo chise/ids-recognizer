@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>128	137	483	804	女	left
+419	126	960	804	輿	right

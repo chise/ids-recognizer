@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>30	31	335	946	艹	left
+335	31	843	999	優	right

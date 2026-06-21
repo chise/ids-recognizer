@@ -1,0 +1,5 @@
+```tsv
+146	222	303	755	component	above
+396	298	508	693	component	middle
+606	48	759	955	component	bellow
+```

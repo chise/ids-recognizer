@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	89	452	804	古	left
+417	159	966	915	眞	right

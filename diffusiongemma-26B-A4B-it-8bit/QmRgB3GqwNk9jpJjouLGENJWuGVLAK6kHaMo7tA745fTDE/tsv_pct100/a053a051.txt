@@ -1,0 +1,4 @@
+```tsv
+178	175	417	608	component	left
+56	517	959	959	component	right
+```

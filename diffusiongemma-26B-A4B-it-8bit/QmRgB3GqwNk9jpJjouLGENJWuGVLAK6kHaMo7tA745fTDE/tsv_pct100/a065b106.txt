@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>15	15	396	804	足	left
+413	52	960	915	專	right

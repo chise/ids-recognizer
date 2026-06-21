@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>29	78	467	876	頁	left
+313	185	946	888	真	right

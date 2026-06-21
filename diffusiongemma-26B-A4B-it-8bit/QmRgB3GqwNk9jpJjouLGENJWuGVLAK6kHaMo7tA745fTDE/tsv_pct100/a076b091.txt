@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	185	290	915	忄	left
+303	206	959	866	兄	right

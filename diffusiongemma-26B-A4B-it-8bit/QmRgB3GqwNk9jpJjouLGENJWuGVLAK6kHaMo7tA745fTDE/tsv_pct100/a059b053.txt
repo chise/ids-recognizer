@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>137	137	513	915	木	left
+187	467	977	903	另	right

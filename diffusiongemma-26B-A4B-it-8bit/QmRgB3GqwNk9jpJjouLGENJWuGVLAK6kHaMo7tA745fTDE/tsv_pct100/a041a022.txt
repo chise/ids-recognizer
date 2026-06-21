@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>133	56	477	856	部	left
+93	93	966	804	危	right

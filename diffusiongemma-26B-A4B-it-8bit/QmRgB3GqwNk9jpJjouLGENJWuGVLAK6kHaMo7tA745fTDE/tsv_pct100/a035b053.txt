@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	137	497	755	女	left
+447	142	981	796	也	right

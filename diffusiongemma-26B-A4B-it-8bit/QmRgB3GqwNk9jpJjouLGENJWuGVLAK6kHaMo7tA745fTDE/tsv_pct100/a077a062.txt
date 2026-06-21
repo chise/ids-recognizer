@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	98	335	936	心	left
+313	18	966	960	隶	right

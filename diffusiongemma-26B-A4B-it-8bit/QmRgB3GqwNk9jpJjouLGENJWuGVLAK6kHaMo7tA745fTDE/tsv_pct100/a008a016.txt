@@ -1,0 +1,6 @@
+```tsv
+137	137	786	269	component	above
+279	149	874	461	component	above
+443	335	755	563	component	above
+599	0	966	796	component	bellow
+```

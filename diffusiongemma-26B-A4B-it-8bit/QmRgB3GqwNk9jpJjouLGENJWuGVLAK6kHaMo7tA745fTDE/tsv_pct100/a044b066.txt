@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>54	52	365	936	联	left
+365	52	977	959	力	right

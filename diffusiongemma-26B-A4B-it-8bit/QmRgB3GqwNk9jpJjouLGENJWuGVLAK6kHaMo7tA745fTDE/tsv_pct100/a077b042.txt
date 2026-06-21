@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>27	155	497	856	京	left
+513	155	986	908	升	right

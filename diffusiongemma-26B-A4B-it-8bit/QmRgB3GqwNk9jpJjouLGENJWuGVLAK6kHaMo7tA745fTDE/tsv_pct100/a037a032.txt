@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>76	77	532	785	好	left
+483	93	981	856	儿	right

@@ -1,0 +1,6 @@
+```tsv
+77	203	269	936	vertical	left
+715	75	915	929	vertical	right
+275	365	715	513	horizontal	top
+315	650	755	810	horizontal	bottom
+```

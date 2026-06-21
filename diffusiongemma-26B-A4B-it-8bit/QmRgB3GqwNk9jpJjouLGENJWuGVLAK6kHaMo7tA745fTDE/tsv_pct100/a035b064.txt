@@ -1,0 +1,4 @@
+```tsv
+43	43	487	608	left	left
+385	73	977	893	right	right
+```

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>18	178	396	786	足	left
+393	155	977	915	册	right

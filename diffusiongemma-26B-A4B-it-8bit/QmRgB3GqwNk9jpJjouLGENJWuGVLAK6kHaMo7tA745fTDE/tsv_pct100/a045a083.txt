@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	137	563	843	广	left
+533	107	966	781	圭	right

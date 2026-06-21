@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23,56	650,903	厨	left
+653,127	966,946	阝	right

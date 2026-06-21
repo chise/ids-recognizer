@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>116	44	831	477	幽	left
+133	442	903	946	兼	right

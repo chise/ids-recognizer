@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>13	196	467	856	女	left
+442	93	977	925	束	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>203	203	545	715	血	left
+503	196	936	796	下	right

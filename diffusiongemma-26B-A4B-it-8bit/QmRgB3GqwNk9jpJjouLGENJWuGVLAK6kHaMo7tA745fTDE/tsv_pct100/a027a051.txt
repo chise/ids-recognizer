@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>31	31	915	936	人	left
+237	237	959	966	傷	right

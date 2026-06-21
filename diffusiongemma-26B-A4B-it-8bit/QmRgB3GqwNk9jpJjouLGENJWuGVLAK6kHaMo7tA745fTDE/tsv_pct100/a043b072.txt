@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	185	362	915	目	left
+355	53	986	946	京	right

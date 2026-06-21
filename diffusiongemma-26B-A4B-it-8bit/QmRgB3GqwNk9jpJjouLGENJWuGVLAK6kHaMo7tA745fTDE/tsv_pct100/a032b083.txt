@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>65	185	435	755	扌	left
+415	150	875	765	旋	right

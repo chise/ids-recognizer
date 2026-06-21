@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23,48	532,876	難	left
+513,62	946,935	隹	right

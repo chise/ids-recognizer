@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>48	18	915	626	差	above
+53	608	946	959	心	bellow

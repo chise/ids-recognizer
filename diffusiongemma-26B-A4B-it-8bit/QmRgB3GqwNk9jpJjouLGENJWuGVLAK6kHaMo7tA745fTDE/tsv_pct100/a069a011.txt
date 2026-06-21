@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>77	77	513	915	四	left
+38	38	936	946	臨	right

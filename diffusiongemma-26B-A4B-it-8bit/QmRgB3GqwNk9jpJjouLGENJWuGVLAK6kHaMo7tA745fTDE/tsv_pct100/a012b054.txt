@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>44	137	439	755	土	left
+363	85	977	946	桀	right

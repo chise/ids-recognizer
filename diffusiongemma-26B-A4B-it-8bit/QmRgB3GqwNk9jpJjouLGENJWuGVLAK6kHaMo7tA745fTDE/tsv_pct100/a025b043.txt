@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>85	51	929	929	亻	left
+103	442	936	988	令	right

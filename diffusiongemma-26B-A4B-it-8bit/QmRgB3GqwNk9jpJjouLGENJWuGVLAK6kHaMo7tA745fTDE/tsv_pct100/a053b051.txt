@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>38	237	362	626	口	left
+114	107	946	814	夫	right

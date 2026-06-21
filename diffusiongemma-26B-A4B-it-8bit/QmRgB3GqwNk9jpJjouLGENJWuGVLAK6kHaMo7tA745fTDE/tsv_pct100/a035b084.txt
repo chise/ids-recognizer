@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	93	477	804	女	left
+503	114	966	888	妇	right

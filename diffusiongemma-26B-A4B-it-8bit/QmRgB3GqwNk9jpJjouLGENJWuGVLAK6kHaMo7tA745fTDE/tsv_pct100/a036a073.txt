@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>23	169	439	893	戈	left
+413	102	981	888	用	right

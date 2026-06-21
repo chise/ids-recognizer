@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56,48	977,497	击	above
+56,442	946,946	手	bellow

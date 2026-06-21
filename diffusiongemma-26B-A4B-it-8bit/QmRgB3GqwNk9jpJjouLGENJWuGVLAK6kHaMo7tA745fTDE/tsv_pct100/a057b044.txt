@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>189,17	618,563	華	left
+233,43	882,497	揮	right

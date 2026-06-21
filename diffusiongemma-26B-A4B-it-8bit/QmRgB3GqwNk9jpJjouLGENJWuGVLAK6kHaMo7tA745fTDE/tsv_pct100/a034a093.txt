@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>33	230	439	856	女	left
+442	85	966	946	庸	right

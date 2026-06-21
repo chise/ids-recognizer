@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>56	62	545	829	女	left
+51	513	977	831	巾	right

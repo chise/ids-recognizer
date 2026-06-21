@@ -1,0 +1,2 @@
+```json
+I did not find any bounding box detections for Chinese character.

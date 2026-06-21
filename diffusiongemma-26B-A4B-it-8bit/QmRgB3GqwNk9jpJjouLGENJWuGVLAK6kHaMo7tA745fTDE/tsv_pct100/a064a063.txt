@@ -1,0 +1,4 @@
+```tsv
+107	107	946	946	component	left
+293	303	981	929	component	right
+```

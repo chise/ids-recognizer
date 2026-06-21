@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>143	52	816	513	糸	left
+131	335	937	966	共	right
