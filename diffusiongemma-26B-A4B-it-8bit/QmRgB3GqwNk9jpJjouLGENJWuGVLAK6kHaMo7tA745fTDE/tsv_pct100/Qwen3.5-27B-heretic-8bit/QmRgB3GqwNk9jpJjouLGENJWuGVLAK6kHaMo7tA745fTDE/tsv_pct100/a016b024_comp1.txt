@@ -1,0 +1,2 @@
+0	0	1000	1000	宀	overlapped
+0	100	1000	1000	生	overlapped

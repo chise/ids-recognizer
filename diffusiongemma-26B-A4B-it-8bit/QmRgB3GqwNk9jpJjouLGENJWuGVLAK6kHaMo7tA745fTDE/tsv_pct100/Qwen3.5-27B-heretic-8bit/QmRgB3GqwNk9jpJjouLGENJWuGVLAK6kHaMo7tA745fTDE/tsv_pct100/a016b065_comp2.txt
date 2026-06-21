@@ -1,0 +1,7 @@
+0	0	984	984	土	left
+0	0	984	984	土	right
+0	0	984	984	土	above
+0	0	984	984	土	below
+0	0	984	984	土	surrounding
+0	0	984	984	土	covered
+0	0	984	984	土	overlapped

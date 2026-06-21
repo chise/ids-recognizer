@@ -1,0 +1,2 @@
+0	0	102	984	戈	left
+0	0	102	984	戉	surrounding

@@ -1,0 +1,2 @@
+0	0	984	984	冂	surrounding
+107	214	714	857	口	inside

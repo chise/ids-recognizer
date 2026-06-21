@@ -1,0 +1,2 @@
+0	0	992	984	土	bellow
+0	0	992	650	宀	surrounding
