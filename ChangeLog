@@ -1,0 +1,6 @@
+2026-06-20  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer_mlx-vlm_diffusiongemma-26B-A4B-it-8bit.py: New
+	file.
+
+	* ids-recognizer_mlx-vlm_Qwen3.5-27B-heretic-8bit.py: New file.
