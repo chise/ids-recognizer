@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>107,31	335,936	水	left
+467,149	959,796	也	right

@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>63	27	368	888	木	left
+381	31	959	946	義	right

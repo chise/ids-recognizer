@@ -1,0 +1,3 @@
+<|channel>thought
+<channel|>52	126	335	936	忄	left
+413	102	960	915	悟	right
