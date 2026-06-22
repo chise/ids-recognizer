@@ -1,5 +1,9 @@
 2026-06-22  MORIOKA Tomohiko  <tomo.git@chise.org>
 
+	* ids-recognizer.py: Accept multiple image files.
+
+2026-06-22  MORIOKA Tomohiko  <tomo.git@chise.org>
+
 	* ids-recognizer.py (prompt): Add
 	`upper-left/upper-right/lower-left/lower-right'.
 	(detect_ids): Likewise.
