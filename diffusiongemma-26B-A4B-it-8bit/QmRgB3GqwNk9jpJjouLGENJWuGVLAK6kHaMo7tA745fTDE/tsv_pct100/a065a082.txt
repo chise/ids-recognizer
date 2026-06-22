@@ -1,4 +1,0 @@
-```tsv
-338	93	608	279	top	above
-188	245	966	831	bottom	surrounding
-```

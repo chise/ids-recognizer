@@ -1,2 +1,0 @@
-76	75	959	458	Officers	left
-107	107	866	966	合	right

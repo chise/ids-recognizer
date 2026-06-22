@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>48,93	315,915	亻	left
-365,51	946,946	京	right

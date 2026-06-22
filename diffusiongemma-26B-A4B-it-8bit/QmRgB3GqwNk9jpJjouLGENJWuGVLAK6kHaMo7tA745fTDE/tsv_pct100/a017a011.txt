@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	147	417	715	土	left
-303	150	981	796	凪	right

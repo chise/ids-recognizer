@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	137	439	755	足	left
-442	52	966	946	舉	right

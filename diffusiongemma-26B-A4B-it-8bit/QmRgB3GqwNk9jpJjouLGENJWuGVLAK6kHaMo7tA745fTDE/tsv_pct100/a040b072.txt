@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	31	477	735	酉	left
-483	107	966	762	麻	right

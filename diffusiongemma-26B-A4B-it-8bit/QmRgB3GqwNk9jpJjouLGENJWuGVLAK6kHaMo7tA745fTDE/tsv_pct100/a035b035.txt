@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>83	43	513	866	穀	left
-447	142	966	765	殳	right

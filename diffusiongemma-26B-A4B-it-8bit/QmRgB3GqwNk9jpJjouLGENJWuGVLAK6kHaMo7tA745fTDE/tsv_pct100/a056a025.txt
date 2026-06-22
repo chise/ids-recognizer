@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>137	219	785	792	彳	left
-193	195	893	893	武	right

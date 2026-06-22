@@ -1,4 +1,0 @@
-```tsv
-38	203	375	796	目	left
-383	137	966	765	 Contracts	right
-```

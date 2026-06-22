@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>116	44	365	439	口	left
-396	44	893	977	韋	right

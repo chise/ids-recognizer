@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>137	237	442	915	月	left
-437	185	963	896	黍	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>31	318	269	650	口	left
-142	142	831	831	圭	right

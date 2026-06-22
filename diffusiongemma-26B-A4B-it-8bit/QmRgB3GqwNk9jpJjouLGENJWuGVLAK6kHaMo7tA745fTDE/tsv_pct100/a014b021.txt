@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>48	85	655	638	土	left
-193	107	936	915	果	right

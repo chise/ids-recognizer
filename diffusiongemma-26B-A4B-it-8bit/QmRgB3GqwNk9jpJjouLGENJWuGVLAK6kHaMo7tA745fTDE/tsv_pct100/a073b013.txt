@@ -1,4 +1,0 @@
-```tsv
-163	31	888	417	left	left
-83	439	725	988	right	right
-```

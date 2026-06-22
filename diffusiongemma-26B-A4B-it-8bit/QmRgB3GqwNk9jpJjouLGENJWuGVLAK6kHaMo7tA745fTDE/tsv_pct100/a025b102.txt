@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>118	41	461	866	付	left
-465	116	977	874	付	right

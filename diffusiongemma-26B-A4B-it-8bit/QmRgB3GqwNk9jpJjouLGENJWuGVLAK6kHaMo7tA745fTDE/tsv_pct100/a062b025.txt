@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>31	212	365	829	扌	left
-368	178	981	831	掟	right

@@ -1,4 +1,0 @@
-<|channel>thought
-<channel|>73,73	442,638	舟	left
-448,85	966,608	殳	right
-269,569	693,946	自	bellow

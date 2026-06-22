@@ -1,4 +1,0 @@
-<|channel>thought
-<channel|>29	27	477	696	阝	left
-477	52	959	563	齐	right
-313	455	715	888	目	bellow

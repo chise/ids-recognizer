@@ -1,4 +1,0 @@
-```tsv
-33	335	442	856	禾	left
-433	131	946	915	 restantes	right
-```

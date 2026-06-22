@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	185	796	362	卉	above
-137	412	977	915	异	bellow

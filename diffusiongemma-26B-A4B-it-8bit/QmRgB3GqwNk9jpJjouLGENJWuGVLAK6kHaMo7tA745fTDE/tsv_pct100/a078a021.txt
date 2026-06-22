@@ -1,4 +1,0 @@
-<|channel>thought
-<channel|>38	127	335	929	忄	left
-313	38	959	563	意	above
-396	563	715	959	日	bellow

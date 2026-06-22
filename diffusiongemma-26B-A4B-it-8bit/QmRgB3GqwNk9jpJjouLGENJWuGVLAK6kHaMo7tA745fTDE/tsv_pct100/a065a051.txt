@@ -1,4 +1,0 @@
-```tsv
-23	159	977	355	horizontal stroke	above
-463	303	608	452	vertical stroke	surrounding
-```

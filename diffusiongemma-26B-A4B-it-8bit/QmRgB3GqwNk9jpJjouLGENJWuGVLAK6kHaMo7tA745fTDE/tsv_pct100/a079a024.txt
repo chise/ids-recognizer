@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>31	116	305	903	忄	left
-403	116	966	786	區	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>333	41	856	467	片	left
-223	513	786	959	化	right

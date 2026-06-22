@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>146	142	497	804	月	left
-303	149	951	888	皮	right

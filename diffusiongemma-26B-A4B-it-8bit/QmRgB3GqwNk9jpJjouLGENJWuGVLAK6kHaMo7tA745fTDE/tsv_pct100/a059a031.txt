@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>115	50	915	365	扌	left
-400	100	975	915	襄	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>38,41	936,365	忄	left
-295,56	959,936	隷	right

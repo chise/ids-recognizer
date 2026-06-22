@@ -1,2 +1,0 @@
-0	0	102	100	十	left	above
-102	0	1000	100	土	right	above

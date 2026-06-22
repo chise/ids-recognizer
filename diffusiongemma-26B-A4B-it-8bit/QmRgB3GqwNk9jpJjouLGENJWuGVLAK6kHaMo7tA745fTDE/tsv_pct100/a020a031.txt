@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>23	27	545	786	支	left
-153	563	959	959	部	right

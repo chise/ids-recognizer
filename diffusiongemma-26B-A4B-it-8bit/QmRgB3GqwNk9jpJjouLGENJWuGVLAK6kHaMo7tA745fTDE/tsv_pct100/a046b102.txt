@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>56	187	467	936	月	left
-442	13	915	966	農	right

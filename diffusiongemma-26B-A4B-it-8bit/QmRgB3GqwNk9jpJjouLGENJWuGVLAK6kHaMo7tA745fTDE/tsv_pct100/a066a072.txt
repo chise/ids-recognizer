@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>77	258	439	856	正	left
-463	196	960	929	商	right

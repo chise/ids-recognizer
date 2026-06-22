@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>29	29	365	461	口	left
-315	31	966	966	华	right

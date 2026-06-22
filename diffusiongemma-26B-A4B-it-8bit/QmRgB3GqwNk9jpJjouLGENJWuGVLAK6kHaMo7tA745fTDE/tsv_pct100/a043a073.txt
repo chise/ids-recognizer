@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>38	43	966	319	宀	above
-333	319	755	955	直	bellow

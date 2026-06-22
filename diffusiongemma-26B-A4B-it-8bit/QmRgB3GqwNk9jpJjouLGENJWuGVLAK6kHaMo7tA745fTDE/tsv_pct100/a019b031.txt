@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>115	80	960	513	component	left
-145	545	915	960	component	right

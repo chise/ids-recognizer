@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>142	31	936	936	囗	surrounding
-315	185	762	755	日	inside

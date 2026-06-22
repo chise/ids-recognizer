@@ -1,4 +1,0 @@
-```tsv
-238	237	439	638	口 component	left
-355	163	977	893	林 component	right
-```

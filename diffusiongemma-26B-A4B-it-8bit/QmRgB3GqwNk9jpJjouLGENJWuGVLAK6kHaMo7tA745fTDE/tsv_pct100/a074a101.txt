@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>115	93	563	946	勤	left
-439	31	946	915	力	right

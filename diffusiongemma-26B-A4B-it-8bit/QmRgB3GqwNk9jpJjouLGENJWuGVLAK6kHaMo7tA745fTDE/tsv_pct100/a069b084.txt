@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>38	48	663	646	呂	left
-654	178	966	903	斤	right

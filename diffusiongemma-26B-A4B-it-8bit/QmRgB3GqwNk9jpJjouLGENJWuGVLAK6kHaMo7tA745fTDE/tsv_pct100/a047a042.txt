@@ -1,2 +1,0 @@
-30	30	966	966	門	surrounding
-245	442	638	755	聞	center

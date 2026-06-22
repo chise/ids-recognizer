@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>0	212	856	360	艹	above
-163	315	915	936	黃	bellow

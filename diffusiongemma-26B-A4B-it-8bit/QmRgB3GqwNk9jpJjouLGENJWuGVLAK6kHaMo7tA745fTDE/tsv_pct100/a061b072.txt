@@ -1,2 +1,0 @@
-103	27	442	915	扌	left
-146	149	946	814	 enclosure	right

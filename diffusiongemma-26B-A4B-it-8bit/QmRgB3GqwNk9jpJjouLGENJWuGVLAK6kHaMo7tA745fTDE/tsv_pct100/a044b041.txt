@@ -1,4 +1,0 @@
-```tsv
-43	159	365	878	目	left
-396	85	966	882	 strictly	right
-```

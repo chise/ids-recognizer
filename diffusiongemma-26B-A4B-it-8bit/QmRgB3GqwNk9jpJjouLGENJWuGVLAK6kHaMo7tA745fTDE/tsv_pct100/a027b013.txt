@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>133	137	362	856	亻	left
-313	203	966	659	人	right

@@ -1,4 +1,0 @@
-<|channel>thought
-<channel|>33	203	439	874	女	left
-447	114	831	856	蜀	center
-843	137	977	915	刂	right

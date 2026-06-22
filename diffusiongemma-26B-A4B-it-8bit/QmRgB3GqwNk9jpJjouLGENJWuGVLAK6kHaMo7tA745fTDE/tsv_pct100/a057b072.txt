@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>29	29	963	442	研	above
-166	411	946	959	手	bellow

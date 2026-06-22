@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>30	75	477	755	頁	left
-403	68	966	929	真	right

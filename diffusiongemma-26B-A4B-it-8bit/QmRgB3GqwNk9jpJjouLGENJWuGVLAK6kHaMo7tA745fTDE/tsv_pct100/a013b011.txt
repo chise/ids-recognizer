@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>140	62	563	856	丰	left
-513	114	981	882	封	right

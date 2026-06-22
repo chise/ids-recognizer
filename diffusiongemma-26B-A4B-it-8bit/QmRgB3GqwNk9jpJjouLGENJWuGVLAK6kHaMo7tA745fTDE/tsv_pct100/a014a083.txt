@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>48	48	946	946	隹	surrounding
-53	53	941	941	隹	surrounding

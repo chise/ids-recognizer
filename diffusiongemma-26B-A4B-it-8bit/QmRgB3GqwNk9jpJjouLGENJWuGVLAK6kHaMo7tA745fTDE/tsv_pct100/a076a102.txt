@@ -1,2 +1,0 @@
-0	127	335	866	付 (person radical)	left
-313	31	966	936	爵 (hat radical)	right

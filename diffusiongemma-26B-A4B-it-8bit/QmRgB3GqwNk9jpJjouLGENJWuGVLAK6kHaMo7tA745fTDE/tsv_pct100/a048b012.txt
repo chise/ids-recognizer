@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>23	237	335	563	口	left
-77	76	977	936	林	right

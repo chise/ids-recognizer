@@ -1,3 +1,0 @@
-0	0	984	984	盛	surrounding
-0	500	984	984	皿	bellow
-0	0	984	500	成	above

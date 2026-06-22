@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>276	276	313	563	口	left
-149	149	882	878	亞	surrounding

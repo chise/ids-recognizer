@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33,31	856,856	氵	left
-313,137	915,963	庸	right

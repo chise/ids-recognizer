@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>177	172	477	878	鼓	left
-365	219	977	856	戈	right

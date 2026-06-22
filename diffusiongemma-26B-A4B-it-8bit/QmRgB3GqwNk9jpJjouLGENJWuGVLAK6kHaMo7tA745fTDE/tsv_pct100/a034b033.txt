@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>115	11	497	532	圭	left
-497	75	946	966	女	right

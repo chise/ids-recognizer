@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>122	48	929	497	頭	left
-116	477	946	966	頁	right

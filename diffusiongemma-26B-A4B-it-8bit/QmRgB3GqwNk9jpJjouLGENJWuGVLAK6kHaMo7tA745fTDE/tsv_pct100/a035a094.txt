@@ -1,5 +1,0 @@
-```tsv
-X0	Y0	X1	Y1	component	position
-56	137	477	831	女	left
-442	43	966	856	崩	right
-```

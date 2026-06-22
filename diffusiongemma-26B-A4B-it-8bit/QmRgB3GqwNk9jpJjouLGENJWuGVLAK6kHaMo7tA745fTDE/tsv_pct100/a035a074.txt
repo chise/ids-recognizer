@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>13	126	563	835	女	left
-467	127	966	915	頁	right

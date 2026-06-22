@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>137	137	365	804	扌	left
-365	175	946	831	采	right

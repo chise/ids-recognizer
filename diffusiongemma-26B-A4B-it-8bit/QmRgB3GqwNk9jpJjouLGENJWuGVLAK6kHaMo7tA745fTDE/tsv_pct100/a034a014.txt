@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>55	60	515	960	萝	left
-25	485	965	960	女	right

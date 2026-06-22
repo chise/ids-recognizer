@@ -1,4 +1,0 @@
-<|channel>thought
-<channel|>46	159	318	885	left radical	left
-375	175	608	866	middle component	center
-638	175	966	856	right component	right

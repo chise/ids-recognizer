@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>23	23	966	966	廣	left
-381	31	856	915	�	right

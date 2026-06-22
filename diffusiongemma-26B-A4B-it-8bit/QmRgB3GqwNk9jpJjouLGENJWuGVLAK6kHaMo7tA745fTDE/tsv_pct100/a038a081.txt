@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>30	203	442	866	貝	left
-437	115	977	915	米	right

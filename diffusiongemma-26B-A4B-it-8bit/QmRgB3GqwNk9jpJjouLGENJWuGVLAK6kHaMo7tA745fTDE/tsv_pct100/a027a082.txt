@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>219	219	563	836	人	left
-437	196	981	814	少	right

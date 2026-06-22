@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	31	497	915	兩	left
-77	497	988	893	頁	right

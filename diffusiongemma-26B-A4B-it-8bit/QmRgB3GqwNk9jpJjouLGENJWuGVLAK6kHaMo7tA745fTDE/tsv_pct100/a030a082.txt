@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>30	237	563	915	亻	left
-287	85	966	936	叢	right

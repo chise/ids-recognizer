@@ -1,2 +1,0 @@
-56	186	439	856	left component	left
-488	281	975	762	right component	right

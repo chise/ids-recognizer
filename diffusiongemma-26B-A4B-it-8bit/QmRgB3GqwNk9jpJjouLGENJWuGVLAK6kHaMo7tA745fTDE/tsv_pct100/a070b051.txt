@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>133	137	439	363	人	left
-78	269	946	915	骨	right

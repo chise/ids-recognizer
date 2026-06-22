@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>116	116	882	545	主	above
-23	442	959	893	意	bellow

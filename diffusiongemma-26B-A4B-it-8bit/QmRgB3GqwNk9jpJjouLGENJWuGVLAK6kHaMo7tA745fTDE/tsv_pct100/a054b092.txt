@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>140	137	915	915	喆	left
-137	532	977	866	登	right

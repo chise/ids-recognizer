@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>103	107	814	313	艹	above
-53	315	966	959	土	bellow

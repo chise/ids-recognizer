@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>77	281	319	532	口	left
-343	142	969	966	蔵	right

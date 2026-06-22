@@ -1,3 +1,0 @@
-```tsv
-0	0	999	999	叢	surrounding
-```

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>56	155	477	792	土	left
-467	137	951	856	帛	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>105	43	443	843	木	left
-420	102	966	836	競	right

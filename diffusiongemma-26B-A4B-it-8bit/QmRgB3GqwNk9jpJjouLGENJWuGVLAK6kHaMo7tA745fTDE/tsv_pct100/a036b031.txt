@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>103	43	856	856	女	left
-103	497	786	966	工	right

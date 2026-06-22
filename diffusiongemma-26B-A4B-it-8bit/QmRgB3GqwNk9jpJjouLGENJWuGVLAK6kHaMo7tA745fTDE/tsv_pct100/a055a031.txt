@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>43	93	563	829	釉	left
-563	237	966	831	阿	right

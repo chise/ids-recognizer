@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>217	17	843	856	衤	left
-142	142	856	856	襄	right

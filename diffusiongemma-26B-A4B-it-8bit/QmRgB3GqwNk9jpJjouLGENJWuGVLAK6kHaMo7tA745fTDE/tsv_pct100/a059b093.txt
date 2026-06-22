@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>53	52	417	584	土	left
-366	31	960	960	提	right

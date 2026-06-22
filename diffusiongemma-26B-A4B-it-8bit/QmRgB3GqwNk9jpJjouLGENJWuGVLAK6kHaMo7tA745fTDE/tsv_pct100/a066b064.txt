@@ -1,4 +1,0 @@
-```tsv
-155	153	439	755	足	left
-437	163	977	915	 undertaking	right
-```

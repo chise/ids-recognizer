@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>88	43	796	796	扌	left
-43	303	804	966	授	right

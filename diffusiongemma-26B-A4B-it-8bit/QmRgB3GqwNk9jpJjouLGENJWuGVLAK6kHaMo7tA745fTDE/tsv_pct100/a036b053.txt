@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>133,56	804,521	女	left
-111,563	715,977	比	right

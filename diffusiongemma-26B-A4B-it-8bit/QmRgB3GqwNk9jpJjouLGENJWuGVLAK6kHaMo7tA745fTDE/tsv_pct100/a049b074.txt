@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>153	153	335	461	口	left
-38	38	966	977	尊	right

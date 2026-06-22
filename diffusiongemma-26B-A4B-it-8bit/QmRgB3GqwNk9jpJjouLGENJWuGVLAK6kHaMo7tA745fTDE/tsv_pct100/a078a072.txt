@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33,85	273,831	忄	left
-303,107	936,856	傑	right

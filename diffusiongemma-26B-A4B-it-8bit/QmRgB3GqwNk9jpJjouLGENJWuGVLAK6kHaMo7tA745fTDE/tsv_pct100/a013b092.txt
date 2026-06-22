@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>126	48	401	663	土	left
-126	355	959	893	封	right

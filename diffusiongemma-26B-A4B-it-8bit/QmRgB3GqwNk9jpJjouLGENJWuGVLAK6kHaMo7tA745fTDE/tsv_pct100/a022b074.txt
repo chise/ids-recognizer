@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>66	27	584	856	禾	left
-584	142	915	966	升	right

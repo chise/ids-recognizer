@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	27	532	936	蕭	left
-467	114	966	959	真	right

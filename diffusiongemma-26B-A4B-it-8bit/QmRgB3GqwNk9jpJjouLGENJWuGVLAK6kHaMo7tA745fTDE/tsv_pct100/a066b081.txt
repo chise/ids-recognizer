@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>34	142	775	417	足	left
-63	429	856	981	海	right

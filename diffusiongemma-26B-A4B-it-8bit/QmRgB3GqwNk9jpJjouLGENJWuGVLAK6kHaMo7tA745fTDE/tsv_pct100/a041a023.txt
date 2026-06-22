@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>143	52	936	532	女	left
-122	497	956	966	危	right

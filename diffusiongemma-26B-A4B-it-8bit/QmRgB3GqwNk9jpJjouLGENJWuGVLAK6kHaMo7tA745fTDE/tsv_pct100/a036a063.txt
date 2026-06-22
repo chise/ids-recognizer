@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	33	966	966	妻	surrounding
-335	335	856	563	女	surrounding

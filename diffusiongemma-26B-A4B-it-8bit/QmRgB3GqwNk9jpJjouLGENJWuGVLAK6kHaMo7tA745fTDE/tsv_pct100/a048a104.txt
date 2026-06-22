@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>38	252	313	608	啞	left
-137	137	966	866	亞	right

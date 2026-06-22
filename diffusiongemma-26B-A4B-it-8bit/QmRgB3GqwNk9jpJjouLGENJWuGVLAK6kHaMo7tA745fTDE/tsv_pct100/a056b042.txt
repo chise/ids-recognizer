@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>226	38	831	735	长	left
-128	477	915	951	松	right

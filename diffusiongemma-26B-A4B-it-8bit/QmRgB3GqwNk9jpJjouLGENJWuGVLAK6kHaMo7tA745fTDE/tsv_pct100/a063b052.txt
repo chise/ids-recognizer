@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>203	23	915	452	扌	left
-188	467	735	977	丹	right

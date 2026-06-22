@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>188	43	545	545	口	left
-43	237	966	966	韋	surrounding

@@ -1,5 +1,0 @@
-```tsv
-218	218	442	442	口	left
-103	102	856	856	base	surrounding
-218	218	966	725	大	right
-```

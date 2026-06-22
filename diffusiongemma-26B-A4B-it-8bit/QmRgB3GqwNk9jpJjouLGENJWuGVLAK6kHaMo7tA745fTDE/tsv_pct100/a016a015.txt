@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>48	196	365	715	土	left
-396	196	946	796	里	right

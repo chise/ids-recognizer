@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>139	137	966	616	夂	above
-283	581	843	715	工	bellow

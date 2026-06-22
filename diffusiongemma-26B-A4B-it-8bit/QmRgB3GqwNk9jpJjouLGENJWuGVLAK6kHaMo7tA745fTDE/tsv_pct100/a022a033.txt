@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33,31	804,804	燕	left
-136,626	966,929	阝	right

@@ -1,4 +1,0 @@
-```tsv
-139	172	428	869	月	left
-442	137	977	877	 pressurized	right
-```

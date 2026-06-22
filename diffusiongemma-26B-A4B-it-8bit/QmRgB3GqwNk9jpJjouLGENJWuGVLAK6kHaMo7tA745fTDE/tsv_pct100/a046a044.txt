@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>155	27	946	946	木	left
-193	362	977	887	见	right

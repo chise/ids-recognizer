@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>116	116	439	903	月	left
-452	62	936	956	幸	right

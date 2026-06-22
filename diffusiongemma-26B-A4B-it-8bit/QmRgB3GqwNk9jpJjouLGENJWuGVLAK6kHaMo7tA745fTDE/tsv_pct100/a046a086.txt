@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>88	27	874	563	銀	left
-103	532	831	966	見	right

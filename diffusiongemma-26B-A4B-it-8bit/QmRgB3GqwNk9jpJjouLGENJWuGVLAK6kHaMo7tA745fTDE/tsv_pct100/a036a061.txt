@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>15	149	483	856	女	left
-477	142	977	866	区	right

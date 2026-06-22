@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>23	41	608	903	酉	left
-584	93	966	966	阝	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	114	477	831	女	left
-433	73	966	856	嫁	right

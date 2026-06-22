@@ -1,4 +1,0 @@
-```tsv
-173	172	513	831	女	left
-513	230	977	814	 equivalent	right
-```

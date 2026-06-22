@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>146	38	735	735	土	left
-146	319	866	966	坎	right

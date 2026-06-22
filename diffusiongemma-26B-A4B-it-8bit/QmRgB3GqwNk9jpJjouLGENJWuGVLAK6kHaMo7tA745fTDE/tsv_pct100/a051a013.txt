@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>159	237	439	532	口	left
-31	442	977	874	晓	right

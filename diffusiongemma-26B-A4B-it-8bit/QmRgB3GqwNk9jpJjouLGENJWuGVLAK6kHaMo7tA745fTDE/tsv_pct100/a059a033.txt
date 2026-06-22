@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>23	137	467	936	扌	left
-439	85	936	888	 unique	right

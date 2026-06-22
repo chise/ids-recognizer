@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>189	11	608	831	瑚	left
-212	219	977	843	阿	right

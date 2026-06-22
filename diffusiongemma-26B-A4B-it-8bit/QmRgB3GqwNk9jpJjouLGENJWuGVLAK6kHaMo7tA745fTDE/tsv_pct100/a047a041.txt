@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>30	85	856	856	耳	left
-463	237	960	796	可	right

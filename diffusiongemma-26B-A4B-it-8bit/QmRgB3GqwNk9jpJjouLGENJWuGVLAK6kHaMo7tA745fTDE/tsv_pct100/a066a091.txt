@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>23	125	365	755	足	left
-330	135	960	760	辺	right

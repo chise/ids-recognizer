@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>13	114	467	903	广	left
-467	102	966	936	京	right

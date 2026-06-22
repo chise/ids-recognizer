@@ -1,4 +1,0 @@
-```tsv
-0	0	365	960	radical	left
-330	40	915	955	phonetic	right
-```

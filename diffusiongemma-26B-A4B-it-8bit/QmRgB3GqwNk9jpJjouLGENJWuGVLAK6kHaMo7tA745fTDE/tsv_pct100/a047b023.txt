@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>217	217	563	903	耳	left
-513	137	946	936	幸	right

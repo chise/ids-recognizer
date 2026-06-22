@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>103	203	401	775	足	left
-93	93	966	915	春	right

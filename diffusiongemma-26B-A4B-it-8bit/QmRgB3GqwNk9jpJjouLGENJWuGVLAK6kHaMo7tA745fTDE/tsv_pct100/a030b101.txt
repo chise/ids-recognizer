@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>113	27	796	477	力	left
-113	458	781	977	力	right

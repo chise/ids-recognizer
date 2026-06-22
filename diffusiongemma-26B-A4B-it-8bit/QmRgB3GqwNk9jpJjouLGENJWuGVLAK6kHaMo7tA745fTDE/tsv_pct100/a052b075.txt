@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	335	417	672	口	left
-178	175	977	874	吐	right

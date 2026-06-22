@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>163	169	477	638	长	left
-43	43	876	986	袁	right

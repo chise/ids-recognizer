@@ -1,4 +1,0 @@
-```tsv
-133,137	417,893	left radical	left
-386,31	959,959	right component	right
-```

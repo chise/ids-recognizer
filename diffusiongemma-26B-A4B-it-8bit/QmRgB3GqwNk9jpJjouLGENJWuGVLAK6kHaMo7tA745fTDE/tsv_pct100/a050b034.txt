@@ -1,2 +1,0 @@
-30	290	237	755	口	left
-366	169	966	816	 established	right

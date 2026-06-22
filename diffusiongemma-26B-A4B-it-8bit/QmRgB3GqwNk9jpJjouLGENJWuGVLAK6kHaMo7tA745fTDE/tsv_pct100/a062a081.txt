@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>146	31	638	638	土	left
-153	155	959	915	真	right

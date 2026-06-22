@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33,48	513,915	黄	left
-477,151	946,903	毬	right

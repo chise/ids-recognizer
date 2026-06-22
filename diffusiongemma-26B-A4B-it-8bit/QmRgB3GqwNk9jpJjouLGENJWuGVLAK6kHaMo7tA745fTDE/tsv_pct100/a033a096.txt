@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>166	169	477	876	女	left
-467	75	966	915	真	right

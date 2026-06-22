@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>186	52	866	526	豊	above
-56	452	946	959	土	bellow

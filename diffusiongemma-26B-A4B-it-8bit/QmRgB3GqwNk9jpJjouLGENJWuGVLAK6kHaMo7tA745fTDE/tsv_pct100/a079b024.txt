@@ -1,2 +1,0 @@
-<|channel>thought
-<channel|>30	30	915	915	components	surrounding

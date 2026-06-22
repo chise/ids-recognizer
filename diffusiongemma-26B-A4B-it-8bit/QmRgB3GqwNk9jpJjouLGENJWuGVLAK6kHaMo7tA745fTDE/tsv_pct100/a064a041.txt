@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>196	41	796	417	贝	left
-106	381	715	977	攵	right

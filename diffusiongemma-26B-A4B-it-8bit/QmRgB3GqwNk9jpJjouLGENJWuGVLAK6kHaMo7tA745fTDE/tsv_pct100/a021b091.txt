@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	53	903	563	部	left
-53	563	951	866	郭	right

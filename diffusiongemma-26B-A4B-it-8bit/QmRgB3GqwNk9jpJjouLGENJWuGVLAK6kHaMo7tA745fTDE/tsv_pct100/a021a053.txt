@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>88	93	608	836	甲	left
-614	93	981	936	阝	right

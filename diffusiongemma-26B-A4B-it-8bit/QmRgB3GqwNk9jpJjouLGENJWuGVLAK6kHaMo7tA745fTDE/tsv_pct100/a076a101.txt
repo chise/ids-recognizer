@@ -1,5 +1,0 @@
-```tsv
-148	172	335	843	忄	left
-313	169	563	856	 components	center
-563	222	966	874	刀	right
-```

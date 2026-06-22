@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>86	169	415	915	目	left
-415	48	960	946	驩	right

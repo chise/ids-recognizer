@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>185	185	467	856	radical	left
-365	142	966	856	component	right

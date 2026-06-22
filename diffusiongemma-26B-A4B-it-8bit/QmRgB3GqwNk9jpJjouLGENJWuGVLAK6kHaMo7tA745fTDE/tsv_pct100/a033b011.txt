@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>25	125	545	915	女	left
-485	105	965	915	妾	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>14	12	442	608	關	left
-442	78	946	946	見	right

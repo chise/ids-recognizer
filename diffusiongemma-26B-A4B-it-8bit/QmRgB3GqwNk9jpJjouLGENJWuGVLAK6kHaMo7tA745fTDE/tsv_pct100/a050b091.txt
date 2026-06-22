@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>128	126	966	786	岳	above
-573	362	856	715	月	bellow

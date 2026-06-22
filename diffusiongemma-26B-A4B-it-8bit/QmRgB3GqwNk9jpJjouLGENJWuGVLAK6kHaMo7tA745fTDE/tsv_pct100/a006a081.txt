@@ -1,6 +1,0 @@
-```tsv
-103	142	936	279	horizontal stroke	above
-448	237	574	866	vertical stroke	center
-56	396	313	706	left diagonal stroke	left
-715	401	959	693	right diagonal stroke	right
-```

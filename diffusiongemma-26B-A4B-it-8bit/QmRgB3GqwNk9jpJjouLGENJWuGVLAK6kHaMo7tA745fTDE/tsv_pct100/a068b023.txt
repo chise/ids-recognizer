@@ -1,4 +1,0 @@
-```tsv
-56	56	915	417	top part	above
-335	335	915	915	bottom (heart)	below
-```

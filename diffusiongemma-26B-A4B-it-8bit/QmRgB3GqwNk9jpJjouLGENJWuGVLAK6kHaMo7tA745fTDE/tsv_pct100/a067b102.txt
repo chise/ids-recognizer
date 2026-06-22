@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>14	142	362	786	足	left
-226	41	959	936	束	right

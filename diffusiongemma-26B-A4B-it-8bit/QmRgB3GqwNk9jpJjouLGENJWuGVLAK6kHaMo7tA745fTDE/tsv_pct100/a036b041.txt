@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>15	15	946	966	雨	surrounding
-137	237	955	955	要	below

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>73	137	483	843	心	left
-343	142	986	836	必	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>70	70	856	856	鬼	left
-185	185	903	903	见	right

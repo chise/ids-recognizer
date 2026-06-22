@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>68	68	563	755	土	left
-313	0	946	966	圭	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>103	43	831	831	女	left
-116	497	977	725	亘	right

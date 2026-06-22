@@ -1,4 +1,0 @@
-```tsv
-133	137	929	477	component	above
-17	467	959	915	component	bellow
-```

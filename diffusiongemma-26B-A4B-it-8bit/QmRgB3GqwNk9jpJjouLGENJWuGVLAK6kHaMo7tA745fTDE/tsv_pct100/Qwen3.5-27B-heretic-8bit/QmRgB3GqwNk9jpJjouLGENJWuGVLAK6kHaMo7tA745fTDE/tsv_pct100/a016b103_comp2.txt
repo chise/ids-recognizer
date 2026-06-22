@@ -1,3 +1,0 @@
-0	0	984	984	威	whole character
-0	0	984	984	戊	surrounding
-0	0	984	984	女	inside

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>103	203	497	893	足	left
-497	203	981	866	艮	right

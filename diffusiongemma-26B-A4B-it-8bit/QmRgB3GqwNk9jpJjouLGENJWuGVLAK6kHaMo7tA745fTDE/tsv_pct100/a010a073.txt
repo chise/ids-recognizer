@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>126	269	563	775	王	left
-153	155	977	816	昆	right

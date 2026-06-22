@@ -1,4 +1,0 @@
-<|channel>thought
-<channel|>144	142	439	786	女	left
-433	137	680	775	那	center
-683	185	981	831	阝	right

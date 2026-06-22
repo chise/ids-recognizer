@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	185	335	925	心	left
-355	150	936	915	董	right

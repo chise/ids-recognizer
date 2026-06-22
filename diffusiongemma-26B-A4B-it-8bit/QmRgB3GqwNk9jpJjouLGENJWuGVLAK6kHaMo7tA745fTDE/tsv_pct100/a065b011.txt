@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>178	85	513	936	恭	left
-513	169	936	893	并	right

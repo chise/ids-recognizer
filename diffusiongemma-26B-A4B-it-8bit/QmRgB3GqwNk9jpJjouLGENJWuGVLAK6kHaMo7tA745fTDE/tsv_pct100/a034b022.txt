@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>23	137	477	856	女	left
-76	75	966	915	馬	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>23	23	563	563	規	above
-513	513	959	977	女	bellow

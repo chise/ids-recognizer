@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>27	178	355	936	亻	left
-363	105	966	888	吏	right

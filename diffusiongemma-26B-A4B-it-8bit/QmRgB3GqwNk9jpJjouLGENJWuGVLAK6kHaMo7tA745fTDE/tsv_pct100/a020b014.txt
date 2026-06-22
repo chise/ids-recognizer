@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>44	149	608	829	火	left
-453	153	977	903	广	right

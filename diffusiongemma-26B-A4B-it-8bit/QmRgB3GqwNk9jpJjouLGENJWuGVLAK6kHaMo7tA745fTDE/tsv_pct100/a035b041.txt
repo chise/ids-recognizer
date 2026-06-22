@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>148	41	903	452	女	left
-116	417	888	977	夫	right

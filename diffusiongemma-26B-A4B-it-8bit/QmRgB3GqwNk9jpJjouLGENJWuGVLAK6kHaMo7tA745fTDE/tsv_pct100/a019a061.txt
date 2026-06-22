@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>66	27	936	335	京	above
-125	335	775	975	京	bellow

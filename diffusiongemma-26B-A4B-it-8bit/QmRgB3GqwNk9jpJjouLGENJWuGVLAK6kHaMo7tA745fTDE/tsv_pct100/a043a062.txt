@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>48	169	439	765	眼	left
-385	114	977	866	辰	right

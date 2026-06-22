@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>13	68	396	856	月	left
-403	93	977	915	膜	right

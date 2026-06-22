@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>48	203	381	831	目	left
-93	93	966	888	成	right

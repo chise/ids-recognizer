@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>213,48	946,513	鼎	above
-233,563	755,874	土	bellow

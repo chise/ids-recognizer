@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	137	455	715	土	left
-415	114	977	903	井	right

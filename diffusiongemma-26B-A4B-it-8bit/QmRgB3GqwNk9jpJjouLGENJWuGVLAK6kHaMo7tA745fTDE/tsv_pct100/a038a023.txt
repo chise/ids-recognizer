@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>83	27	563	814	頰	left
-149	149	966	878	真	right

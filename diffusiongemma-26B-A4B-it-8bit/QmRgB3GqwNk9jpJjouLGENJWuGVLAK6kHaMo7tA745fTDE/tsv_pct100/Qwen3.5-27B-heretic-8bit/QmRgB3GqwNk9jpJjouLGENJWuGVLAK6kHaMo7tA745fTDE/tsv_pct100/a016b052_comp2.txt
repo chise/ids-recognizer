@@ -1,2 +1,0 @@
-0	0	984	984	戈	overlapped
-0	357	262	984	廾	overlapped

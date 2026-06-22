@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	77	439	836	扌	left
-442	77	966	843	卖	right

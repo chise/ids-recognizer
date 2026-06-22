@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>173	18	946	563	top	above
-443	563	963	964	目	bellow

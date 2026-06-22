@@ -1,4 +1,0 @@
-```tsv
-0	0	1000	1000 radical	left
-300	0	1000	1000 component	right
-```

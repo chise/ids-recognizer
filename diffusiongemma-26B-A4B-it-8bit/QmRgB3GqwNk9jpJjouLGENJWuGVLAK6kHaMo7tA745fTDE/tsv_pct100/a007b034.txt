@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>138	137	843	269	一	above
-263	52	936	792	升	bellow

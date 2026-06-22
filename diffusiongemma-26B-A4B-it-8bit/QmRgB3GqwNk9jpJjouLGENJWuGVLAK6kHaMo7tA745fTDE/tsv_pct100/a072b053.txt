@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>225	11	439	836	月	left
-98	467	966	856	兑	right

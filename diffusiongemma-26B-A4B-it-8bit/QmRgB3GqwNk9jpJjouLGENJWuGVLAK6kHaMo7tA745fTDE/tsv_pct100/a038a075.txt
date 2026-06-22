@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>175	31	532	946	月	left
-31	312	959	936	人	right

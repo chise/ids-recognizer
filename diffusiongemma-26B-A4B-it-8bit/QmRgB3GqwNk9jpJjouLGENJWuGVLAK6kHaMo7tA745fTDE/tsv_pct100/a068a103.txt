@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>149	237	467	888	立	left
-116	116	959	960	門	right

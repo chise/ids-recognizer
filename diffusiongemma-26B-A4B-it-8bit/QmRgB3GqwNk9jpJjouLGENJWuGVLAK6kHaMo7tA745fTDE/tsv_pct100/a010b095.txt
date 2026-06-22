@@ -1,3 +1,0 @@
-```tsv
-233	85	946	946	character	surrounding
-```

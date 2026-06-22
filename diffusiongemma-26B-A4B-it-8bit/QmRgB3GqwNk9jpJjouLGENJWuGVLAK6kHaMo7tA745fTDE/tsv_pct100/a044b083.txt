@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>105	169	365	903	目	left
-345	21	946	966	農	right

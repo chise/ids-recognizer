@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>56	102	396	856	亻	left
-315	116	977	908	戈	right

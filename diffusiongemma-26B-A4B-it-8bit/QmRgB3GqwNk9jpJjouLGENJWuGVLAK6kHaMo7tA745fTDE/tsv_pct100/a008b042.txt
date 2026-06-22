@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	252	545	735	王	left
-149	142	936	831	旋	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>119	41	887	439	挂	left
-126	381	893	966	干	right

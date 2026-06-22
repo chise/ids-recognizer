@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	75	477	966	音	left
-467	75	966	936	叢	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>53,203	335,513	口	left
-365,21	946,946	専	right

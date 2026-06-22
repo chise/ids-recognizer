@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>79	31	915	915	人	left
-103	335	977	977	工	right

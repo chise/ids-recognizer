@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>173	172	461	804	贝	left
-166	335	786	966	卖	right

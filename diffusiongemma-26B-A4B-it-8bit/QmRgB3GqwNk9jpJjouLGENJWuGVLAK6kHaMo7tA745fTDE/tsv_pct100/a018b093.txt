@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>83	85	545	936	黃	left
-483	187	959	814	免	right

@@ -1,2 +1,0 @@
-```tsv
-```78	52	888	977	Chinese character	surrounding

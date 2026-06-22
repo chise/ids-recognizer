@@ -1,4 +1,0 @@
-<|channel>thought
-<channel|>223	237	365	545	口	left
-553	258	804	563	夊	right
-155	155	966	796	夂	surrounding

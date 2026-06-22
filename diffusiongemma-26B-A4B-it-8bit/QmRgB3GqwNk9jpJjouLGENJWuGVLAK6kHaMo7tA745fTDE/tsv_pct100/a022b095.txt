@@ -1,4 +1,0 @@
-```tsv
-115	137	563	936	郭 (left-side radical component)	left
-565	142	925	966	阝 (right-side component)	right
-```

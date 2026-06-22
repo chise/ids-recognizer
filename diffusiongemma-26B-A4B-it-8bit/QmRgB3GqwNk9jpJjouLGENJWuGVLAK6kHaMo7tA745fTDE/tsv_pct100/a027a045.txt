@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>23	52	335	893	彳	left
-314	314	977	915	冊	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>65	269	755	725	長	left
-335	635	936	946	臨	right

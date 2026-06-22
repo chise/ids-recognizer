@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>123	56	898	893	木	left
-584	185	959	959	部	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>66	169	439	755	足	left
-413	44	936	946	魏	right

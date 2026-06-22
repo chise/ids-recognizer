@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>144	48	888	856	世	left
-116	513	936	715	王	right

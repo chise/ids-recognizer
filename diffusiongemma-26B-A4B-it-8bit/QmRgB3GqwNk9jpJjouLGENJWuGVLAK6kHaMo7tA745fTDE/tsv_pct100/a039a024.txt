@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	155	497	856	八	left
-403	102	966	888	真	right

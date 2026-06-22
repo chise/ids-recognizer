@@ -1,3 +1,0 @@
-118	313	290	696	component	left
-353	41	597	981	component	center
-673	403	936	715	component	right

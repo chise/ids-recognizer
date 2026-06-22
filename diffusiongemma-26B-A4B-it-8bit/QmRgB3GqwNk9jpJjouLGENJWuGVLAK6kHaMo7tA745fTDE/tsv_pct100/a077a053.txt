@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	175	435	929	心	left
-269	93	977	929	成立	right

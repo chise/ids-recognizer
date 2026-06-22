@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>66	149	362	804	目	left
-366	51	966	946	职	right

@@ -1,4 +1,0 @@
-```tsv
-38	107	477	856	月	left
-467	41	966	814	shortcut	right
-```

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>53	203	467	775	女	left
-467	161	986	866	母	right

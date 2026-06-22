@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>43	43	411	976	犊	left
-365	43	915	976	癢	right

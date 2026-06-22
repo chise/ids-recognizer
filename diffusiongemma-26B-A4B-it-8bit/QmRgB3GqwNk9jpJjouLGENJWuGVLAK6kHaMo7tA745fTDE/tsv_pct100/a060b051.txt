@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>38	98	365	755	扌	left
-403	126	981	762	艮	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>53	75	497	563	糸	left
-437	412	959	959	兼	right

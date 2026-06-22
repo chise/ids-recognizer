@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>116	203	365	502	口	left
-41	41	856	966	base	surrounding

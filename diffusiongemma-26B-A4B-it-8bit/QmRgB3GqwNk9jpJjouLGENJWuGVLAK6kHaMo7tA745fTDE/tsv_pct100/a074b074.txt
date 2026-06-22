@@ -1,4 +1,0 @@
-```tsv
-278	23	735	185	top	above
-256	185	786	903	bottom	bellow
-```

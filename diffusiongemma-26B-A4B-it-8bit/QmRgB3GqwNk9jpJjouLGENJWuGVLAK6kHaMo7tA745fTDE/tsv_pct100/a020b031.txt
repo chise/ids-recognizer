@@ -1,3 +1,0 @@
-```tsv
-27	227	936	936	other	surrounding
-```

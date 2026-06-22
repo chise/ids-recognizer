@@ -1,2 +1,0 @@
-203	23	477	804	月	left
-463	41	959	946	 simplification	right

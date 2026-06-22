@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>122	126	401	866	扌	left
-153	153	966	866	桑	right

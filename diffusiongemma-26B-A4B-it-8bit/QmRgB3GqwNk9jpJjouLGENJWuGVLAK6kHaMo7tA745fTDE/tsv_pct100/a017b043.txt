@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>38	185	439	715	田	left
-442	48	966	946	雇	right

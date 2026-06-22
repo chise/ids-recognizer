@@ -1,4 +1,0 @@
-<|channel>thought
-<channel|>33	226	360	526	口	left
-303	107	814	563	急	right
-203	626	977	903	心	bellow

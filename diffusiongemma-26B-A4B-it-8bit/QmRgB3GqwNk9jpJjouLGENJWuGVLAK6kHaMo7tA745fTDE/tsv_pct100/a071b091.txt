@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>48	48	966	563	齐	above
-355	467	725	959	背	below

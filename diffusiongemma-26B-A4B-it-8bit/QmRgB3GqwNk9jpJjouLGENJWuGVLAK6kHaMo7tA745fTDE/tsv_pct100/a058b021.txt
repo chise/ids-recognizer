@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>30	93	467	876	扌	left
-442	62	966	876	苗	right

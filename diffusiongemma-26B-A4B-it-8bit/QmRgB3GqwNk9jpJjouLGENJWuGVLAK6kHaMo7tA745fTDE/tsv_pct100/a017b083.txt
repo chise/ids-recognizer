@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	237	396	715	田	left
-442	93	959	915	重	right

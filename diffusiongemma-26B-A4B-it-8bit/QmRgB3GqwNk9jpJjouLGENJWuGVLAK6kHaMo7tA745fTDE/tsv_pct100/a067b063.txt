@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>155	160	435	775	足	left
-315	115	965	860	跟	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>222	31	362	638	田	left
-136	365	981	882	冊	right

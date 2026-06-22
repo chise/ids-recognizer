@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>76	237	563	755	三	left
-458	93	966	856	戈	right

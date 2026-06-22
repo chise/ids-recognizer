@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>107	107	893	638	盖	above
-638	269	977	936	皿	bellow

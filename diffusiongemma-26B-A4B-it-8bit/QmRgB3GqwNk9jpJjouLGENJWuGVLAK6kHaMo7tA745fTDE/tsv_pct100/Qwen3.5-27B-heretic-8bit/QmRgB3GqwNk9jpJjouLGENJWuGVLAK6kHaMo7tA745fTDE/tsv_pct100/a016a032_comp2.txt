@@ -1,2 +1,0 @@
-0	0	984	984	宀	overlapped
-0	357	984	984	丁	overlapped

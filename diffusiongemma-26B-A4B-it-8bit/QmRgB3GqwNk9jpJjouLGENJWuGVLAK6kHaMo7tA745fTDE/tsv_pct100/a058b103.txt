@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>61	116	365	831	扌	left
-335	142	959	804	手	right

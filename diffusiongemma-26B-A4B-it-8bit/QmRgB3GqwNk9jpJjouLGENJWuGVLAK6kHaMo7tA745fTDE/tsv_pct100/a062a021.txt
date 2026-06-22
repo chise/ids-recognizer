@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>133	137	362	936	扌	left
-383	142	971	874	彙	right

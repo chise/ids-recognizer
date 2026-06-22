@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>33	29	618	856	蜀	left
-33	626	966	966	阝	right

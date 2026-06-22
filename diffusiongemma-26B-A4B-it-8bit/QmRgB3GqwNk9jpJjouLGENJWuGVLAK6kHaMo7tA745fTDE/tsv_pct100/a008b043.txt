@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>114	114	755	563	今	above
-310	497	936	915	土	bellow

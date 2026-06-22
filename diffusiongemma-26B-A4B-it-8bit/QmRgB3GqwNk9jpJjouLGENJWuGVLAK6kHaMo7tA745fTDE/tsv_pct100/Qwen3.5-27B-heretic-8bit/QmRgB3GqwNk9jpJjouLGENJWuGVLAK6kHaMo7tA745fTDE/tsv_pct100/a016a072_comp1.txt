@@ -1,2 +1,0 @@
-0	0	100	100	厂	surrounding
-0	50	100	100	七	bellow

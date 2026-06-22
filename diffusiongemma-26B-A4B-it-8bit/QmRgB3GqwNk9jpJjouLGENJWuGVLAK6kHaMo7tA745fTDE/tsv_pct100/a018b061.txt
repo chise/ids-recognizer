@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>219	31	467	735	田	above
-172	442	966	856	田	bellow

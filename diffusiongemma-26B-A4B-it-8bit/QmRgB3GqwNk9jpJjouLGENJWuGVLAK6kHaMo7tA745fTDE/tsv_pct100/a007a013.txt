@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>56	235	477	765	礻	left
-442	142	936	796	寸	right

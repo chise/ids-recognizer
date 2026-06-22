@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>103	203	467	638	王	left
-83	137	966	856	盾	right

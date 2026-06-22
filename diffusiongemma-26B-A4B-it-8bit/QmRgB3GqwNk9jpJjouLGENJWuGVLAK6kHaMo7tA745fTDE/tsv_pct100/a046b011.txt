@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>24	149	915	923	厲	left
-153	157	959	856	見	right

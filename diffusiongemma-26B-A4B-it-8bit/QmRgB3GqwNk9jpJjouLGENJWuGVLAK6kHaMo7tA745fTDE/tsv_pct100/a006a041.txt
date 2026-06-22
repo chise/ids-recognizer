@@ -1,2 +1,0 @@
-69	237	439	545	component	left
-447	155	946	955	component	right

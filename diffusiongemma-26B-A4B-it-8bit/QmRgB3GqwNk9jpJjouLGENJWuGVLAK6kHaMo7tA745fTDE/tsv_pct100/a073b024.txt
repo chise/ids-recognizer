@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>114	29	893	477	月	left
-76	442	966	965	监	right

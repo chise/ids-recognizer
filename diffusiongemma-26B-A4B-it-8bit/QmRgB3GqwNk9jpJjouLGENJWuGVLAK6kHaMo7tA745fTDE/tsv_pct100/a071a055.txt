@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>144	48	513	866	月	left
-497	114	966	856	冊	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>56,27	936,936	善	left
-503,102	959,929	顯	right

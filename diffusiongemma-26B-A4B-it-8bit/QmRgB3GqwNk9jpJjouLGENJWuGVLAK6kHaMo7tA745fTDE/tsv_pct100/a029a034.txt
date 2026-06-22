@@ -1,3 +1,0 @@
-```tsv
-103	48	843	836	character	center
-```

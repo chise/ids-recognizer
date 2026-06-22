@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>44	126	452	843	舟	left
-62	62	959	836	登	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>103	276	368	831	立	left
-163	169	966	915	羊	right

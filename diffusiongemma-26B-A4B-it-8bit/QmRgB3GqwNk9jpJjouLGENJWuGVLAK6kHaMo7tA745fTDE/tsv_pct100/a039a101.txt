@@ -1,4 +1,0 @@
-<|channel>thought
-<channel|>131	78	960	266	頁	above
-263	175	483	856	頁	left
-263	523	977	866	頁	right

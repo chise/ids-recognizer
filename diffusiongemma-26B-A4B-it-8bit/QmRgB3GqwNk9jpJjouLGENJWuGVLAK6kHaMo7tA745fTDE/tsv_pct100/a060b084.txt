@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>53	52	843	483	打	left
-233	439	866	966	丁	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>36,169	477,792	月	left
-477,116	966,826	爵	right

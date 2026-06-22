@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>38	169	477	650	馬	left
-437	114	959	859	憑	right

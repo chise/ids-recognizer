@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>100	31	584	893	鄭	left
-584	137	936	977	部	right

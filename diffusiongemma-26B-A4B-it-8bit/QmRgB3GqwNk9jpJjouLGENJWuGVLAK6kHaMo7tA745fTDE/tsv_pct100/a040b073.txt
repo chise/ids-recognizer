@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>53	203	401	796	面	left
-439	116	981	897	羅	right

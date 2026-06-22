@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>102	95	365	755	足	left
-365	45	977	915	頁	right

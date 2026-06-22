@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>116	126	866	360	月	left
-89	89	866	989	份	right

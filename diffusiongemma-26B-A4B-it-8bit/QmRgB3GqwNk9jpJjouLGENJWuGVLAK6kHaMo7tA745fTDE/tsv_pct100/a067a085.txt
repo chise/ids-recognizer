@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>153	23	829	452	且	left
-146	452	856	915	户	right

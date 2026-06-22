@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>44	203	335	532	口	left
-386	85	946	836	吴	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>53,172	439,755	田	left
-79,79	966,893	向	right

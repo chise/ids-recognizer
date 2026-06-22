@@ -1,2 +1,0 @@
-<|channel>thought
-<channel|>23,23	976,976	Chinese character	surrounding

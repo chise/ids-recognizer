@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>50	137	335	915	亻	left
-46	313	936	936	畠	right

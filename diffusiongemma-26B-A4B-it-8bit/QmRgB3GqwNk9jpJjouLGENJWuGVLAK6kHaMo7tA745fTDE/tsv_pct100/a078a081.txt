@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>77	59	281	866	佔	left
-303	11	966	966	稟	right

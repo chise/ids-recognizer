@@ -1,3 +1,0 @@
-```tsv
-113	23	843	966	Chinese character	surrounding
-```

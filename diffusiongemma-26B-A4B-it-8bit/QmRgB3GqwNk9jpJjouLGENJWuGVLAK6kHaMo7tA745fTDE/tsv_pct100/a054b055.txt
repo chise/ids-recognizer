@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>116	31	563	936	齒	left
-172	574	966	893	回	right

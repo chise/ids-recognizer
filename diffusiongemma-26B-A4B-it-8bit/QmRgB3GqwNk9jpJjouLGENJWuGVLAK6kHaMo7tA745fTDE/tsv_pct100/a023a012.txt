@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>93	26	608	856	部	left
-614	126	966	977	邵	right

@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>13	68	508	903	番	left
-497	93	966	893	真	right

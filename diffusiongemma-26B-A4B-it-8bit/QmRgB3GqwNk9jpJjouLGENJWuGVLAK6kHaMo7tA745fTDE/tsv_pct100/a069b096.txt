@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>16,163	532,755	血	left
-537,149	977,936	丰	right

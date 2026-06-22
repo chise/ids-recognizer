@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>54	52	936	532	林	above
-135	482	959	946	卉	bellow

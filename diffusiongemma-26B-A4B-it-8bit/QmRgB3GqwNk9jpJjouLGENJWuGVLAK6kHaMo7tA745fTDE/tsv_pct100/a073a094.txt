@@ -1,3 +1,0 @@
-<|channel>thought
-<channel|>44,142	415,915	月	left
-437,31	981,946	勝	right
