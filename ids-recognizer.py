@@ -15,7 +15,7 @@ import json
 
 parser = argparse.ArgumentParser(description='Detect Hanzi-components from image file and generate IDS if possible.')
 
-parser.add_argument('image_file_name', help='Image file name to process') 
+parser.add_argument('image_files', nargs='*', help='Image file name to process')
 parser.add_argument('--model', help='MLX-VLM model path', default='mlx-community/Qwen3.5-27B-heretic-8bit') 
 
 args = parser.parse_args()
@@ -153,11 +153,6 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
             prompt_file.write(prompt)
 
 
-#image_file_name = sys.argv[1]
-image_file_name = args.image_file_name
-
-print (image_file_name)
-
 proc = subprocess.run("ipfs add -- | cut -d' ' -f2", shell=True, input=prompt, stdout=PIPE, stderr=PIPE, text=True)
 IPFS_CID = proc.stdout.rstrip('\r\n')
 
@@ -170,4 +165,10 @@ os.makedirs(TSV_OUTPUT_PATH, exist_ok=True)
 
 print (OUTPUT_PATH, TSV_OUTPUT_PATH)
 
-run_OCR_for_glyph_image (image_file_name, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH)
+#image_file_name = sys.argv[1]
+#image_file_name = args.image_file_name
+
+for image_file_name in args.image_files:
+    print (image_file_name)
+    run_OCR_for_glyph_image (image_file_name, prompt,
+                             TSV_OUTPUT_PATH, OUTPUT_PATH)
