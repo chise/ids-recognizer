@@ -1,5 +1,11 @@
 2026-06-22  MORIOKA Tomohiko  <tomo.git@chise.org>
 
+	* ids-recognizer.py (prompt): Add
+	`upper-left/upper-right/lower-left/lower-right'.
+	(detect_ids): Likewise.
+
+2026-06-22  MORIOKA Tomohiko  <tomo.git@chise.org>
+
 	* ids-recognizer_mlx-vlm_Qwen3.5-27B-heretic-8bit.py: Deleted.
 
 	* ids-recognizer_mlx-vlm_diffusiongemma-26B-A4B-it-8bit.py:
