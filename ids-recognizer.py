@@ -31,7 +31,7 @@ config = load_config(model_path)
 
 prompt = '''<image> Locate every components of the Chinese character.
 Report each component with bbox coordinates as TSV format like:
-X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-from-above/surround-from-below/surround-from-left/surround-from-right/surround-from-upper-left/surround-from-upper-right/surround-from-lower-left/surround-from-lower-right/covered/middle/overlapped)
+X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-from-above/surround-from-below/surround-from-left/surround-from-right/surround-from-upper-left/surround-from-upper-right/surround-from-lower-left/surround-from-lower-right/upper-left/upper-right/lower-left/lower-right/covered/middle/overlapped)
 '''
 
 def run_VLM (images, prompt):
@@ -74,24 +74,28 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
             return f'⿷{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-upper-left' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) ) ):
+                 ( Component_Position[1] == 'covered' ) or
+                 ( Component_Position[1] == 'lower-right' ) ) ):
             return f'⿸{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-upper-right' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) ) ):
+                 ( Component_Position[1] == 'covered' ) or
+                 ( Component_Position[1] == 'lower-left' ) ) ):
             return f'⿹{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-lower-left' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) ) ):
+                 ( Component_Position[1] == 'covered' ) or
+                 ( Component_Position[1] == 'upper-right' ) ) ):
             return f'⿺{Component_Text[0]}{Component_Text[1]}'
+        elif ( ( Component_Position[0] == 'surround-from-lower-right' ) and
+               ( ( Component_Position[1] == 'middle' ) or
+                 ( Component_Position[1] == 'covered' ) or
+                 ( Component_Position[1] == 'upper-left' ) ) ):
+            return f'⿽{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-right' ) and
                ( ( Component_Position[1] == 'middle' ) or
                  ( Component_Position[1] == 'covered' ) ) ):
             return f'⿼{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'surround-from-lower-right' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) ) ):
-            return f'⿽{Component_Text[0]}{Component_Text[1]}'
 
 def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
     im = Image.open(image_file)
