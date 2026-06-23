@@ -44,7 +44,7 @@ def run_VLM (images, prompt):
     response = generate(model, processor, formatted_prompt, images,
                         max_tokens = 4096, temperature=0.0,
                         verbose=False)
-    print (response, type(response))
+    print (response)
     return response.text
 
 def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
@@ -53,8 +53,14 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
         if ( ( Component_Position[0] == 'left' ) and
              ( Component_Position[1] == 'right' ) ):
             return f'⿰{Component_Text[0]}{Component_Text[1]}'
+        elif ( ( Component_Position[0] == 'upper-left' ) and
+             ( Component_Position[1] == 'lower-right' ) ):
+            return f'⿰{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'above' ) and
                ( Component_Position[1] == 'below' ) ):
+            return f'⿱{Component_Text[0]}{Component_Text[1]}'
+        elif ( ( Component_Position[0] == 'upper' ) and
+               ( Component_Position[1] == 'lower' ) ):
             return f'⿱{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'full-surround' ) and
                ( ( Component_Position[1] == 'middle' ) or
@@ -102,48 +108,56 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
     image_width, image_height = im.size
     basename = os.path.splitext(os.path.basename(image_file))[0]
 
-    print (image_file, prompt)
-    images = [ image_file ]
+    ids_file_name = f'{OUTPUT_PATH}/{basename}_ids.txt'
+    if os.path.isfile(ids_file_name):
+        print( f'{ids_file_name} already exists.')
+        ids_destfile = open (ids_file_name, 'r', encoding = 'utf-8')
+        ids = ids_destfile.read()
+        ids_destfile.close()
+        return ids
+    else:
+        print (image_file, prompt)
+        images = [ image_file ]
 
-    response = run_VLM (images, prompt)
+        response = run_VLM (images, prompt)
 
-    print (response)
-    component_number = 0
-    X1 = []
-    Y1 = []
-    X2 = []
-    Y2 = []
-    Component_Text = []
-    Component_Position = []
-    with open(f'{TSV_OUTPUT_PATH}/{basename}.tsv', 'w', encoding = 'utf-8') as tsv_destfile:
-        for line_match in re.findall('(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\S+)\s+(\S+)\n?', response):
-            x1, y1, x2, y2, line_text, position = line_match
-            x1 = int (x1)
-            y1 = int (y1)
-            x2 = int (x2)
-            y2 = int (y2)
-            orx1 = round ( ( x1 * image_width  ) / 1000 )
-            ory1 = round ( ( y1 * image_height ) / 1000 )
-            orx2 = round ( ( x2 * image_width  ) / 1000 )
-            ory2 = round ( ( y2 * image_height ) / 1000 )
-            # orw  = round ( ( ( x2 - x1 ) * image_width)  / 1000 )
-            # orh  = round ( ( ( y2 - y1 ) * image_height) / 1000 )
-            X1.append(orx1)
-            Y1.append(ory1)
-            X2.append(orx2)
-            Y2.append(ory2)
-            Component_Text.append(line_text)
-            Component_Position.append(position)
-            print (f'{orx1}	{ory1}	{orx2}	{ory2}	{line_text}	{position}')
-            print (f'{orx1}	{ory1}	{orx2}	{ory2}	{line_text}	{position}',
-                   file=tsv_destfile)
-            im_crop = im.crop((orx1, ory1, orx2, ory2))
-            component_number = component_number + 1
-            im_crop.save(f'{TSV_OUTPUT_PATH}/{basename}_comp{component_number}.png')
+        component_number = 0
+        X1 = []
+        Y1 = []
+        X2 = []
+        Y2 = []
+        Component_Text = []
+        Component_Position = []
+        with open(f'{TSV_OUTPUT_PATH}/{basename}.tsv', 'w', encoding = 'utf-8') as tsv_destfile:
+            for line_match in re.findall('(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\S+)\s+(\S+)\n?', response):
+                x1, y1, x2, y2, line_text, position = line_match
+                x1 = int (x1)
+                y1 = int (y1)
+                x2 = int (x2)
+                y2 = int (y2)
+                orx1 = round ( ( x1 * image_width  ) / 1000 )
+                ory1 = round ( ( y1 * image_height ) / 1000 )
+                orx2 = round ( ( x2 * image_width  ) / 1000 )
+                ory2 = round ( ( y2 * image_height ) / 1000 )
+                # orw  = round ( ( ( x2 - x1 ) * image_width)  / 1000 )
+                # orh  = round ( ( ( y2 - y1 ) * image_height) / 1000 )
+                X1.append(orx1)
+                Y1.append(ory1)
+                X2.append(orx2)
+                Y2.append(ory2)
+                Component_Text.append(line_text)
+                Component_Position.append(position)
+                print (f'{orx1}	{ory1}	{orx2}	{ory2}	{line_text}	{position}')
+                print (f'{orx1}	{ory1}	{orx2}	{ory2}	{line_text}	{position}',
+                       file=tsv_destfile)
+                im_crop = im.crop((orx1, ory1, orx2, ory2))
+                component_number = component_number + 1
+                im_crop.save(f'{TSV_OUTPUT_PATH}/{basename}_comp{component_number}.png')
 
         ids = detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position)
         if ids:
-            with open(f'{OUTPUT_PATH}/{basename}_ids.txt', 'w', encoding = 'utf-8') as ids_destfile:
+            with open(f'{OUTPUT_PATH}/{basename}_ids.txt',
+                      'w', encoding = 'utf-8') as ids_destfile:
                 print(ids, file=ids_destfile)
 
         with open(f'{OUTPUT_PATH}/{basename}.txt', 'w', encoding = 'utf-8') as destfile:
@@ -151,6 +165,7 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
 
         with open(f'{OUTPUT_PATH}/{basename}.prompt', 'w', encoding = 'utf-8') as prompt_file:
             prompt_file.write(prompt)
+        return ids
 
 
 proc = subprocess.run("ipfs add -- | cut -d' ' -f2", shell=True, input=prompt, stdout=PIPE, stderr=PIPE, text=True)
@@ -165,10 +180,7 @@ os.makedirs(TSV_OUTPUT_PATH, exist_ok=True)
 
 print (OUTPUT_PATH, TSV_OUTPUT_PATH)
 
-#image_file_name = sys.argv[1]
-#image_file_name = args.image_file_name
-
 for image_file_name in args.image_files:
-    print (image_file_name)
-    run_OCR_for_glyph_image (image_file_name, prompt,
-                             TSV_OUTPUT_PATH, OUTPUT_PATH)
+    ids = run_OCR_for_glyph_image (image_file_name, prompt,
+                                   TSV_OUTPUT_PATH, OUTPUT_PATH)
+    print (f'{image_file_name} : {ids}\n')
