@@ -1,3 +1,14 @@
+2026-06-23  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (run_VLM): Print `response' only [omit type].
+	(detect_ids):
+	- Treat `upper-left' <A> and `lower-right' <B> as ⿰<A><B>.
+	- Accept `upper' as the same as `above'.
+	- Accept `lower' as the same as `below'.
+	(run_OCR_for_glyph_image): If *_ids.txt exists, skip processing
+	and use it as the result.
+	(<toplevel>): Display IDS.
+
 2026-06-22  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py: Accept multiple image files.
