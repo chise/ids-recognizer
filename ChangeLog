@@ -1,5 +1,16 @@
 2026-06-23  MORIOKA Tomohiko  <tomo.git@chise.org>
 
+	* ids-recognizer.py (prompt): Omit `overlapped'.
+	(def run_VLM): Reduce `max_tokens' [4096 -> 512].
+	(detect_ids):
+	- Treat `upper-left' <A> and `lower-right' 儿 as ⿱<A>儿.
+	- Treat `upper-right' <A> and `lower-left' <B> as ⿱<A><B>.
+	- Treat `full-surround' <凵> and (`middle' or `covered') <B> as
+	  ⿶凵<B>.
+	- Add some rules for three components cases.
+
+2026-06-23  MORIOKA Tomohiko  <tomo.git@chise.org>
+
 	* ids-recognizer.py (run_VLM): Print `response' only [omit type].
 	(detect_ids):
 	- Treat `upper-left' <A> and `lower-right' <B> as ⿰<A><B>.
