@@ -31,7 +31,7 @@ config = load_config(model_path)
 
 prompt = '''<image> Locate every components of the Chinese character.
 Report each component with bbox coordinates as TSV format like:
-X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-from-above/surround-from-below/surround-from-left/surround-from-right/surround-from-upper-left/surround-from-upper-right/surround-from-lower-left/surround-from-lower-right/upper-left/upper-right/lower-left/lower-right/covered/middle)
+X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-from-above/surround-from-below/surround-from-left/surround-from-right/surround-from-upper-left/surround-from-upper-right/surround-from-lower-left/surround-from-lower-right/upper-left/upper-right/lower-left/lower-right/enclosed/middle)
 '''
 
 def run_VLM (images, prompt):
@@ -51,65 +51,142 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
     number_of_components = len(Component_Text)
     if number_of_components == 2:
         if ( ( Component_Position[0] == 'left' ) and
-             ( Component_Position[1] == 'right' ) ):
+             ( ( Component_Position[1] == 'right' ) or
+               ( Component_Position[1] == 'full-surround' ) or
+               ( Component_Position[1] == 'full' ) ) ):
             return f'⿰{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'upper-left' ) and
-             ( Component_Position[1] == 'lower-right' ) ):
-            if Component_Text[1] == '儿':
+               ( Component_Position[1] == 'lower-right' ) ):
+            if ( ( Component_Text[0] == '雨' ) or
+                 ( Component_Text[0] == '⺮' ) or
+                 ( Component_Text[1] == '儿' ) or
+                 ( Component_Text[1] == '女' ) or
+                 ( Component_Text[1] == '心' ) or
+                 ( Component_Text[1] == '虫' ) or
+                 ( Y2[0] <= Y1[1] ) ):
                 return f'⿱{Component_Text[0]}{Component_Text[1]}'
+            elif Component_Text[1] == '口':
+                return f'⿸{Component_Text[0]}{Component_Text[1]}'
+            elif Component_Text[0] == '𠂇':
+                return f'⿸{Component_Text[0]}{Component_Text[1]}'
+            elif Component_Text[0] == '麻':
+                if ( Y2[0] > Y1[1] ):
+                    return f'⿸{Component_Text[0]}{Component_Text[1]}'
+                else:
+                    return f'⿱{Component_Text[0]}{Component_Text[1]}'
             else:
                 return f'⿰{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'above' ) and
-               ( Component_Position[1] == 'below' ) ):
+        elif ( ( Component_Position[0] == 'right' ) and
+               ( Component_Position[1] == 'left' ) ):
+            return f'⿰{Component_Text[1]}{Component_Text[0]}'
+        elif ( ( Component_Position[0] == 'upper-left' ) and
+               ( Component_Position[1] == 'upper-right' ) ):
+            return f'⿰{Component_Text[0]}{Component_Text[1]}'
+        elif ( ( Component_Position[0] == 'lower-left' ) and
+               ( ( Component_Position[1] == 'upper-right' ) or
+                 ( Component_Position[1] == 'enclosed' ) ) and
+               ( ( {Component_Text[0]} == '辶' ) or
+                 ( {Component_Text[0]} == '廴' ) ) ):
+            return f'⿺{Component_Text[0]}{Component_Text[1]}'
+        elif ( ( Component_Position[0] == 'lower-left' ) and
+               ( Component_Position[1] == 'lower-right' )
+               and
+               ( {Component_Text[0]} == '走' ) ):
+            return f'⿺{Component_Text[0]}{Component_Text[1]}'
+        elif ( ( ( Component_Position[0] == 'above' ) or
+                 ( Component_Position[0] == 'upper' ) )
+               and
+               ( ( Component_Position[1] == 'below' ) or
+                 ( Component_Position[1] == 'full-surround' ) ) ):
             return f'⿱{Component_Text[0]}{Component_Text[1]}'
+        elif ( ( Component_Position[0] == 'below' ) and
+               ( Component_Position[1] == 'above' ) ):
+            return f'⿱{Component_Text[1]}{Component_Text[0]}'
         elif ( ( Component_Position[0] == 'upper' ) and
                ( Component_Position[1] == 'lower' ) ):
-            return f'⿱{Component_Text[0]}{Component_Text[1]}'
+            if Component_Text[0] == '气':
+                return f'⿹{Component_Text[0]}{Component_Text[1]}'
+            else:
+                return f'⿱{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'upper-right' ) and
                ( Component_Position[1] == 'lower-left' ) ):
-            return f'⿱{Component_Text[0]}{Component_Text[1]}'
+            if Component_Text[0] == '戈':
+                return f'⿹{Component_Text[0]}{Component_Text[1]}'
+            else:
+                return f'⿱{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'full-surround' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) ) ):
+                 ( Component_Position[1] == 'enclosed' ) ) ):
             if Component_Text[0] == '凵':
                 return f'⿶{Component_Text[0]}{Component_Text[1]}'
+            elif Component_Text[0] == '几':
+                return f'⿵{Component_Text[0]}{Component_Text[1]}'
+            elif Component_Text[0] == '广':
+                return f'⿸{Component_Text[0]}{Component_Text[1]}'
+            elif ( ( Component_Text[0] == '門' ) or
+                   ( Component_Text[0] == '冂' ) ):
+                return f'⿵{Component_Text[0]}{Component_Text[1]}'
             else:
                 return f'⿴{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-above' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) ) ):
+               ( ( Component_Position[1] == 'below' ) or
+                 ( Component_Position[1] == 'covered' ) or
+                 ( Component_Position[1] == 'middle' ) or
+                 ( Component_Position[1] == 'enclosed' ) or
+                 ( Component_Position[1] == 'full-surround' ) ) ):
+            if ( ( Component_Text[0] == '虍' ) or
+                 ( Component_Text[0] == '鹿' ) ) :
+                return f'⿸{Component_Text[0]}{Component_Text[1]}'
+            elif ( ( Component_Text[0] == '宀' ) or
+                   ( Component_Text[0] == '穴' ) or
+                   ( Component_Text[0] == '冖' ) ):
+                return f'⿱{Component_Text[0]}{Component_Text[1]}'
+            else:
+                return f'⿵{Component_Text[0]}{Component_Text[1]}'
+        elif ( ( Component_Position[0] == 'below' ) and
+               ( Component_Position[1] == 'surround-from-above' ) ):
             return f'⿵{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-below' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) ) ):
+                 ( Component_Position[1] == 'enclosed' ) ) ):
             return f'⿶{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-left' ) and
                ( ( Component_Position[1] == 'middle' ) or
+                 ( Component_Position[1] == 'enclosed' ) or
                  ( Component_Position[1] == 'covered' ) ) ):
-            return f'⿷{Component_Text[0]}{Component_Text[1]}'
+            if Component_Text[0] == '疒':
+                return f'⿸{Component_Text[0]}{Component_Text[1]}'
+            elif ( ( Component_Text[0] == '門') or
+                   ( Component_Text[0] == '冂') ):
+                return f'⿵{Component_Text[0]}{Component_Text[1]}'
+            else:
+                return f'⿷{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-upper-left' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) or
+                 ( Component_Position[1] == 'enclosed' ) or
                  ( Component_Position[1] == 'lower-right' ) ) ):
-            return f'⿸{Component_Text[0]}{Component_Text[1]}'
+            if Component_Text[0] == '匚':
+                return f'⿷{Component_Text[0]}{Component_Text[1]}'
+            else:
+                return f'⿸{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-upper-right' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) or
+                 ( Component_Position[1] == 'enclosed' ) or
                  ( Component_Position[1] == 'lower-left' ) ) ):
             return f'⿹{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-lower-left' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) or
+                 ( Component_Position[1] == 'enclosed' ) or
                  ( Component_Position[1] == 'upper-right' ) ) ):
             return f'⿺{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-lower-right' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) or
+                 ( Component_Position[1] == 'enclosed' ) or
                  ( Component_Position[1] == 'upper-left' ) ) ):
             return f'⿽{Component_Text[0]}{Component_Text[1]}'
         elif ( ( Component_Position[0] == 'surround-from-right' ) and
                ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'covered' ) ) ):
+                 ( Component_Position[1] == 'enclosed' ) ) ):
             return f'⿼{Component_Text[0]}{Component_Text[1]}'
     elif number_of_components == 3:
         if ( ( ( Component_Position[0] == 'upper' ) or
@@ -119,7 +196,10 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
              and
              ( ( Component_Position[2] == 'lower' ) or
                ( Component_Position[2] == 'below' ) ) ):
-            return f'⿳{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}'
+            if Component_Position[1] == Component_Position[2]:
+                return f'⿱{Component_Text[0]}⿱{Component_Text[1]}{Component_Text[2]}'
+            else:
+                return f'⿳{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}'
         elif ( ( ( Component_Position[0] == 'above' ) or
                  ( Component_Position[0] == 'upper' ) )
                and
@@ -142,7 +222,10 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                ( Component_Position[1] == 'upper-right' )
                and
                ( ( Component_Position[2] == 'lower' ) or
-                 ( Component_Position[2] == 'below' ) ) ):
+                 ( Component_Position[2] == 'below' ) or
+                 ( ( Component_Position[2] == 'lower-right' ) and
+                   ( X1[2] < X2[0] ) )
+                ) ):
             return f'⿱⿰{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}'
         elif ( ( Component_Position[0] == 'left' )
                and
@@ -150,6 +233,46 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                and
                ( Component_Position[2] == 'lower-right' ) ):
             return f'⿰{Component_Text[0]}⿱{Component_Text[1]}{Component_Text[2]}'
+        elif ( ( Component_Position[0] == 'left' )
+               and
+               ( Component_Position[1] == 'upper-right' )
+               and
+               ( Component_Position[2] == 'lower-right' ) ):
+            return f'⿰{Component_Text[0]}⿱{Component_Text[1]}{Component_Text[2]}'
+        elif ( ( Component_Position[0] == 'upper-left' )
+               and
+               ( Component_Position[1] == 'full-surround' )
+               and
+               ( Component_Position[2] == 'enclosed' ) ):
+            if Component_Text[1] == '門':
+                return f'⿰{Component_Text[0]}⿵{Component_Text[1]}{Component_Text[2]}'
+            else:
+                return f'⿰{Component_Text[0]}⿴{Component_Text[1]}{Component_Text[2]}'
+    elif number_of_components == 4:
+        if ( ( ( Component_Position[0] == 'upper' ) or
+               ( Component_Position[0] == 'above' ) )
+             and
+             ( Component_Position[1] == 'lower-left' )
+             and
+             ( Component_Position[2] == 'lower-right' )
+             and
+             ( Component_Position[3] == 'below' ) ):
+            if ( ( Component_Text[0] == Component_Text[1] ) and
+                 ( Component_Text[1] == Component_Text[2] ) ):
+                return f'⿱⿱{Component_Text[0]}⿰{Component_Text[1]}{Component_Text[2]}{Component_Text[3]}'
+            else:
+                return f'⿳{Component_Text[0]}⿰{Component_Text[1]}{Component_Text[2]}{Component_Text[3]}'
+        elif ( ( Component_Position[0] == 'upper-left' )
+               and
+               ( Component_Position[1] == 'upper-right' )
+               and
+               ( Component_Position[2] == 'surround-from-above' )
+               and
+               ( Component_Position[3] == 'enclosed' ) ):
+            if ( Component_Text[2] == '冖' ):
+                return f'⿱⿱⿰{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}{Component_Text[3]}'
+            else:
+                return f'⿳⿰{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}{Component_Text[3]}'
 
 
 def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
@@ -199,9 +322,11 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
                 print (f'{orx1}	{ory1}	{orx2}	{ory2}	{line_text}	{position}')
                 print (f'{orx1}	{ory1}	{orx2}	{ory2}	{line_text}	{position}',
                        file=tsv_destfile)
-                im_crop = im.crop((orx1, ory1, orx2, ory2))
                 component_number = component_number + 1
-                im_crop.save(f'{TSV_OUTPUT_PATH}/{basename}_comp{component_number}.png')
+                if ( ( (orx2 - orx1) > 0) and
+                     ( (ory2 - ory1) > 0) ):
+                    im_crop = im.crop((orx1, ory1, orx2, ory2))
+                    im_crop.save(f'{TSV_OUTPUT_PATH}/{basename}_comp{component_number}.png')
 
         ids = detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position)
         if ids:
