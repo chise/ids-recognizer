@@ -50,144 +50,157 @@ def run_VLM (images, prompt):
 def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
     number_of_components = len(Component_Text)
     if number_of_components == 2:
-        if ( ( Component_Position[0] == 'left' ) and
-             ( ( Component_Position[1] == 'right' ) or
-               ( Component_Position[1] == 'full-surround' ) or
-               ( Component_Position[1] == 'full' ) ) ):
-            return f'⿰{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'upper-left' ) and
-               ( Component_Position[1] == 'lower-right' ) ):
-            if ( ( Component_Text[0] == '雨' ) or
-                 ( Component_Text[0] == '⺮' ) or
-                 ( Component_Text[1] == '儿' ) or
-                 ( Component_Text[1] == '女' ) or
-                 ( Component_Text[1] == '心' ) or
-                 ( Component_Text[1] == '虫' ) or
-                 ( Y2[0] <= Y1[1] ) ):
-                return f'⿱{Component_Text[0]}{Component_Text[1]}'
-            elif Component_Text[1] == '口':
-                return f'⿸{Component_Text[0]}{Component_Text[1]}'
-            elif Component_Text[0] == '𠂇':
-                return f'⿸{Component_Text[0]}{Component_Text[1]}'
-            elif Component_Text[0] == '麻':
-                if ( Y2[0] > Y1[1] ):
+        match Component_Position[0]:
+            case 'left':
+                if ( ( Component_Position[1] == 'right' ) or
+                     ( Component_Position[1] == 'full-surround' ) or
+                     ( Component_Position[1] == 'full' ) ):
+                    return f'⿰{Component_Text[0]}{Component_Text[1]}'
+
+            case 'upper-left':
+                if Component_Position[1] == 'lower-right':
+                    if ( ( Component_Text[0] == '雨' ) or
+                         ( Component_Text[0] == '⺮' ) or
+                         ( Component_Text[1] == '儿' ) or
+                         ( Component_Text[1] == '女' ) or
+                         ( Component_Text[1] == '心' ) or
+                         ( Component_Text[1] == '虫' ) or
+                         ( Y2[0] <= Y1[1] ) ):
+                        return f'⿱{Component_Text[0]}{Component_Text[1]}'
+                elif Component_Text[1] == '口':
                     return f'⿸{Component_Text[0]}{Component_Text[1]}'
+                elif Component_Text[0] == '𠂇':
+                    return f'⿸{Component_Text[0]}{Component_Text[1]}'
+                elif Component_Text[0] == '麻':
+                    if ( Y2[0] > Y1[1] ):
+                        return f'⿸{Component_Text[0]}{Component_Text[1]}'
+                    else:
+                        return f'⿱{Component_Text[0]}{Component_Text[1]}'
+                # elif Component_Position[1] == 'upper-right':
+                #     return f'⿰{Component_Text[0]}{Component_Text[1]}'
                 else:
+                    return f'⿰{Component_Text[0]}{Component_Text[1]}'
+
+            case 'lower-left':
+                # if ( ( Component_Position[1] == 'upper-right' ) or
+                #      ( Component_Position[1] == 'enclosed'    ) or
+                #      ( Component_Position[1] == 'lower-right' ) ):
+                #     if ( ( {Component_Text[0]} == '辶' ) or
+                #          ( {Component_Text[0]} == '廴' ) or
+                #          ( {Component_Text[0]} == '走' ) ):
+                return f'⿺{Component_Text[0]}{Component_Text[1]}'
+
+            case 'right':
+                if Component_Position[1] == 'left':
+                    return f'⿰{Component_Text[1]}{Component_Text[0]}'
+
+            case 'above':
+                if ( ( Component_Position[1] == 'below' ) or
+                     ( Component_Position[1] == 'full-surround' ) ):
                     return f'⿱{Component_Text[0]}{Component_Text[1]}'
-            else:
-                return f'⿰{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'right' ) and
-               ( Component_Position[1] == 'left' ) ):
-            return f'⿰{Component_Text[1]}{Component_Text[0]}'
-        elif ( ( Component_Position[0] == 'upper-left' ) and
-               ( Component_Position[1] == 'upper-right' ) ):
-            return f'⿰{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'lower-left' ) and
-               ( ( Component_Position[1] == 'upper-right' ) or
-                 ( Component_Position[1] == 'enclosed' ) ) and
-               ( ( {Component_Text[0]} == '辶' ) or
-                 ( {Component_Text[0]} == '廴' ) ) ):
-            return f'⿺{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'lower-left' ) and
-               ( Component_Position[1] == 'lower-right' )
-               and
-               ( {Component_Text[0]} == '走' ) ):
-            return f'⿺{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( ( Component_Position[0] == 'above' ) or
-                 ( Component_Position[0] == 'upper' ) )
-               and
-               ( ( Component_Position[1] == 'below' ) or
-                 ( Component_Position[1] == 'full-surround' ) ) ):
-            return f'⿱{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'below' ) and
-               ( Component_Position[1] == 'above' ) ):
-            return f'⿱{Component_Text[1]}{Component_Text[0]}'
-        elif ( ( Component_Position[0] == 'upper' ) and
-               ( Component_Position[1] == 'lower' ) ):
-            if Component_Text[0] == '气':
-                return f'⿹{Component_Text[0]}{Component_Text[1]}'
-            else:
-                return f'⿱{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'upper-right' ) and
-               ( Component_Position[1] == 'lower-left' ) ):
-            if Component_Text[0] == '戈':
-                return f'⿹{Component_Text[0]}{Component_Text[1]}'
-            else:
-                return f'⿱{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'full-surround' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'enclosed' ) ) ):
-            if Component_Text[0] == '凵':
-                return f'⿶{Component_Text[0]}{Component_Text[1]}'
-            elif Component_Text[0] == '几':
-                return f'⿵{Component_Text[0]}{Component_Text[1]}'
-            elif Component_Text[0] == '广':
-                return f'⿸{Component_Text[0]}{Component_Text[1]}'
-            elif ( ( Component_Text[0] == '門' ) or
-                   ( Component_Text[0] == '冂' ) ):
-                return f'⿵{Component_Text[0]}{Component_Text[1]}'
-            else:
-                return f'⿴{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'surround-from-above' ) and
-               ( ( Component_Position[1] == 'below' ) or
-                 ( Component_Position[1] == 'covered' ) or
-                 ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'enclosed' ) or
-                 ( Component_Position[1] == 'full-surround' ) ) ):
-            if ( ( Component_Text[0] == '虍' ) or
-                 ( Component_Text[0] == '鹿' ) ) :
-                return f'⿸{Component_Text[0]}{Component_Text[1]}'
-            elif ( ( Component_Text[0] == '宀' ) or
-                   ( Component_Text[0] == '穴' ) or
-                   ( Component_Text[0] == '冖' ) ):
-                return f'⿱{Component_Text[0]}{Component_Text[1]}'
-            else:
-                return f'⿵{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'below' ) and
-               ( Component_Position[1] == 'surround-from-above' ) ):
-            return f'⿵{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'surround-from-below' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'enclosed' ) ) ):
-            return f'⿶{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'surround-from-left' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'enclosed' ) or
-                 ( Component_Position[1] == 'covered' ) ) ):
-            if Component_Text[0] == '疒':
-                return f'⿸{Component_Text[0]}{Component_Text[1]}'
-            elif ( ( Component_Text[0] == '門') or
-                   ( Component_Text[0] == '冂') ):
-                return f'⿵{Component_Text[0]}{Component_Text[1]}'
-            else:
-                return f'⿷{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'surround-from-upper-left' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'enclosed' ) or
-                 ( Component_Position[1] == 'lower-right' ) ) ):
-            if Component_Text[0] == '匚':
-                return f'⿷{Component_Text[0]}{Component_Text[1]}'
-            else:
-                return f'⿸{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'surround-from-upper-right' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'enclosed' ) or
-                 ( Component_Position[1] == 'lower-left' ) ) ):
-            return f'⿹{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'surround-from-lower-left' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'enclosed' ) or
-                 ( Component_Position[1] == 'upper-right' ) ) ):
-            return f'⿺{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'surround-from-lower-right' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'enclosed' ) or
-                 ( Component_Position[1] == 'upper-left' ) ) ):
-            return f'⿽{Component_Text[0]}{Component_Text[1]}'
-        elif ( ( Component_Position[0] == 'surround-from-right' ) and
-               ( ( Component_Position[1] == 'middle' ) or
-                 ( Component_Position[1] == 'enclosed' ) ) ):
-            return f'⿼{Component_Text[0]}{Component_Text[1]}'
+
+            case 'upper':
+                if ( ( Component_Position[1] == 'below' ) or
+                     ( Component_Position[1] == 'lower' ) or
+                     ( Component_Position[1] == 'full-surround' ) ):
+                    if Component_Text[0] == '气':
+                        return f'⿹{Component_Text[0]}{Component_Text[1]}'
+                    else:
+                        return f'⿱{Component_Text[0]}{Component_Text[1]}'
+
+            case 'below':
+                if Component_Position[1] == 'above':
+                    return f'⿱{Component_Text[1]}{Component_Text[0]}'
+                elif Component_Position[1] == 'surround-from-above':
+                    return f'⿵{Component_Text[0]}{Component_Text[1]}'
+
+            case 'upper-right':
+                if Component_Position[1] == 'lower-left':
+                    if Component_Text[0] == '戈':
+                        return f'⿹{Component_Text[0]}{Component_Text[1]}'
+                    else:
+                        return f'⿱{Component_Text[0]}{Component_Text[1]}'
+
+            case 'full-surround':
+                if ( ( Component_Position[1] == 'middle' ) or
+                     ( Component_Position[1] == 'enclosed' ) ):
+                    if Component_Text[0] == '凵':
+                        return f'⿶{Component_Text[0]}{Component_Text[1]}'
+                    elif Component_Text[0] == '几':
+                        return f'⿵{Component_Text[0]}{Component_Text[1]}'
+                    elif Component_Text[0] == '广':
+                        return f'⿸{Component_Text[0]}{Component_Text[1]}'
+                    elif ( ( Component_Text[0] == '門' ) or
+                           ( Component_Text[0] == '冂' ) ):
+                        return f'⿵{Component_Text[0]}{Component_Text[1]}'
+                    else:
+                        return f'⿴{Component_Text[0]}{Component_Text[1]}'
+
+            case 'surround-from-above':
+                if ( ( Component_Position[1] == 'below' ) or
+                     ( Component_Position[1] == 'covered' ) or
+                     ( Component_Position[1] == 'middle' ) or
+                     ( Component_Position[1] == 'enclosed' ) or
+                     ( Component_Position[1] == 'full-surround' ) ):
+                    if ( ( Component_Text[0] == '虍' ) or
+                         ( Component_Text[0] == '鹿' ) ) :
+                        return f'⿸{Component_Text[0]}{Component_Text[1]}'
+                    elif ( ( Component_Text[0] == '宀' ) or
+                           ( Component_Text[0] == '穴' ) or
+                           ( Component_Text[0] == '冖' ) ):
+                        return f'⿱{Component_Text[0]}{Component_Text[1]}'
+                    else:
+                        return f'⿵{Component_Text[0]}{Component_Text[1]}'
+
+            case 'surround-from-below':
+                if ( ( Component_Position[1] == 'middle' ) or
+                     ( Component_Position[1] == 'enclosed' ) ):
+                    return f'⿶{Component_Text[0]}{Component_Text[1]}'
+
+            case 'surround-from-left':
+                if ( ( Component_Position[1] == 'middle' ) or
+                     ( Component_Position[1] == 'enclosed' ) or
+                     ( Component_Position[1] == 'covered' ) ):
+                    if Component_Text[0] == '疒':
+                        return f'⿸{Component_Text[0]}{Component_Text[1]}'
+                    elif ( ( Component_Text[0] == '門') or
+                           ( Component_Text[0] == '冂') ):
+                        return f'⿵{Component_Text[0]}{Component_Text[1]}'
+                    else:
+                        return f'⿷{Component_Text[0]}{Component_Text[1]}'
+
+            case 'surround-from-upper-left':
+                if ( ( Component_Position[1] == 'middle' ) or
+                     ( Component_Position[1] == 'enclosed' ) or
+                     ( Component_Position[1] == 'lower-right' ) ):
+                    if Component_Text[0] == '匚':
+                        return f'⿷{Component_Text[0]}{Component_Text[1]}'
+                    else:
+                        return f'⿸{Component_Text[0]}{Component_Text[1]}'
+
+            case 'surround-from-lower-left':
+                if ( ( Component_Position[1] == 'middle' ) or
+                     ( Component_Position[1] == 'enclosed' ) or
+                     ( Component_Position[1] == 'upper-right' ) ):
+                    return f'⿺{Component_Text[0]}{Component_Text[1]}'
+
+            case 'surround-from-right':
+                if ( ( Component_Position[1] == 'middle' ) or
+                     ( Component_Position[1] == 'enclosed' ) ):
+                    return f'⿼{Component_Text[0]}{Component_Text[1]}'
+
+            case 'surround-from-upper-right':
+                if ( ( Component_Position[1] == 'middle' ) or
+                     ( Component_Position[1] == 'enclosed' ) or
+                     ( Component_Position[1] == 'lower-left' ) ):
+                    return f'⿹{Component_Text[0]}{Component_Text[1]}'
+
+            case 'surround-from-lower-right':
+                if ( ( Component_Position[1] == 'middle' ) or
+                     ( Component_Position[1] == 'enclosed' ) or
+                     ( Component_Position[1] == 'upper-left' ) ):
+                    return f'⿽{Component_Text[0]}{Component_Text[1]}'
+
     elif number_of_components == 3:
         if ( ( ( Component_Position[0] == 'upper' ) or
                ( Component_Position[0] == 'above' ) )
