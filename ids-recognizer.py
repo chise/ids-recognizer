@@ -29,9 +29,15 @@ model_name = model_path[model_separator_pos + 1:]
 model, processor = load(model_path)
 config = load_config(model_path)
 
-prompt = '''<image> Locate every components of the Chinese character.
+prompt = '''<image> Locate every component of the Kanji.
 Report each component with bbox coordinates as TSV format like:
 X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-from-above/surround-from-below/surround-from-left/surround-from-right/surround-from-upper-left/surround-from-upper-right/surround-from-lower-left/surround-from-lower-right/upper-left/upper-right/lower-left/lower-right/enclosed/middle)
+'''
+
+component_prompt = '''<image> Run OCR for component (or structure) of the Kanji and output the result.
+'''
+
+character_prompt = '''<image> Run Kanji (or traditional Hanzi) OCR and output the result.
 '''
 
 def run_VLM (images, prompt):
@@ -50,6 +56,8 @@ def run_VLM (images, prompt):
 def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
     number_of_components = len(Component_Text)
     if number_of_components == 2:
+        if Component_Text[1] == '四点底':
+            Component_Text[1] = '灬'
         match Component_Position[0]:
             case 'left':
                 if ( ( Component_Position[1] == 'right' ) or
@@ -67,6 +75,15 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                          ( Component_Text[1] == '虫' ) or
                          ( Y2[0] <= Y1[1] ) ):
                         return f'⿱{Component_Text[0]}{Component_Text[1]}'
+                    else:
+                        return f'⿰{Component_Text[0]}{Component_Text[1]}'
+                elif Component_Position[1] == 'lower-left':
+                    if ( Component_Text[0] == '辶' ):
+                        return f'⿺{Component_Text[1]}{Component_Text[0]}'
+                    else:
+                        return f'⿱{Component_Text[0]}{Component_Text[1]}'
+                # elif Component_Position[1] == 'upper-right':
+                #     return f'⿰{Component_Text[0]}{Component_Text[1]}'
                 elif Component_Text[1] == '口':
                     return f'⿸{Component_Text[0]}{Component_Text[1]}'
                 elif Component_Text[0] == '𠂇':
@@ -76,19 +93,25 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                         return f'⿸{Component_Text[0]}{Component_Text[1]}'
                     else:
                         return f'⿱{Component_Text[0]}{Component_Text[1]}'
-                # elif Component_Position[1] == 'upper-right':
-                #     return f'⿰{Component_Text[0]}{Component_Text[1]}'
                 else:
                     return f'⿰{Component_Text[0]}{Component_Text[1]}'
 
             case 'lower-left':
-                # if ( ( Component_Position[1] == 'upper-right' ) or
-                #      ( Component_Position[1] == 'enclosed'    ) or
-                #      ( Component_Position[1] == 'lower-right' ) ):
-                #     if ( ( {Component_Text[0]} == '辶' ) or
-                #          ( {Component_Text[0]} == '廴' ) or
-                #          ( {Component_Text[0]} == '走' ) ):
-                return f'⿺{Component_Text[0]}{Component_Text[1]}'
+                if Component_Position[1] == 'lower-right':
+                    if {Component_Text[0]} == '攵':
+                        return f'⿰{Component_Text[0]}{Component_Text[1]}'
+                    else:
+                    # if ( ( Component_Position[1] == 'upper-right' ) or
+                    #      ( Component_Position[1] == 'enclosed'    ) )
+                    #     if ( ( {Component_Text[0]} == '辶' ) or
+                    #          ( {Component_Text[0]} == '廴' ) or
+                    #          ( {Component_Text[0]} == '走' ) ):
+                        return f'⿺{Component_Text[0]}{Component_Text[1]}'
+                elif ( ( Component_Position[1] == 'upper-right' ) or
+                       ( Component_Position[1] == 'full-surround' ) or
+                       ( Component_Position[1] == 'full' ) or
+                       ( Component_Position[1] == 'enclosed' ) ):
+                    return f'⿺{Component_Text[0]}{Component_Text[1]}'
 
             case 'right':
                 if Component_Position[1] == 'left':
@@ -120,6 +143,8 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                         return f'⿹{Component_Text[0]}{Component_Text[1]}'
                     else:
                         return f'⿱{Component_Text[0]}{Component_Text[1]}'
+                elif Component_Position[1] == 'enclosed':
+                    return f'⿱{Component_Text[0]}{Component_Text[1]}'
 
             case 'full-surround':
                 if ( ( Component_Position[1] == 'middle' ) or
@@ -128,7 +153,8 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                         return f'⿶{Component_Text[0]}{Component_Text[1]}'
                     elif Component_Text[0] == '几':
                         return f'⿵{Component_Text[0]}{Component_Text[1]}'
-                    elif Component_Text[0] == '广':
+                    elif ( ( Component_Text[0] == '广' ) or
+                           ( Component_Text[0] == '麻' ) ):
                         return f'⿸{Component_Text[0]}{Component_Text[1]}'
                     elif ( ( Component_Text[0] == '門' ) or
                            ( Component_Text[0] == '冂' ) ):
@@ -143,11 +169,13 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                      ( Component_Position[1] == 'enclosed' ) or
                      ( Component_Position[1] == 'full-surround' ) ):
                     if ( ( Component_Text[0] == '虍' ) or
-                         ( Component_Text[0] == '鹿' ) ) :
+                         ( Component_Text[0] == '鹿' ) or
+                         ( Component_Text[0] == '广' ) ):
                         return f'⿸{Component_Text[0]}{Component_Text[1]}'
                     elif ( ( Component_Text[0] == '宀' ) or
                            ( Component_Text[0] == '穴' ) or
-                           ( Component_Text[0] == '冖' ) ):
+                           ( Component_Text[0] == '冖' ) or
+                           ( Component_Text[0] == '雨' ) ):
                         return f'⿱{Component_Text[0]}{Component_Text[1]}'
                     else:
                         return f'⿵{Component_Text[0]}{Component_Text[1]}'
@@ -155,7 +183,10 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
             case 'surround-from-below':
                 if ( ( Component_Position[1] == 'middle' ) or
                      ( Component_Position[1] == 'enclosed' ) ):
-                    return f'⿶{Component_Text[0]}{Component_Text[1]}'
+                    if Component_Text[0] == '皿':
+                        return f'⿱{Component_Text[1]}{Component_Text[0]}'
+                    else:
+                        return f'⿶{Component_Text[0]}{Component_Text[1]}'
 
             case 'surround-from-left':
                 if ( ( Component_Position[1] == 'middle' ) or
@@ -175,6 +206,8 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                      ( Component_Position[1] == 'lower-right' ) ):
                     if Component_Text[0] == '匚':
                         return f'⿷{Component_Text[0]}{Component_Text[1]}'
+                    elif Component_Text[0] == '几':
+                        return f'⿵{Component_Text[0]}{Component_Text[1]}'
                     else:
                         return f'⿸{Component_Text[0]}{Component_Text[1]}'
 
@@ -293,13 +326,20 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
     image_width, image_height = im.size
     basename = os.path.splitext(os.path.basename(image_file))[0]
 
-    ids_file_name = f'{OUTPUT_PATH}/{basename}_ids.txt'
+    ids_file_name  = f'{OUTPUT_PATH}/{basename}_ids.txt'
+    full_file_name = f'{OUTPUT_PATH}/{basename}_full.txt'
     if os.path.isfile(ids_file_name):
         print( f'{ids_file_name} already exists.')
         ids_destfile = open (ids_file_name, 'r', encoding = 'utf-8')
         ids = ids_destfile.read()
         ids_destfile.close()
         return ids
+    elif os.path.isfile(full_file_name):
+        print( f'{full_file_name} already exists.')
+        full_destfile = open (full_file_name, 'r', encoding = 'utf-8')
+        full = full_destfile.read()
+        full_destfile.close()
+        return full
     else:
         print (image_file, prompt)
         images = [ image_file ]
@@ -336,16 +376,71 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
                 print (f'{orx1}	{ory1}	{orx2}	{ory2}	{line_text}	{position}',
                        file=tsv_destfile)
                 component_number = component_number + 1
-                if ( ( (orx2 - orx1) > 0) and
-                     ( (ory2 - ory1) > 0) ):
+                if ( ( (orx2 - orx1) > 0 ) and
+                     ( (ory2 - ory1) > 0 ) ):
                     im_crop = im.crop((orx1, ory1, orx2, ory2))
                     im_crop.save(f'{TSV_OUTPUT_PATH}/{basename}_comp{component_number}.png')
+
+        if len(Component_Text) == 3:
+            if ( ( ( Component_Position[0] == 'upper-right' ) and
+                   ( Component_Position[1] == 'full-surround' ) ) or
+                 ( ( Component_Position[0] == 'upper-left' ) and
+                   ( Component_Position[1] == 'upper-right' ) ) ):
+                if ( ( abs(X1[1] - X1[0]) < 5 ) and
+                     ( abs(X2[1] - X2[0]) < 5 ) and
+                     ( Y1[1] <= Y2[0] ) ):
+                    if X1[1] < X1[0]:
+                        X1[0] = X1[1]
+                    if Y1[1] < Y1[0]:
+                        Y1[0] = Y1[1]
+                    if X2[0] < X2[1]:
+                        X2[0] = X2[1]
+                    if Y2[0] < Y2[1]:
+                        Y2[0] = Y2[1]
+                    del X1[1]
+                    del Y1[1]
+                    del X2[1]
+                    del Y2[1]
+                    orig_comp2 = Component_Text[1]
+                    del Component_Text[1]
+                    del Component_Position[1]
+                    print(f'-> ({X1[0]},{Y1[0]})-({X2[0]},{Y2[0]})')
+                    if ( ( (X2[0] - X1[0]) > 0 ) and
+                         ( (Y2[0] - Y1[0]) > 0 ) ):
+                        im_crop = im.crop((X1[0], Y1[0], X2[0], Y2[0]))
+                        comp1_image_file_name = f'{TSV_OUTPUT_PATH}/{basename}_comp1.png'
+                        im_crop.save(comp1_image_file_name)
+                        comp1_response = run_VLM ([comp1_image_file_name], component_prompt)
+                        print (f'new component = "{comp1_response}".')
+                        if len(comp1_response) == 1:
+                            Component_Text[0] = comp1_response
+                        else:
+                            Component_Text[0] = f'⿱{Component_Text[0]}{orig_comp2}'
+                    else:
+                        Component_Text[0] = f'⿱{Component_Text[0]}{orig_comp2}'
+                    comp2_image_file_name = f'{TSV_OUTPUT_PATH}/{basename}_comp2.png'
+                    if (os.path.isfile(comp2_image_file_name)):
+                        os.remove(comp2_image_file_name)
+                    comp3_image_file_name = f'{TSV_OUTPUT_PATH}/{basename}_comp3.png'
+                    if (os.path.isfile(comp3_image_file_name)):
+                        os.rename(comp3_image_file_name, comp2_image_file_name)
 
         ids = detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position)
         if ids:
             with open(f'{OUTPUT_PATH}/{basename}_ids.txt',
                       'w', encoding = 'utf-8') as ids_destfile:
                 print(ids, file=ids_destfile)
+        elif len(Component_Text) == 1:
+            char_response = run_VLM (images, character_prompt)
+            print (f'character = "{char_response}".')
+            if (os.path.isfile(full_file_name)):
+                os.remove(full_file_name)
+            if len(char_response) == 1:
+                with open(full_file_name, 'w', encoding = 'utf-8') as full_destfile:
+                    print(char_response, file=full_destfile)
+            elif Component_Position[0] == 'full-surround':
+                with open(full_file_name, 'w', encoding = 'utf-8') as full_destfile:
+                    print(Component_Text[0], file=full_destfile)
 
         with open(f'{OUTPUT_PATH}/{basename}.txt', 'w', encoding = 'utf-8') as destfile:
             destfile.write(response)
