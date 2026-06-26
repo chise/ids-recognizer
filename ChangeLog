@@ -1,5 +1,9 @@
 2026-06-26  MORIOKA Tomohiko  <tomo.git@chise.org>
 
+	* ids-recognizer.py (detect_ids): Use `case'.
+
+2026-06-26  MORIOKA Tomohiko  <tomo.git@chise.org>
+
 	* ids-recognizer.py (prompt): Use `enclosed' instead of `covered'.
 	(detect_ids): Likewise; add some rules.
 	(run_OCR_for_glyph_image): When cropping component image, check
