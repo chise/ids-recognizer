@@ -1,3 +1,15 @@
+2026-06-27  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (prompt): Modify prompt.
+	(simpler_prompt): New variable.
+	(detect_ids): Add some rules.
+	(run_OCR_for_glyph_image): Separate post-process part into
+	`manage_OCR_for_glyph_image'; change spec of return type.
+	(manage_OCR_for_glyph_image): New function [moved from
+	`run_OCR_for_glyph_image'].
+	(<toplevel>): Use `manage_OCR_for_glyph_image' instead of
+	`run_OCR_for_glyph_image'.
+
 2026-06-26  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (prompt): Use `Kanji' instead of `Chinese character'.
