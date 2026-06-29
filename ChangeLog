@@ -1,3 +1,24 @@
+2026-06-29  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (prompt_E): New variable.
+	(prompt_cE): New variable.
+	(prompt_C): New variable.
+	(prompt_cC): New variable.
+	(prompt_J): New variable.
+	(prompt_cJ): New variable.
+	(prompt_JcE): New variable.
+	(prompt): New implementation.
+	(simpler_prompt): Modify prompt.
+	(detect_ids):
+	- Add rule for `upper-left' + `upper-right'.
+	- Modify rule for `lower-left' + `lower-right'.
+	- Add rule when `full-surround' is `宀'.
+	- Add rule when `surround-from-above' is `疒'.
+	- Fix rule for ( `upper' | `above' ) + `middle' + ( `lower' |
+	  `below' ).
+	(manage_OCR_for_glyph_image): Check any component of the result
+	IDS is not the target character.
+
 2026-06-27  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (prompt): Modify prompt.
