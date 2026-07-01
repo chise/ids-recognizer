@@ -64,10 +64,23 @@ Report each component with bbox coordinates as TSV format like:
 X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-from-above/surround-from-below/surround-from-left/surround-from-right/surround-from-upper-left/surround-from-upper-right/surround-from-lower-left/surround-from-lower-right/upper-left/upper-right/lower-left/lower-right/enclosed/middle)
 '''
 
+prompt_ja = '''画像にある漢字を構成する全ての部品を見つけてください。
+見つかった各部品は矩形座標とともに下記のような TSV 形式で出力してください：
+X0	Y0	X1	Y1	部品	相対位置（left(偏)/right(旁)/above(冠)/below(脚)/surround-from-upper-left(垂)/surround-from-lower-left(繞)/full-surround(囗,行,衣など)/surround-from-above(門,几,冂など)/surround-from-left(匚,匸など)/surround-from-upper-right(勹,气など)/surround-from-below(凵など)/upper-left(左上)/upper-right(右上)/lower-left(左下)/lower-right(右下)/enclosed(構えの中の部品)/middle(左右や上下の間の部品))
+'''
+
+prompt_zh_TW = '''找出圖像中漢字的所有組成部分。
+以 TSV 格式輸出每個找到的組成部分及其對應的直角座標。
+範例：
+X0	Y0	X1	Y1	組成部分	相對位置(left(偏)/right(旁)/above(頭)/below(底)/surround-from-upper-left(例如:⺗,灬,龰)/surround-from-lower-left(例如:⻌,廴,虍)/full-surround(同時夾著文字上下者稱為框。例如:囗,行,衣)/surround-from-above(例如:門,几,冂)/surround-from-left(匚,匸など)/surround-from-upper-right(例如:勹,气)/surround-from-below(例如:凵)/upper-left(左上)/upper-right(右上)/lower-left(左下)/lower-right(右下)/enclosed(内部的部件)/middle(夾在左右或上下之間的部件))
+'''
+
 #prompt = prompt_J
-#prompt = prompt_E
+prompt = prompt_E
 #prompt = prompt_cE
-prompt = prompt_cC
+#prompt = prompt_C
+#prompt = prompt_ja
+#prompt = prompt_zh_TW
 
 
 simpler_prompt = '''<image> Locate every component of the Kanji.
@@ -127,31 +140,38 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                         return f'⿸{Component_Text[0]}{Component_Text[1]}'
                     else:
                         return f'⿰{Component_Text[0]}{Component_Text[1]}'
+
                 elif Component_Position[1] == 'lower-left':
                     if ( Component_Text[0] == '辶' ):
                         return f'⿺{Component_Text[1]}{Component_Text[0]}'
                     else:
                         return f'⿱{Component_Text[0]}{Component_Text[1]}'
+
                 elif Component_Position[1] == 'upper-right':
                     if Y2[0] <= Y1[0]:
                         return f'⿱{Component_Text[0]}{Component_Text[1]}'
                     else:
                         return f'⿰{Component_Text[0]}{Component_Text[1]}'
+
                 elif ( ( Component_Position[1] == 'full-surround' ) or
                        ( Component_Position[1] == 'enclosed' ) ):
                     if Component_Text[1] == '儿':
                         return f'⿱{Component_Text[0]}{Component_Text[1]}'
                     else:
                         return f'⿸{Component_Text[0]}{Component_Text[1]}'
+
                 elif Component_Text[1] == '口':
                     return f'⿸{Component_Text[0]}{Component_Text[1]}'
+
                 elif Component_Text[0] == '𠂇':
                     return f'⿸{Component_Text[0]}{Component_Text[1]}'
+
                 elif Component_Text[0] == '麻':
                     if ( Y2[0] > Y1[1] ):
                         return f'⿸{Component_Text[0]}{Component_Text[1]}'
                     else:
                         return f'⿱{Component_Text[0]}{Component_Text[1]}'
+
                 else:
                     return f'⿰{Component_Text[0]}{Component_Text[1]}'
 
@@ -169,6 +189,7 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                     #          ( {Component_Text[0]} == '廴' ) or
                     #          ( {Component_Text[0]} == '走' ) ):
                         return f'⿺{Component_Text[0]}{Component_Text[1]}'
+
                 elif ( ( Component_Position[1] == 'upper-right' ) or
                        ( Component_Position[1] == 'full-surround' ) or
                        ( Component_Position[1] == 'full' ) or
@@ -181,7 +202,8 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
 
             case 'above':
                 if ( ( Component_Position[1] == 'below' ) or
-                     ( Component_Position[1] == 'full-surround' ) ):
+                     ( Component_Position[1] == 'full-surround' ) or
+                     ( Component_Position[1] == 'enclosed' ) ):
                     return f'⿱{Component_Text[0]}{Component_Text[1]}'
 
             case 'upper':
@@ -205,6 +227,7 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                         return f'⿹{Component_Text[0]}{Component_Text[1]}'
                     else:
                         return f'⿱{Component_Text[0]}{Component_Text[1]}'
+
                 elif Component_Position[1] == 'enclosed':
                     return f'⿱{Component_Text[0]}{Component_Text[1]}'
 
@@ -306,65 +329,69 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                     return f'⿽{Component_Text[0]}{Component_Text[1]}'
 
     elif number_of_components == 3:
-        if ( ( ( Component_Position[0] == 'upper' ) or
-               ( Component_Position[0] == 'above' ) )
-             and
-             ( Component_Position[1] == 'middle' )
-             and
-             ( ( Component_Position[2] == 'lower' ) or
-               ( Component_Position[2] == 'below' ) ) ):
-            if Component_Text[1] == Component_Text[2]:
-                return f'⿱{Component_Text[0]}⿱{Component_Text[1]}{Component_Text[2]}'
-            else:
-                return f'⿳{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}'
-        elif ( ( ( Component_Position[0] == 'above' ) or
-                 ( Component_Position[0] == 'upper' ) )
-               and
-               ( Component_Position[1] == 'lower-left' )
-               and
-               ( Component_Position[2] == 'lower-right' ) ):
-            return f'⿱{Component_Text[0]}⿰{Component_Text[1]}{Component_Text[2]}'
-        elif ( ( ( Component_Position[0] == 'above' ) or
-                 ( Component_Position[0] == 'upper' ) )
-               and
-               ( Component_Position[1] == 'surround-from-above' )
-               and
-               ( Component_Position[2] == 'middle' ) ):
-            if Component_Text[1] == '囗':
-                return f'⿱{Component_Text[0]}⿴{Component_Text[1]}{Component_Text[2]}'
-            else:
-                return f'⿱{Component_Text[0]}⿵{Component_Text[1]}{Component_Text[2]}'
-        elif ( ( Component_Position[0] == 'upper-left' )
-               and
-               ( Component_Position[1] == 'upper-right' )
-               and
-               ( ( Component_Position[2] == 'lower' ) or
-                 ( Component_Position[2] == 'below' ) or
-                 ( ( Component_Position[2] == 'lower-right' ) and
-                   ( X1[2] < X2[0] ) )
-                ) ):
-            return f'⿱⿰{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}'
-        elif ( ( Component_Position[0] == 'left' )
-               and
-               ( Component_Position[1] == 'upper-right' )
-               and
-               ( Component_Position[2] == 'lower-right' ) ):
-            return f'⿰{Component_Text[0]}⿱{Component_Text[1]}{Component_Text[2]}'
-        elif ( ( Component_Position[0] == 'left' )
-               and
-               ( Component_Position[1] == 'upper-right' )
-               and
-               ( Component_Position[2] == 'lower-right' ) ):
-            return f'⿰{Component_Text[0]}⿱{Component_Text[1]}{Component_Text[2]}'
-        elif ( ( Component_Position[0] == 'upper-left' )
-               and
-               ( Component_Position[1] == 'full-surround' )
-               and
-               ( Component_Position[2] == 'enclosed' ) ):
-            if Component_Text[1] == '門':
-                return f'⿰{Component_Text[0]}⿵{Component_Text[1]}{Component_Text[2]}'
-            else:
-                return f'⿰{Component_Text[0]}⿴{Component_Text[1]}{Component_Text[2]}'
+        match Component_Position[0]:
+            case 'upper':
+                if ( ( Component_Position[1] == 'middle' ) and
+                     ( ( Component_Position[2] == 'lower' ) or
+                       ( Component_Position[2] == 'below' ) ) ):
+                    if Component_Text[1] == Component_Text[2]:
+                        return f'⿱{Component_Text[0]}⿱{Component_Text[1]}{Component_Text[2]}'
+                    else:
+                        return f'⿳{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}'
+
+                elif ( ( Component_Position[1] == 'lower-left' ) and
+                       ( Component_Position[2] == 'lower-right' ) ):
+                    return f'⿱{Component_Text[0]}⿰{Component_Text[1]}{Component_Text[2]}'
+                elif ( ( Component_Position[1] == 'surround-from-above' ) and
+                       ( Component_Position[2] == 'middle' ) ):
+                    if Component_Text[1] == '囗':
+                        return f'⿱{Component_Text[0]}⿴{Component_Text[1]}{Component_Text[2]}'
+                    else:
+                        return f'⿱{Component_Text[0]}⿵{Component_Text[1]}{Component_Text[2]}'
+
+            case 'above':
+                if ( ( Component_Position[1] == 'middle' ) and
+                     ( ( Component_Position[2] == 'lower' ) or
+                       ( Component_Position[2] == 'below' ) ) ):
+                    if Component_Text[1] == Component_Text[2]:
+                        return f'⿱{Component_Text[0]}⿱{Component_Text[1]}{Component_Text[2]}'
+                    else:
+                        return f'⿳{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}'
+
+                elif ( ( Component_Position[1] == 'enclosed' ) and
+                       ( Component_Position[2] == 'below' ) ):
+                    return f'⿳{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}'
+
+                elif ( ( Component_Position[1] == 'lower-left' ) and
+                       ( Component_Position[2] == 'lower-right' ) ):
+                    return f'⿱{Component_Text[0]}⿰{Component_Text[1]}{Component_Text[2]}'
+                elif ( ( Component_Position[1] == 'surround-from-above' ) and
+                       ( Component_Position[2] == 'middle' ) ):
+                    if Component_Text[1] == '囗':
+                        return f'⿱{Component_Text[0]}⿴{Component_Text[1]}{Component_Text[2]}'
+                    else:
+                        return f'⿱{Component_Text[0]}⿵{Component_Text[1]}{Component_Text[2]}'
+
+            case 'upper-left':
+                if ( ( Component_Position[1] == 'upper-right' ) and
+                     ( ( Component_Position[2] == 'lower' ) or
+                       ( Component_Position[2] == 'below' ) or
+                       ( ( Component_Position[2] == 'lower-right' ) and
+                         ( X1[2] < X2[0] ) )
+                      ) ):
+                    return f'⿱⿰{Component_Text[0]}{Component_Text[1]}{Component_Text[2]}'
+                elif ( ( Component_Position[1] == 'full-surround' ) and
+                       ( Component_Position[2] == 'enclosed' ) ):
+                    if Component_Text[1] == '門':
+                        return f'⿰{Component_Text[0]}⿵{Component_Text[1]}{Component_Text[2]}'
+                    else:
+                        return f'⿰{Component_Text[0]}⿴{Component_Text[1]}{Component_Text[2]}'
+
+            case 'left':
+                if ( ( Component_Position[1] == 'upper-right' ) and
+                     ( Component_Position[2] == 'lower-right' ) ):
+                    return f'⿰{Component_Text[0]}⿱{Component_Text[1]}{Component_Text[2]}'
+
     elif number_of_components == 4:
         if ( ( ( Component_Position[0] == 'upper' ) or
                ( Component_Position[0] == 'above' ) )
@@ -412,7 +439,7 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
     Component_Text = []
     Component_Position = []
     with open(f'{TSV_OUTPUT_PATH}/{basename}.tsv', 'w', encoding = 'utf-8') as tsv_destfile:
-        for line_match in re.findall('(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\S+)\s+(\S+)\n?', response):
+        for line_match in re.findall('(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\S+)\s+([a-z-]+)\S*\n?', response):
             x1, y1, x2, y2, line_text, position = line_match
             x1 = int (x1)
             y1 = int (y1)
