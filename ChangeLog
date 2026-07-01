@@ -1,3 +1,13 @@
+2026-07-01  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (prompt_ja): New prompt.
+	(prompt_zh_TW): New prompt.
+	(detect_ids):
+	- Treat `above' + `enclosed' as the same as `above' + ( `below' |
+	  `full-surround' ).
+	- Use `match' and `case' for 3-components patterns.
+	(run_OCR_for_glyph_image): Accept `(...)' of Component_Position.
+
 2026-06-29  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (prompt_E): New variable.
