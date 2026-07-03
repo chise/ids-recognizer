@@ -34,43 +34,49 @@ Report each component with bbox coordinates as TSV format like:
 X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-from-above/surround-from-below/surround-from-left/surround-from-right/surround-from-upper-left/surround-from-upper-right/surround-from-lower-left/surround-from-lower-right/upper-left/upper-right/lower-left/lower-right/enclosed/middle)
 '''
 
-component_examples_of_left = '口(叶),亻,扌,忄,𤣩,彳,糹,釒,訁,飠,⻖,犭,衤,礻,⺬,⻊,冫,氵,支,木,糸,舌,孚,辛,甫,𠦝,亨,豈,歹,文,龠,禾,齒,雚,蒙,𠁣,𩰋,音,𦰩,𨥫,坐,了,共,龺,同,𫵖,子,孑,斉,咅,仌,丁,亭,彦'
+component_examples_of_left = '口(叶),亻,扌,忄,𤣩,彳,糹,釒,訁,飠,⻖,犭,衤,礻,⺬,⻊,冫,氵,支,木,糸,舌,孚,辛,甫,𠦝,亨,豈,歹,文,龠,禾,齒,雚,蒙,𠁣,𩰋,音,𨥫,坐,了,共,龺(朝),同,𫵖,子,孑,斉,咅,仌,丁,亭,彦,矢(知),㠯(𰀥),𦰩(難),巳(𠨎),己(𠨎),刃(𱐔),彡(須),立(䇃)'
 
-component_examples_of_right = '刂,⻏,卩,攵,攴,口,乚,夌,垔,豈,栗,倉,冥,彔,欠,𠃛,𩰊,㣊,𦰩,難,矣,菐,犬,丣,坐,與,舁,頃,了,共,巽,同,子,齊,斉,咅,仌,互,亟,丁,亭,彦'
+component_examples_of_right = '刂,⻏,卩,攵(牧),攴,口,乚,夌,垔,豈,栗,倉,冥,彔,欠,𠃛,𩰊,㣊,矣,菐,犬,丣,坐,與,舁,頃,了,共,巽,同,子,齊,斉,咅,仌,互,亟,丁,亭,彦,矢,難(儺),㠯(佀),矣(俟),尹(伊),巳(𠨎),己(𠨎),巽(撰),刃(仞),彡(杉),頁(頃),立(位),冉(呥),厶(私)'
 
-component_examples_of_above = '宀,冖,⺮,艹,癶,𭼽,𪱙,罒,覀,屮,爫,彐,彑,夂,文,䒑,业,兴,加,卯,次,所,𣅀,立,㐭,𠆢,亼,亽,六,𫩠,八,⺜,𠀎,准,禾,𦥯,龹,𤇾,𰃮,𫇦,髟,冎,𡨄,𣦼,殸,攸,難,氶,处,丣,一,𦥑,與,頃,了,共,龻,𰀉,灾,𦥔,吅,咅,亟,𦭝'
+component_examples_of_above = '亠,宀,冖,⺮,艹,癶,𭼽,𪱙,罒,覀,⺷(義),屮(㞷),爫,彐,彑,夂(冬),文,䒑,业,兴,加,卯,次,所,𣅀,立(音),㐭,𠆢,亼,亽,六,𫩠,八,⺜,𠀎,准,禾,𦥯,龹,𤇾,𰃮,𫇦,髟,冎,𡨄,𣦼,殸,攸,氶(丞),处,丣,一,𦥑,與,頃,了,共,龻,𰀉,灾,𦥔,吅,咅,亟,𦭝(蔑),難(臡),𠀐(貴),亞(亞),㇇(氶),𠨎(巽),刃(忍),彡(辵),攵(㣊),不(否),冉(𣅾),厶(弁)'
 
-component_examples_of_below = '⺗,灬,龰,夂,夊,口,二,儿,几,了,子,旦,丂,𰆊,八,大,犬,𬺢,厶,彡,難,菐,廾,𪱙,丣,坐,一,與,舁,頃,了,共,巽,𠨎,同,吅,互,彑,亟,丁,亭'
+component_examples_of_below = '⺗,灬,龰,夂(夏),夊,口,二,儿,几,了,子,旦,丂,𰆊,八,大,犬,𬺢(具),厶(去),彡,難,菐,廾,𪱙,丣,坐,一(丞),與,舁,頃,了,共,巽,同,吅,互(𦬚),亟,丁,亭,屮(𡗡),矢(矣),難(𦍀),㠯(官),&CDP-8DE0;(𪟊),𪟊(寡),巽(𦺈),刃(𦬄),彡(㐱),立(笠),不(示),冉(再)'
 
-component_examples_of_surround_from_upper_left = '厂,𠂆,𠂋,厃,疒,尸,广,戸,虍,𬻉,倝,产,𠂇,麻,鹿,⺶,攸,𠩵,耂'
+component_examples_of_surround_from_upper_left = '厂,𠂆,𠂋(后),厃(危),疒,尸,广,戸,虍,𬻉,倝(幹),产,𠂇(右),麻(磨),鹿,⺶,攸,𠩵,耂,尹(君)'
 
 component_examples_of_surround_from_lower_left = '⻌,廴,走,鬼,麥,麦,風,支,爪,毛,夊,鼠,文,几,乙,𠃊,元,克,光,是'
 
-component_examples_of_full_surround = '囗,行,衣,井,𦥑,二,㗊,互'
+component_examples_of_full_surround = '囗,行,衣,井,𦥑,二,㗊,互(𠀕)'
 
-component_examples_of_surround_from_above = '門,鬥,几,冂,𰃦,凡,齊,斉,𣎆,𦝠,戌'
+component_examples_of_surround_from_above = '門(聞),鬥(闘),几(凧),冂(囘),𰃦（向),凡(風),齊,斉,𣎆,𦝠,戌'
 
 component_examples_of_surround_from_left = '匚,匸'
 
-component_examples_of_surround_from_upper_right = '勹,气,戈,弋,⺄,頃'
+component_examples_of_surround_from_upper_right = '勹,气,戈,弋,⺄'
 
 component_examples_of_surround_from_below = '凵,𠒂,舁'
 
 component_examples_of_enclosed = '丶(丼),口(哀),歹(夙),女(威),日(間),同(興),王(匡),仌(𠕎)'
 
-component_examples_of_middle = '丩(嘂),頁(囂),言(龻),日(龺),𡵉(微),合(搿),分(椕),冖(牵),田(畫),⺣(稥),厶(窓),冖(夢,亭),𠀎(𡨄)'
+component_examples_of_middle = '丩(嘂),頁(囂),言(龻),日(龺),𡵉(微),合(搿),分(椕),冖(牵),田(畫),⺣(稥),厶(窓),冖(亭),𠀎(𡨄),丨(攸),一(兴),𦰩(攤),水(丞),亅(水),厶(𣏋)'
 
-component_examples_of_upper_right = '力(勉),匕(匙)'
+component_examples_of_upper_right = '力(勉),匕(匙),㠯(𲏘),巽(選),彡(尨)'
 
-component_examples_of_lower_right = '彡(修),其(旗),力(勝),㔾(卮),子(㞌),亟(𢉗),丁(庁)'
+component_examples_of_lower_right = '彡(修),其(旗),力(勝),㔾(卮),子(㞌),亟(𢉗),丁(庁),矢(侯),矣(𡱢),㠯(𢈂),立(𢨶),攵(䖍),冉(㾆)'
 
-component_examples_of_lower_left = '十(卂),口(句),口(命)'
+component_examples_of_lower_left = '十(卂),口(句),口(命),𬺣(或),立(𣱠)'
 
 component_examples_of_upper_left = '土(敖),氵(柒),氵(染),叕(歠),日(猒),瓜(瓥),耳(聖)'
 
+component_examples_of_sandwiched = '了(氶),𬼶(亟),⿱丂一(亟)'
+
+component_examples_of_middle_left = '口(亟),㇇(丞)'
+
+component_examples_of_middle_right = '又(亟),品(區),矢(医),&CDP-85BF;(丞),厶(鬼)'
+
 prompt_E5 = f'''<image> Locate every component of the Chinese character.
 Report each component with bbox coordinates as TSV format like:
-X0	Y0	X1	Y1	component	position (left(e.g.{component_examples_of_left})/right(e.g.{component_examples_of_right})/above(e.g.{component_examples_of_above})/below(e.g.{component_examples_of_below})/surround-from-upper-left(e.g.{component_examples_of_surround_from_upper_left})/surround-from-lower-left(e.g.{component_examples_of_surround_from_lower_left})/full-surround(e.g.{component_examples_of_full_surround})/surround-from-above(e.g.{component_examples_of_surround_from_above})/surround-from-left(e.g.{component_examples_of_surround_from_left})/surround-from-upper-right(e.g.{component_examples_of_surround_from_upper_right})/surround-from-below(e.g.{component_examples_of_surround_from_below})/upper-left(e.g.{component_examples_of_upper_left})/upper-right(e.g.{component_examples_of_upper_right})/lower-right(e.g.{component_examples_of_lower_right})/lower-left(e.g.{component_examples_of_lower_left})/enclosed(e.g.{component_examples_of_enclosed}/middle(e.g.{component_examples_of_middle}))
+X0	Y0	X1	Y1	component	position (left(e.g.{component_examples_of_left})/right(e.g.{component_examples_of_right})/above(e.g.{component_examples_of_above})/below(e.g.{component_examples_of_below})/surround-from-upper-left(e.g.{component_examples_of_surround_from_upper_left})/surround-from-lower-left(e.g.{component_examples_of_surround_from_lower_left})/full-surround(e.g.{component_examples_of_full_surround})/surround-from-above(e.g.{component_examples_of_surround_from_above})/surround-from-left(e.g.{component_examples_of_surround_from_left})/surround-from-upper-right(e.g.{component_examples_of_surround_from_upper_right})/surround-from-below(e.g.{component_examples_of_surround_from_below})/upper-left(e.g.{component_examples_of_upper_left})/upper-right(e.g.{component_examples_of_upper_right})/lower-right(e.g.{component_examples_of_lower_right})/lower-left(e.g.{component_examples_of_lower_left})/enclosed(e.g.{component_examples_of_enclosed})/middle(e.g.{component_examples_of_middle})/sandwiched(e.g.{component_examples_of_sandwiched})/middle-left(e.g.{component_examples_of_middle_left})/middle-right(e.g.{component_examples_of_middle_right}))
 '''
 
 prompt_cE = '''<image> Locate every component of the classical Chinese character.
@@ -105,7 +111,7 @@ X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-fr
 
 prompt_ja = f'''画像にある漢字を構成する全ての部品を見つけてください。
 見つかった各部品は矩形座標とともに下記のような TSV 形式で出力してください：
-X0	Y0	X1	Y1	部品	相対位置（left(偏。例：{component_examples_of_left})/right(旁。例：{component_examples_of_right})/above(冠。例：{component_examples_of_above})/below(脚。例：{component_examples_of_below})/surround-from-upper-left(垂。例：{component_examples_of_surround_from_upper_left})/surround-from-lower-left(繞。例：{component_examples_of_surround_from_lower_left})/full-surround(構。例：{component_examples_of_full_surround})/surround-from-above(構。例：{component_examples_of_surround_from_above})/surround-from-left(例：{component_examples_of_surround_from_left})/surround-from-upper-right(例：{component_examples_of_surround_from_upper_right})/surround-from-below(例：{component_examples_of_surround_from_below})/upper-left(左上。例：{component_examples_of_upper_left})/upper-right(右上。例：{component_examples_of_upper_right})/lower-left(左下。例：{component_examples_of_lower_left})/lower-right(右下。例：{component_examples_of_lower_right})/enclosed(構えの中の部品。例：{component_examples_of_enclosed})/middle(左右や上下の間の部品。例：{component_examples_of_middle})))
+X0	Y0	X1	Y1	部品	相対位置（left(偏。例：{component_examples_of_left})/right(旁。例：{component_examples_of_right})/above(冠。例：{component_examples_of_above})/below(脚。例：{component_examples_of_below})/surround-from-upper-left(垂。例：{component_examples_of_surround_from_upper_left})/surround-from-lower-left(繞。例：{component_examples_of_surround_from_lower_left})/full-surround(構。例：{component_examples_of_full_surround})/surround-from-above(構。例：{component_examples_of_surround_from_above})/surround-from-left(例：{component_examples_of_surround_from_left})/surround-from-upper-right(例：{component_examples_of_surround_from_upper_right})/surround-from-below(例：{component_examples_of_surround_from_below})/upper-left(左上。例：{component_examples_of_upper_left})/upper-right(右上。例：{component_examples_of_upper_right})/lower-left(左下。例：{component_examples_of_lower_left})/lower-right(右下。例：{component_examples_of_lower_right})/enclosed(構えの中の部品。例：{component_examples_of_enclosed})/middle(左右や上下の間の部品。例：{component_examples_of_middle})/sandwiched(例：{component_examples_of_sandwiched})/middle-left(例：{component_examples_of_middle_left})/middle-right(例：{component_examples_of_middle_right})))
 '''
 
 prompt_zh_TW = '''找出圖像中漢字的所有組成部分。
@@ -684,11 +690,12 @@ def merge_above_and_below (image_file, X1, Y1, X2, Y2, Component_Text, Component
 def merge_right_above_and_below (image_file, X1, Y1, X2, Y2, Component_Text, Component_Position, TSV_OUTPUT_PATH):
     im = Image.open(image_file)
     basename = os.path.splitext(os.path.basename(image_file))[0]
+    image_width, image_height = im.size
 
     cx1 = min (X1[1], X1[2])
-    cy1 = min (Y1[1], Y1[2])
-    cx2 = max (X2[1], X2[2])
-    cy2 = max (Y2[1], Y2[2])
+    cy1 = 0 # min (Y1[1], Y1[2])
+    cx2 = image_width - 1  # max (X2[1], X2[2])
+    cy2 = image_height - 1 # max (Y2[1], Y2[2])
     orig_comp2 = Component_Text[1]
     orig_comp3 = Component_Text[2]
     del X1[2]
@@ -838,8 +845,8 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
     Component_Text = []
     Component_Position = []
     with open(f'{TSV_OUTPUT_PATH}/{basename}.tsv', 'w', encoding = 'utf-8') as tsv_destfile:
-        for line_match in re.findall('(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\S+)\s+([a-z-]+)\S*\n?', response):
-            x1, y1, x2, y2, line_text, position = line_match
+        for line_match in re.findall('([0-9]+)\s+([0-9]+)\s+([0-9]+)\s+([0-9]+)\s+([^() \t\n\r]+?)(\(.+\))?\s+([a-z-]+)\S*\n?', response):
+            x1, y1, x2, y2, line_text, comment, position = line_match
             x1 = int (x1)
             y1 = int (y1)
             x2 = int (x2)
@@ -881,7 +888,9 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
                         Component_Position[0] = 'above'
                         Component_Position[1] = 'below'
 
-                elif ( ( Component_Position[1] == 'upper-right' ) and
+                elif ( ( ( Component_Position[1] == 'upper-right' ) or
+                         ( Component_Position[1] == 'right' ) )
+                       and
                        ( Component_Position[2] == 'right' ) ):
                     X1, Y1, X2, Y2, Component_Text, Component_Position = merge_right_above_and_below (image_file,
                                                                                                       X1, Y1,
