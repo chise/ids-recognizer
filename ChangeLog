@@ -1,3 +1,56 @@
+2026-07-03  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py(component_examples_of_left): New variable.
+	(component_examples_of_right): New variable.
+	(component_examples_of_above): New variable.
+	(component_examples_of_below): New variable.
+	(component_examples_of_surround_from_upper_left): New variable.
+	(component_examples_of_surround_from_lower_left): New variable.
+	(component_examples_of_full_surround): New variable.
+	(component_examples_of_surround_from_above): New variable.
+	(component_examples_of_surround_from_left): New variable.
+	(component_examples_of_surround_from_upper_right): New variable.
+	(component_examples_of_surround_from_below): New variable.
+	(component_examples_of_enclosed): New variable.
+	(component_examples_of_middle): New variable.
+	(component_examples_of_upper_right): New variable.
+	(component_examples_of_lower_right): New variable.
+	(component_examples_of_lower_left): New variable.
+	(component_examples_of_upper_left): New variable.
+	(prompt_E5): New variable.
+	(prompt_ja): Refer component_examples_of_*.
+	(simpler_prompt): Likewise.
+	(detect_ids):
+	- Add rule for one-component result.
+	- Treat `lower-left' + `right' as the same as `lower-left' +
+	  `upper-right'.
+	- Treat 'above' + `full' as the same as 'above' + `full-surround'.
+	- Add rules for `lower' + `upper' and `lower' +
+	  `surround-from-above'.
+	- Treat `upper-right' + `lower-right' as the same as
+	  `upper-right' + `enclosed'.
+	- Add rules for `surround' + x.
+	- Treat `surround-from-left' + `full' as the same as
+	  `surround-from-left' + `enclosed'; modify rules when the first
+	  component is '⻌' or '廴'.
+	- Add rule for `surround-from-left' + `right'.
+	- Add rule for `upper-left' + `right' + `below'.
+	- Add rule for `upper-left' + `middle' + `lower-right'.
+	- Add rule for `upper-left' + `middle' + `lower-left'.
+	- Treat `left' + `right' + `lower-right' as the same as
+	  `left' + `upper-right' + `lower-right'.
+	- Add rule for `left' + `right' + `below'.
+	- Add rule for `left' + `full-surround' + `enclosed'.
+	- Use `match' and `case' for 4-components patterns.
+	(merge_left_and_right): New function.
+	(merge_below_left_and_right): New function.
+	(merge_above_and_below): New function.
+	(merge_right_above_and_below): New function.
+	(merge_enclosed_verticale3): New function.
+	(merge_below_left_and_vertical2): New function.
+	(run_OCR_for_glyph_image): Use `merge_*'.
+	(manage_OCR_for_glyph_image): Add code to check IDS.
+
 2026-07-01  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (prompt_ja): New prompt.
