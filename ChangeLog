@@ -1,3 +1,31 @@
+2026-07-04  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (component_examples_of_left): Add some
+	products.
+	(component_examples_of_right): Add some products.
+	(component_examples_of_above): Add some products.
+	(component_examples_of_below): Add some products.
+	(component_examples_of_surround_from_upper_left): Add some products.
+	(component_examples_of_full_surround): Add some products.
+	(component_examples_of_surround_from_above): Add some products.
+	(component_examples_of_surround_from_upper_right): Add some products.
+	(component_examples_of_middle): Add some products.
+	(component_examples_of_upper_right): Add some examples.
+	(component_examples_of_lower_right): Add some examples.
+	(component_examples_of_lower_left): Add some examples.
+	(component_examples_of_sandwiched): New variable.
+	(component_examples_of_middle_left): New variable.
+	(component_examples_of_middle_right): New variable.
+	(prompt_E5): Use `component_examples_of_sandwiched',
+	`component_examples_of_middle_left' and
+	`component_examples_of_middle_right'.
+	(prompt_ja): Likewise.
+	(merge_right_above_and_below): Don't trust geometries of the
+	detected right components.
+	(run_OCR_for_glyph_image): Try to ignore (...) in component text;
+	treat `left' + `right' + `right' as the same as
+	`left' + `right' + `right'.
+
 2026-07-03  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py(component_examples_of_left): New variable.
