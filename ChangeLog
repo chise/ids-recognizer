@@ -1,5 +1,59 @@
 2026-07-04  MORIOKA Tomohiko  <tomo.git@chise.org>
 
+	* ids-recognizer.py (component_examples_of_left): Modified.
+	(component_examples_of_right): Modified.
+	(component_examples_of_above): Modified.
+	(component_examples_of_below): Modified.
+	(component_examples_of_surround_from_upper_left): Modified.
+	(component_examples_of_surround_from_lower_left): Modified.
+	(component_examples_of_full_surround): Modified.
+	(component_examples_of_surround_from_above): Modified.
+	(component_examples_of_enclosed): Modified.
+	(component_examples_of_middle): Modified.
+	(component_examples_of_upper_right): Modified.
+	(component_examples_of_lower_right): Modified.
+	(component_examples_of_lower_left): Modified.
+	(component_examples_of_upper_left): Modified.
+	(component_examples_of_sandwiched): Modified.
+	(component_examples_of_middle_right): Modified.
+	(position_prompt_en): New variable.
+	(position_prompt_en_s): New variable.
+	(position_prompt_ja): New variable.
+	(prompt_E5): Use `position_prompt_en'.
+	(prompt_E5s): New variable.
+	(prompt_cE): Use `position_prompt_en'.
+	(prompt_C): Use `position_prompt_en'.
+	(prompt_cC): Use `position_prompt_en'.
+	(prompt_ja): Fixed.
+	(simpler_prompt): Modified to be more simpler.
+	(detect_ids):
+	- Treat `left' + ( `below' | `above' ) as the same as `left' + `full'.
+	- Treat `upper-right' + `below' as the same as `upper-right' + `lower-right'.
+	- Treat `surround-from-upper-left' + `right' as the same as `surround-from-upper-left' + `lower-right'.
+	- Add rule for `surround-from-upper-left' + `below'.
+	- Add special rule when `surround-from-upper-left' is `耂'.
+	- Add rule for `surround-from-upper-right' + `below'.
+	- Add rule for `above' + `below' + `below'.
+	- Add rule for `above' + `right' + `left'.
+	- Add rule for `above' + `surround-from-above' + ( `middle' + `enclosed' ).
+	- Add rule for `above' + `surround-from-upper-right' + ( `middle' + `enclosed' ).
+	- Add rule for `left' + `above' + `below'.
+	- Add rule for `lower-left' + `upper-right' + `below'.
+	- Add rule for `above' + `below' + `lower-left' + `lower-right'.
+	(merge_above_and_below): Don't trust geometries of the detected above
+	component.
+	(merge_enclosed_vertical3): Renamed from `merge_enclosed_verticale3'.
+	(merge_enclosed_vertical4): New function.
+	(merge_below_vertical3): New function.
+	(run_OCR_for_glyph_image): Modify parser.
+	- Use `merge_right_above_and_below' for `left' + `surround-from-above' + `enclosed'.
+	- Use `merge_above_and_below' for `above' + `surround-from-upper-left' + `below'.
+	- Use `merge_below_vertical3' for `above' + `enclosed' + `sandwiched' + `below'.
+	- Use `merge_above_and_below' for `above' + `surround-from-upper-left' + `middle' + `below'.
+	- Use `merge_enclosed_vertical4' for `surround-from-left' + `enclosed' + `above' + `middle' + `below'.
+
+2026-07-04  MORIOKA Tomohiko  <tomo.git@chise.org>
+
 	* ids-recognizer.py (component_examples_of_left): Add some
 	products.
 	(component_examples_of_right): Add some products.
