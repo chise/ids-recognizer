@@ -1,3 +1,50 @@
+2026-07-06  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (prompt_E): Abolished.
+	(component_examples_of_left): Modified.
+	(component_examples_of_right): Modified.
+	(component_examples_of_above): Modified.
+	(component_examples_of_below): Modified.
+	(component_examples_of_enclosed): Add some examples.
+	(component_examples_of_middle): Abolished; separated into
+	`component_examples_of_sandwiched_from_left_and_right' and
+	`component_examples_of_sandwiched_from_above_and_below'.
+	(component_examples_of_lower_right): Add an example.
+	(component_examples_of_sandwiched): Abolished; separated into
+	`component_examples_of_sandwiched_from_left_and_right' and
+	`component_examples_of_sandwiched_from_above_and_below'.
+	(component_examples_of_sandwiched_from_left_and_right): New
+	variable.
+	(component_examples_of_sandwiched_from_above_and_below): New
+	variable.
+	(component_examples_of_inserted_from_left): Renamed from
+	`component_examples_of_middle_left'.
+	(component_examples_of_inserted_from_right): Renamed from
+	`component_examples_of_middle_right'.
+	(position_prompt_en_p): New variable.
+	(position_prompt_ja_p): New variable.
+	(prompt_E6p): New variable [renamed from `prompt_E'].
+	(prompt_C6p): New variable.
+	(prompt_J6p): New variable.
+	(prompt_J): Use `position_prompt_en'.
+	(prompt_ja): Use `position_prompt_ja'.
+	(prompt_ja6p): New variable.
+	(retry_prompt): New variable.
+	(retry_prompt2): New variable.
+	(detect_ids):
+	- Add rule for `above' + `right' [when X1[0] <= X2[1]].
+	- Add rule for `enclosed' + `surround-from-lower-left' [reversed
+	  seq].
+	- Treat `surround-from-lower-left' + `full-surround' as the same
+	  as `surround-from-lower-left' + `enclosed'.
+	(run_OCR_for_glyph_image):
+	- Modify rules for `upper-left' + `upper-right' + x to treat
+	  `surround-from-upper-right' component.
+	- Add components merge rule for 'surround-from-lower-left' +
+	  `above' + `sandwiched-from-above-and-below' +
+	  `sandwiched-from-above-and-below'.
+	(manage_OCR_for_glyph_image): Modify some retry rules.
+
 2026-07-04  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (component_examples_of_left): Modified.
