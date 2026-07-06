@@ -29,18 +29,13 @@ model_name = model_path[model_separator_pos + 1:]
 model, processor = load(model_path)
 config = load_config(model_path)
 
-prompt_E = '''<image> Locate every component of the Chinese character.
-Report each component with bbox coordinates as TSV format like:
-X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-from-above/surround-from-below/surround-from-left/surround-from-right/surround-from-upper-left/surround-from-upper-right/surround-from-lower-left/surround-from-lower-right/upper-left/upper-right/lower-left/lower-right/enclosed/middle)
-'''
+component_examples_of_left = '口(叶),亻,扌,忄,𤣩,彳,糹,釒,訁,飠,⻖,犭,衤,礻,⺬,⻊,冫,氵,支(𠚽),木(機),糸,舌,辛,甫,歹,文,龠,禾,齒,雚,蒙,𠁣(門),𩰋(鬥),坐,了,同,𫵖,子,孑,斉,咅,仌,丁,亭,彦,矢(知),㠯(𰀥),𦰩(難),巳(𠨎),己(𠨎),刃(𱐔),彡(須),立(䇃),堇(勤),人(从),矛(敄),尚(敞),十(卄),丰(邦),田(畼),矣(欸)'
 
-component_examples_of_left = '口(叶),亻,扌,忄,𤣩,彳,糹,釒,訁,飠,⻖,犭,衤,礻,⺬,⻊,冫,氵,支(𠚽),木(機),糸,舌,辛,甫,歹,文,龠,禾,齒,雚,蒙,𠁣(門),𩰋(鬥),坐,了,共,同,𫵖,子,孑,斉,咅,仌,丁,亭,彦,矢(知),㠯(𰀥),𦰩(難),巳(𠨎),己(𠨎),刃(𱐔),彡(須),立(䇃),堇(勤),人(从),矛(敄),尚(敞),十(卄),丰(邦),田(畼)'
+component_examples_of_right = '刂,⻏,卩,攵(牧),攴,口,乚,夌,垔,豈,栗,倉,冥,彔,欠,𠃛,𩰊,㣊,菐,犬,丣,坐,與,舁,頃,了,共(供),巽(撰),同,子,齊,斉,咅,仌,互(坘),亟(極),丁,亭,彦,矢(䀢),難(儺),㠯(佀),矣(俟),尹(伊),巳(𠨎),己(𠨎),巽(撰),刃(仞),彡(杉),頁(頃),立(位),冉(呥),厶(私),堇(謹),人(从),从(𪻐),杀(刹),𣏂(剎),矛(䋒),𠂉(𭤨),尚(倘),衣(挔),𧘇(𠇊),几(机),支(伎),十(什),丰(仹),卯(柳),田(畑),尺(択)'
 
-component_examples_of_right = '刂,⻏,卩,攵(牧),攴,口,乚,夌,垔,豈,栗,倉,冥,彔,欠,𠃛,𩰊,㣊,菐,犬,丣,坐,與,舁,頃,了,共,巽,同,子,齊,斉,咅,仌,互(坘),亟(極),丁,亭,彦,矢(䀢),難(儺),㠯(佀),矣(俟),尹(伊),巳(𠨎),己(𠨎),巽(撰),刃(仞),彡(杉),頁(頃),立(位),冉(呥),厶(私),堇(謹),人(从),从(𪻐),杀(刹),𣏂(剎),矛(䋒),𠂉(𭤨),尚(倘),衣(挔),𧘇(𠇊),几(机),支(伎),十(什),丰(仹),卯(柳),田(畑),尺(択)'
+component_examples_of_above = '亠,宀,冖,⺮,艹,癶,𭼽,𪱙,罒,覀,⺷(義),屮(㞷),爫,彐,彑,夂(冬),文,䒑(屰),业(業),兴,加,卯,次,所,𣅀,立(音),㐭,𠆢,亼,亽,六,𫩠,八,⺜,𠀎,准,禾,𦥯,龹,𤇾,𰃮,𫇦,髟,冎,𡨄,𣦼,殸,攸,氶(丞),处,丣,一,𦥑,與,頃,了,共(巷),龻,𰀉,灾,𦥔,吅,咅,亟,𦭝(蔑),難(臡),𠀐(貴),亞(亞),㇇(氶),𠨎(巽),刃(忍),彡(辵),攵(㣊),不(否),冉(𣅾),厶(弁),人(介),从(怂),吅(單),𱼀(䍃),矛(柔),巛(巢),𠂉(乞),尚(堂),衣(𧘉),几(殳),支(𥁈),十(古),丰(𣐇),卯(𨥫),田(界),尺(𪽗),𠨎(巽)'
 
-component_examples_of_above = '亠,宀,冖,⺮,艹,癶,𭼽,𪱙,罒,覀,⺷(義),屮(㞷),爫,彐,彑,夂(冬),文,䒑,业(業),兴,加,卯,次,所,𣅀,立(音),㐭,𠆢,亼,亽,六,𫩠,八,⺜,𠀎,准,禾,𦥯,龹,𤇾,𰃮,𫇦,髟,冎,𡨄,𣦼,殸,攸,氶(丞),处,丣,一,𦥑,與,頃,了,共,龻,𰀉,灾,𦥔,吅,咅,亟,𦭝(蔑),難(臡),𠀐(貴),亞(亞),㇇(氶),𠨎(巽),刃(忍),彡(辵),攵(㣊),不(否),冉(𣅾),厶(弁),人(介),从(怂),吅(單),𱼀(䍃),矛(柔),巛(巢),𠂉(乞),尚(堂),衣(𧘉),几(殳),支(𥁈),十(古),丰(𣐇),卯(𨥫),田(界),尺(𪽗)'
-
-component_examples_of_below = '⺗,灬,龰,夂(夏),夊,口,二,儿,几(亢),了,子,旦,丂,𰆊,八,大,犬,𬺢(具),厶(去),彡,難,菐,廾,𪱙,丣,坐,一(丞),與,舁,頃,了,共,巽,同,吅,互(𦬚),亟,丁,亭,屮(𡗡),矢(矣),難(𦍀),㠯(官),𪟊(寡),巽(𦺈),刃(𦬄),彡(㐱),立(笠),不(示),冉(再),堇(蓳),人(珡),从(𠅃),业(並),朩(杀),朮(𣏂),术(𣏂),吅(品),矛(罞),巛(𠮰),𠦒(華),禸(禺),衣(装),𧘇(衣),支(芰),十(早),丰(夆),卯(奅),田(畗),尺(𫁶)'
+component_examples_of_below = '⺗,灬,龰,夂(夏),夊,口,二,儿(兄),几(亢),了,子,旦,丂,𰆊,八,大,犬,𬺢(具),厶(去),彡,難,菐,廾,𪱙,丣,坐,一(丞),與,舁,頃,了,共(巽),巽(𦺈),同,吅,互(𦬚),亟,丁,亭,屮(𡗡),矢(矣),難(𦍀),㠯(官),𪟊(寡),巽(𦺈),刃(𦬄),彡(㐱),立(笠),不(示),冉(再),堇(蓳),人(珡),从(𠅃),业(並),朩(杀),朮(𣏂),术(𣏂),吅(品),矛(罞),巛(𠮰),𠦒(華),禸(禺),衣(装),𧘇(衣),支(芰),十(早),丰(夆),卯(奅),田(畗),尺(𫁶),𠨎(𠨕),矣(𦮸),䒑(豆)'
 
 component_examples_of_surround_from_upper_left = '厂,𠂆,𠂋(后),厃(危),疒,尸,广,戸,虍(處),𬻉,𭤨(旗),倝(幹),产,𠂇(右),麻(磨),鹿,⺶,攸,𠩵,耂,尹(君)'
 
@@ -56,29 +51,38 @@ component_examples_of_surround_from_upper_right = '勹,气,戈,弋,⺄'
 
 component_examples_of_surround_from_below = '凵,𠒂,舁'
 
-component_examples_of_enclosed = '丶(丼),口(哀),歹(夙),女(威),日(間),同(興),仌(𠕎),人(閃),㗊(𡈨),亻(亟),丰(𠙾),田(𡇍)'
-
-component_examples_of_middle = '丩(嘂),頁(囂),言(龻),日(卓),目(算),𡵉(微),合(搿),分(椕),冖(牵),田(畫),⺣(稥),厶(窓),冖(亭),𠀎(𡨄),丨(攸),一(兴),𦰩(攤),水(丞),亅(水),厶(𣏋),矛(楙),巛(巠)'
+component_examples_of_enclosed = '丶(丼),口(哀),歹(夙),女(威),日(間),同(興),仌(𠕎),人(閃),㗊(𡈨),亻(亟),丰(𠙾),田(𡇍),巽(𨶷),矣(𨴱),䒑(𦉰)'
 
 component_examples_of_upper_right = '力(勉),匕(匙),㠯(𲏘),巽(選),彡(尨),𱼀(將),巛(巡),𠂉(臨),𧘇(𮞅),几(処),互(𧺳),卯(𨒖),田(𤔉)'
 
-component_examples_of_lower_right = '彡(修),其(旗),力(勝),㔾(卮),子(㞌),亟(𢉗),丁(庁),矢(侯),矣(𡱢),㠯(𢈂),立(𢨶),攵(䖍),冉(㾆),堇(厪),人(庂),巛(𠈉),夂(䖍),攵(䖍),尚(𤷛),衣(扆),支(庋),丰(𠨵),卯(㡻)'
+component_examples_of_lower_right = '彡(修),其(旗),力(勝),㔾(卮),子(㞌),亟(𢉗),丁(庁),矢(侯),矣(𡱢),㠯(𢈂),立(𢨶),攵(䖍),冉(㾆),堇(厪),人(庂),巛(𠈉),夂(䖍),攵(䖍),尚(𤷛),衣(扆),支(庋),丰(𠨵),卯(㡻),共(𢈎)'
 
 component_examples_of_lower_left = '十(卂),口(句),口(命),𬺣(或),立(𣱠),丰(𫻩),田(𤰭)'
 
 component_examples_of_upper_left = '土(敖),氵(柒),氵(染),叕(歠),日(猒),瓜(瓥),耳(聖),𱼀(然)'
 
-component_examples_of_sandwiched = '了(氶),𬼶(亟),人(臾)'
+component_examples_of_sandwiched_from_left_and_right = '矛(楙),𦰩(攤),丨(攸),亅(水),分(椕),合(搿),𡵉(微),丩(嘂),了(氶),𬼶(亟),人(臾)'
 
-component_examples_of_middle_left = '口(亟),㇇(丞)'
+component_examples_of_sandwiched_from_above_and_below = '一(兴),頁(囂),日(卓),目(算),田(畫),⺣(稥),厶(窓),冖(亭),𠀎(𡨄),水(丞),厶(𣏋),巛(巠)'
 
-component_examples_of_middle_right = '又(亟),品(區),矢(医),厶(鬼),王(匡),田(𭅗)'
+component_examples_of_inserted_from_left = '口(亟),㇇(丞)'
 
-position_prompt_en = f'position (left(e.g.{component_examples_of_left})/right(e.g.{component_examples_of_right})/above(e.g.{component_examples_of_above})/below(e.g.{component_examples_of_below})/surround-from-upper-left(e.g.{component_examples_of_surround_from_upper_left})/surround-from-lower-left(e.g.{component_examples_of_surround_from_lower_left})/full-surround(e.g.{component_examples_of_full_surround})/surround-from-above(e.g.{component_examples_of_surround_from_above})/surround-from-left(e.g.{component_examples_of_surround_from_left})/surround-from-upper-right(e.g.{component_examples_of_surround_from_upper_right})/surround-from-below(e.g.{component_examples_of_surround_from_below})/upper-left(e.g.{component_examples_of_upper_left})/upper-right(e.g.{component_examples_of_upper_right})/lower-right(e.g.{component_examples_of_lower_right})/lower-left(e.g.{component_examples_of_lower_left})/enclosed(e.g.{component_examples_of_enclosed})/middle(e.g.{component_examples_of_middle})/sandwiched(e.g.{component_examples_of_sandwiched})/middle-left(e.g.{component_examples_of_middle_left})/middle-right(e.g.{component_examples_of_middle_right}))'
+component_examples_of_inserted_from_right = '又(亟),品(區),矢(医),厶(鬼),王(匡),田(𭅗),巽(㔵)'
 
-position_prompt_en_s = f'position (left(e.g.{component_examples_of_left})/right(e.g.{component_examples_of_right})/above(e.g.{component_examples_of_above})/below(e.g.{component_examples_of_below})/surround-from-upper-left(e.g.{component_examples_of_surround_from_upper_left})/surround-from-lower-left(e.g.{component_examples_of_surround_from_lower_left})/full-surround(e.g.{component_examples_of_full_surround})/surround-from-above(e.g.{component_examples_of_surround_from_above})/surround-from-left(e.g.{component_examples_of_surround_from_left})/surround-from-upper-right(e.g.{component_examples_of_surround_from_upper_right})/surround-from-below(e.g.{component_examples_of_surround_from_below})/upper-left(e.g.{component_examples_of_upper_left})/upper-right(e.g.{component_examples_of_upper_right})/lower-right(e.g.{component_examples_of_lower_right})/lower-left(e.g.{component_examples_of_lower_left})/enclosed(e.g.{component_examples_of_enclosed})/middle(e.g.{component_examples_of_middle})'
+position_prompt_en = f'position (left(e.g.{component_examples_of_left})/right(e.g.{component_examples_of_right})/above(e.g.{component_examples_of_above})/below(e.g.{component_examples_of_below})/surround-from-upper-left(e.g.{component_examples_of_surround_from_upper_left})/surround-from-lower-left(e.g.{component_examples_of_surround_from_lower_left})/full-surround(e.g.{component_examples_of_full_surround})/surround-from-above(e.g.{component_examples_of_surround_from_above})/surround-from-left(e.g.{component_examples_of_surround_from_left})/surround-from-upper-right(e.g.{component_examples_of_surround_from_upper_right})/surround-from-below(e.g.{component_examples_of_surround_from_below})/upper-left(e.g.{component_examples_of_upper_left})/upper-right(e.g.{component_examples_of_upper_right})/lower-right(e.g.{component_examples_of_lower_right})/lower-left(e.g.{component_examples_of_lower_left})/enclosed(e.g.{component_examples_of_enclosed})/sandwiched-from-left-and-right(e.g.{component_examples_of_sandwiched_from_left_and_right})/sandwiched-from-above-and-below(e.g.{component_examples_of_sandwiched_from_above_and_below})/inserted-from-left(e.g.{component_examples_of_inserted_from_left})/inserted-from-right(e.g.{component_examples_of_inserted_from_right}))'
 
-position_prompt_ja = f'相対位置(left(偏。例：{component_examples_of_left})/right(旁。例：{component_examples_of_right})/above(冠。例：{component_examples_of_above})/below(脚。例：{component_examples_of_below})/surround-from-upper-left(垂。例：{component_examples_of_surround_from_upper_left})/surround-from-lower-left(繞。例：{component_examples_of_surround_from_lower_left})/full-surround(構(a)。例：{component_examples_of_full_surround})/surround-from-above(構(b)。例：{component_examples_of_surround_from_above})/surround-from-left(例：{component_examples_of_surround_from_left})/surround-from-upper-right(例：{component_examples_of_surround_from_upper_right})/surround-from-below(例：{component_examples_of_surround_from_below})/upper-left(左上。例：{component_examples_of_upper_left})/upper-right(右上。例：{component_examples_of_upper_right})/lower-right(右下。例：{component_examples_of_lower_right})/lower-left(左下。例：{component_examples_of_lower_left})/enclosed(構えの中の部品。例：{component_examples_of_enclosed})/middle(中。例：{component_examples_of_middle})/sandwiched(挟まれた部品。例：{component_examples_of_sandwiched})/middle-left(左中央。例：{component_examples_of_middle_left})/middle-right(右中央。例：{component_examples_of_middle_right}))'
+position_prompt_en_s = f'position (left(e.g.{component_examples_of_left})/right(e.g.{component_examples_of_right})/above(e.g.{component_examples_of_above})/below(e.g.{component_examples_of_below})/surround-from-upper-left(e.g.{component_examples_of_surround_from_upper_left})/surround-from-lower-left(e.g.{component_examples_of_surround_from_lower_left})/full-surround(e.g.{component_examples_of_full_surround})/surround-from-above(e.g.{component_examples_of_surround_from_above})/surround-from-left(e.g.{component_examples_of_surround_from_left})/surround-from-upper-right(e.g.{component_examples_of_surround_from_upper_right})/surround-from-below(e.g.{component_examples_of_surround_from_below})/upper-left(e.g.{component_examples_of_upper_left})/upper-right(e.g.{component_examples_of_upper_right})/lower-right(e.g.{component_examples_of_lower_right})/lower-left(e.g.{component_examples_of_lower_left})/enclosed(e.g.{component_examples_of_enclosed})'
+
+position_prompt_ja = f'相対位置(left(偏。例：{component_examples_of_left})/right(旁。例：{component_examples_of_right})/above(冠。例：{component_examples_of_above})/below(脚。例：{component_examples_of_below})/surround-from-upper-left(垂。例：{component_examples_of_surround_from_upper_left})/surround-from-lower-left(繞。例：{component_examples_of_surround_from_lower_left})/full-surround(構1。例：{component_examples_of_full_surround})/surround-from-above(構2。例：{component_examples_of_surround_from_above})/surround-from-left(例：{component_examples_of_surround_from_left})/surround-from-upper-right(例：{component_examples_of_surround_from_upper_right})/surround-from-below(例：{component_examples_of_surround_from_below})/upper-left(左上。例：{component_examples_of_upper_left})/upper-right(右上。例：{component_examples_of_upper_right})/lower-right(右下。例：{component_examples_of_lower_right})/lower-left(左下。例：{component_examples_of_lower_left})/enclosed(構えの中の部品。例：{component_examples_of_enclosed})/sandwiched-from-left-and-right(左右の間。例：{component_examples_of_sandwiched_from_left_and_right})/sandwiched-from-above-and-below(上下の間。例：{component_examples_of_sandwiched_from_above_and_below})/inserted-from-left(例：{component_examples_of_inserted_from_left})/inserted-from-right(例：{component_examples_of_inserted_from_right}))'
+
+position_prompt_en_p = 'position (left/right/above/below/surround-from-upper-left/surround-from-lower-left/full-surround/surround-from-above/surround-from-left/surround-from-upper-right/surround-from-below/surround-from-right/surround-from-lower-right/upper-left/upper-right/lower-left/lower-right/enclosed/sandwiched-from-left-and-right/sandwiched-from-above-and-below/inserted-from-left/inserted-from-right)'
+
+position_prompt_ja_p = '相対位置(left(偏)/right(旁)/above(冠)/below(脚)/surround-from-upper-left(垂)/surround-from-lower-left(繞)/full-surround(箱構)/surround-from-above(上構)/surround-from-left/surround-from-upper-right/surround-from-below/upper-left(左上)/upper-right(右上)/lower-left(左下)/lower-right(右下)/enclosed(構えの中)/sandwiched-from-left-and-right(左右の間)/sandwiched-from-above-and-below(上下の間)/inserted-from-left/inserted-from-right)'
+
+prompt_E6p = f'''<image> Locate every component of the Chinese character.
+Report each component with bbox coordinates as TSV format like:
+X0	Y0	X1	Y1	component	{position_prompt_en_p}
+'''
 
 prompt_E5 = f'''<image> Locate every component of the Chinese character.
 Report each component with bbox coordinates as TSV format like:
@@ -95,6 +99,11 @@ Report each component with bbox coordinates as TSV format like:
 X0	Y0	X1	Y1	component	{position_prompt_en}
 '''
 
+prompt_C6p = f'''<image> Locate every component of the Hanzi.
+Report each component with bbox coordinates as TSV format like:
+X0	Y0	X1	Y1	component	{position_prompt_en_p}
+'''
+
 prompt_C = f'''<image> Locate every component of the Hanzi.
 Report each component with bbox coordinates as TSV format like:
 X0	Y0	X1	Y1	component	{position_prompt_en}
@@ -105,9 +114,14 @@ Report each component with bbox coordinates as TSV format like:
 X0	Y0	X1	Y1	component	{position_prompt_en}
 '''
 
-prompt_J = '''<image> Locate every component of the Kanji.
+prompt_J6p = f'''<image> Locate every component of the Kanji.
 Report each component with bbox coordinates as TSV format like:
-X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-from-above/surround-from-below/surround-from-left/surround-from-right/surround-from-upper-left/surround-from-upper-right/surround-from-lower-left/surround-from-lower-right/upper-left/upper-right/lower-left/lower-right/enclosed/middle)
+X0	Y0	X1	Y1	component	{position_prompt_en_p}
+'''
+
+prompt_J = f'''<image> Locate every component of the Kanji.
+Report each component with bbox coordinates as TSV format like:
+X0	Y0	X1	Y1	component	{position_prompt_en}
 '''
 
 prompt_cJ = '''<image> Locate every component of the classical Kanji.
@@ -122,7 +136,12 @@ X0	Y0	X1	Y1	component	position (above/below/left/right/full-surround/surround-fr
 
 prompt_ja = f'''画像にある漢字を構成する全ての部品を見つけてください。
 見つかった各部品は矩形座標とともに下記のような TSV 形式で出力してください：
-X0	Y0	X1	Y1	部品	相対位置(left(偏。例：{component_examples_of_left})/right(旁。例：{component_examples_of_right})/above(冠。例：{component_examples_of_above})/below(脚。例：{component_examples_of_below})/surround-from-upper-left(垂。例：{component_examples_of_surround_from_upper_left})/surround-from-lower-left(繞。例：{component_examples_of_surround_from_lower_left})/full-surround(構。例：{component_examples_of_full_surround})/surround-from-above(構。例：{component_examples_of_surround_from_above})/surround-from-left(例：{component_examples_of_surround_from_left})/surround-from-upper-right(例：{component_examples_of_surround_from_upper_right})/surround-from-below(例：{component_examples_of_surround_from_below})/upper-left(左上。例：{component_examples_of_upper_left})/upper-right(右上。例：{component_examples_of_upper_right})/lower-left(左下。例：{component_examples_of_lower_left})/lower-right(右下。例：{component_examples_of_lower_right})/enclosed(構えの中の部品。例：{component_examples_of_enclosed})/middle(左右や上下の間の部品。例：{component_examples_of_middle})/sandwiched(例：{component_examples_of_sandwiched})/middle-left(例：{component_examples_of_middle_left})/middle-right(例：{component_examples_of_middle_right}))
+X0	Y0	X1	Y1	部品	{position_prompt_ja}
+'''
+
+prompt_ja6p = f'''画像にある漢字を構成する全ての部品を見つけてください。
+見つかった各部品は矩形座標とともに下記のような TSV 形式で出力してください：
+X0	Y0	X1	Y1	部品	{position_prompt_ja_p}
 '''
 
 prompt_zh_TW = '''找出圖像中漢字的所有組成部分。
@@ -131,14 +150,25 @@ prompt_zh_TW = '''找出圖像中漢字的所有組成部分。
 X0	Y0	X1	Y1	組成部分	相對位置(left(偏。例如:口,亻,扌,忄,𤣩,彳,糹,釒,訁,飠,⻖,犭,衤,礻,⺬,⻊,冫,氵,麥,麦,風,支,鼠,木,糸)/right(旁。例如:刂,⻏,卩,攵,攴,口)/above(頭。例如:宀,冖,⺮,艹,癶,罒,覀,屮,爫,彐,彑,夂,文)/below(底。例如:⺗,灬,龰,夂,夊,口)/surround-from-upper-left(例如:厂,疒,尸,广,戸,虍)/surround-from-lower-left(例如:⻌,廴,走,鬼,麥,麦,風,支,爪,毛,夊,鼠,文,几)/full-surround(同時夾著文字上下或左右。例如:囗,行,衣)/surround-from-above(例如:門,几,冂,鬥)/surround-from-left(匚,匸など)/surround-from-upper-right(例如:勹,气,戈,弋)/surround-from-below(例如:凵)/upper-left(左上)/upper-right(右上)/lower-left(左下)/lower-right(右下)/enclosed(内部的部件)/middle(夾在左右或上下之間的部件))
 '''
 
-#prompt = prompt_J
-#prompt = prompt_E
+#prompt = prompt_E6p
 #prompt = prompt_cE
 #prompt = prompt_C
 #prompt = prompt_ja
+#prompt = prompt_ja6p
 #prompt = prompt_zh_TW
 #prompt = prompt_E5
-prompt = prompt_E5s
+#prompt = prompt_E5s
+#retry_prompt = prompt_ja6p
+#retry_prompt = prompt_ja
+#prompt = prompt_C6p
+
+# prompt = prompt_J6p
+# retry_prompt = prompt_ja
+# retry_prompt2 = prompt_C
+
+prompt = prompt_E6p
+retry_prompt = prompt_ja
+retry_prompt2 = prompt_C
 
 simpler_prompt = f'''<image> Locate every component of the Kanji.
 Report each component with bbox coordinates as TSV format like:
@@ -271,6 +301,9 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                      ( Component_Position[1] == 'full' ) or
                      ( Component_Position[1] == 'enclosed' ) ):
                     return f'⿱{Component_Text[0]}{Component_Text[1]}'
+                elif ( ( Component_Position[1] == 'right' ) and
+                       ( X1[0] <= X2[1] ) ):
+                    return f'⿰{Component_Text[0]}{Component_Text[1]}'
 
             case 'upper':
                 if ( ( Component_Position[1] == 'below' ) or
@@ -304,6 +337,10 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
                        ( Component_Position[1] == 'lower-right' ) or
                        ( Component_Position[1] == 'below' ) ):
                     return f'⿱{Component_Text[0]}{Component_Text[1]}'
+
+            case 'enclosed':
+                if Component_Position[1] == 'surround-from-lower-left':
+                    return f'⿺{Component_Text[1]}{Component_Text[0]}'
 
             case 'surround':
                 if Component_Position[1] == 'middle':
@@ -401,7 +438,8 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position):
             case 'surround-from-lower-left':
                 if ( ( Component_Position[1] == 'middle' ) or
                      ( Component_Position[1] == 'enclosed' ) or
-                     ( Component_Position[1] == 'upper-right' ) ):
+                     ( Component_Position[1] == 'upper-right' ) or
+                     ( Component_Position[1] == 'full-surround' ) ):
                     return f'⿺{Component_Text[0]}{Component_Text[1]}'
 
             case 'surround-from-right':
@@ -1097,7 +1135,14 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
                                                                                                    Component_Text,
                                                                                                    Component_Position,
                                                                                                    TSV_OUTPUT_PATH)
-                        Component_Position[0] = 'above'
+                        if ( ( Component_Text[0] == '勹' ) or
+                             ( Component_Text[0] == '气' ) or
+                             ( Component_Text[0] == '戈' ) or
+                             ( Component_Text[0] == '弋' ) or
+                             ( Component_Text[0] == '⺄' ) ):
+                            Component_Position[0] = 'surround-from-upper-right'
+                        else:
+                            Component_Position[0] = 'above'
                         Component_Position[1] = 'below'
 
                     elif ( ( abs(X1[1] - X1[0]) < 5 ) and
@@ -1203,6 +1248,17 @@ def run_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
                                                                                                Component_Text,
                                                                                                Component_Position,
                                                                                                TSV_OUTPUT_PATH)
+
+        elif ( ( Component_Position[0] == 'surround-from-lower-left' ) and
+               ( Component_Position[1] == 'above' ) and
+               ( Component_Position[2] == 'sandwiched-from-above-and-below' ) and
+               ( Component_Position[3] == 'sandwiched-from-above-and-below' ) ):
+            X1, Y1, X2, Y2, Component_Text, Component_Position = merge_enclosed_vertical3 (image_file,
+                                                                                           X1, Y1,
+                                                                                           X2, Y2,
+                                                                                           Component_Text,
+                                                                                           Component_Position,
+                                                                                           TSV_OUTPUT_PATH)
 
         elif ( ( Component_Position[0] == 'upper-left' ) and
                ( Component_Position[1] == 'upper-right' ) and
@@ -1397,12 +1453,7 @@ def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH
                 print(char_response, file=full_destfile)
             return char_response
         else:
-            ids = detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position)
-            if ids:
-                with open(f'{OUTPUT_PATH}/{basename}_ids.txt',
-                          'w', encoding = 'utf-8') as ids_destfile:
-                    print(ids, file=ids_destfile)
-            elif len(Component_Text) == 1:
+            if len(Component_Text) == 1:
                 if (os.path.isfile(full_file_name)):
                     os.remove(full_file_name)
 
@@ -1414,25 +1465,103 @@ def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH
                     with open(full_file_name, 'w', encoding = 'utf-8') as full_destfile:
                         print(Component_Text[0], file=full_destfile)
 
+            elif len(Component_Text) == 2:
+                if ( ( X1[0] == X1[1] ) and
+                     ( Y1[0] == Y1[1] ) and
+                     ( X2[0] == X2[1] ) and
+                     ( Y2[0] == Y2[1] ) ):
+                    print ('Retry')
+                    X1, Y1, X2, Y2, Component_Text, Component_Position = run_OCR_for_glyph_image (image_file_name,
+                                                                                                  retry_prompt,
+                                                                                                  TSV_OUTPUT_PATH,
+                                                                                                  OUTPUT_PATH)
+                else:
+                    match Component_Position[0]:
+                        case 'left':
+                            if Component_Position[1] == 'surround-from-above':
+                                print ('Retry')
+                                X1, Y1, X2, Y2, Component_Text, Component_Position = run_OCR_for_glyph_image (image_file_name,
+                                                                                                              component_prompt,
+                                                                                                              TSV_OUTPUT_PATH,
+                                                                                                              OUTPUT_PATH)
+
+                            elif ( ( Component_Text[1] == '夊' ) or
+                                   ( Component_Text[1] == '冂' ) or
+                                   ( Component_Text[1] == '攸') ):
+                                print ('Retry')
+                                X1, Y1, X2, Y2, Component_Text, Component_Position = run_OCR_for_glyph_image (image_file_name,
+                                                                                                              retry_prompt,
+                                                                                                              TSV_OUTPUT_PATH,
+                                                                                                              OUTPUT_PATH)
+
+                        case 'above':
+                            if ( ( Component_Text[0] == '⺌' ) or
+                                 ( Component_Text[1] == '八' ) ):
+                                print ('Retry')
+                                X1, Y1, X2, Y2, Component_Text, Component_Position = run_OCR_for_glyph_image (image_file_name,
+                                                                                                              retry_prompt,
+                                                                                                              TSV_OUTPUT_PATH,
+                                                                                                              OUTPUT_PATH)
+
+                        case 'upper-left':
+                            if Component_Text[0] == '亠':
+                                print ('Retry')
+                                X1, Y1, X2, Y2, Component_Text, Component_Position = run_OCR_for_glyph_image (image_file_name,
+                                                                                                              retry_prompt,
+                                                                                                              TSV_OUTPUT_PATH,
+                                                                                                              OUTPUT_PATH)
+
+                        case 'full-surround':
+                            if Component_Text[0] == '儿':
+                                print ('Retry')
+                                X1, Y1, X2, Y2, Component_Text, Component_Position = run_OCR_for_glyph_image (image_file_name,
+                                                                                                              retry_prompt,
+                                                                                                              TSV_OUTPUT_PATH,
+                                                                                                              OUTPUT_PATH)
+
+                        case 'surround-from-lower-left':
+                            if Component_Text[0] == '勹':
+                                print ('Retry')
+                                X1, Y1, X2, Y2, Component_Text, Component_Position = run_OCR_for_glyph_image (image_file_name,
+                                                                                                              retry_prompt,
+                                                                                                              TSV_OUTPUT_PATH,
+                                                                                                              OUTPUT_PATH)
+
             elif len(Component_Text) > 7:
                 X1, Y1, X2, Y2, Component_Text, Component_Position = run_OCR_for_glyph_image (image_file_name,
                                                                                               simpler_prompt,
                                                                                               TSV_OUTPUT_PATH,
                                                                                               OUTPUT_PATH)
-                if ( ( len(char_response) == 1 ) and
-                     ( any ( comp == char_response for comp in Component_Text ) ) ):
-                    with open(full_file_name, 'w', encoding = 'utf-8') as full_destfile:
-                        print(char_response, file=full_destfile)
-                        return char_response
+
+        ids = detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position)
+        if ids:
+            with open(f'{OUTPUT_PATH}/{basename}_ids.txt',
+                      'w', encoding = 'utf-8') as ids_destfile:
+                print(ids, file=ids_destfile)
+            return ids
+        else:
+            print ('Retry')
+            X1, Y1, X2, Y2, Component_Text, Component_Position = run_OCR_for_glyph_image (image_file_name,
+                                                                                          retry_prompt2,
+                                                                                          TSV_OUTPUT_PATH,
+                                                                                          OUTPUT_PATH)
+            if ( ( len(char_response) == 1 ) and
+                 ( any ( comp == char_response for comp in Component_Text ) ) ):
+                with open(full_file_name, 'w', encoding = 'utf-8') as full_destfile:
+                    print(char_response, file=full_destfile)
+                return char_response
+            else:
+                ids = detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position)
+                if ids:
+                    with open(f'{OUTPUT_PATH}/{basename}_ids.txt',
+                              'w', encoding = 'utf-8') as ids_destfile:
+                        print(ids, file=ids_destfile)
+                    return ids
                 else:
-                    ids = detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position)
-                    if ids:
-                        with open(f'{OUTPUT_PATH}/{basename}_ids.txt',
-                                  'w', encoding = 'utf-8') as ids_destfile:
-                            print(ids, file=ids_destfile)
-
-    return ids
-
+                    if ( len(char_response) == 1 ):
+                        with open(full_file_name, 'w', encoding = 'utf-8') as full_destfile:
+                            print(char_response, file=full_destfile)
+                        return char_response
 
 proc = subprocess.run("ipfs add -- | cut -d' ' -f2", shell=True, input=prompt, stdout=PIPE, stderr=PIPE, text=True)
 IPFS_CID = proc.stdout.rstrip('\r\n')
