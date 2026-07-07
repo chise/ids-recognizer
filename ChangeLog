@@ -1,3 +1,27 @@
+2026-07-07  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (component_examples_of_left): Add some
+	examples.
+	(component_examples_of_right): Likewise.
+	(component_examples_of_above): Likewise.
+	(component_examples_of_below): Likewise.
+	(component_examples_of_full_surround): Likewise.
+	(component_examples_of_upper_right): Likewise.
+	(component_examples_of_lower_right): Likewise.
+	(component_examples_of_lower_left): Add an example.
+	(component_examples_of_sandwiched_from_left_and_right): Likewise.
+	(component_examples_of_sandwiched_from_above_and_below): Likewise.
+	(position_prompt_zh_TW): New variable.
+	(prompt_zh_TW): Use `position_prompt_zh_TW'.
+	(detect_ids):
+	- Add special rule when a `surround-from-left' is `食'.
+	- Add rule for `surround-from-left' + `surround-from-right'.
+	- Add special rule for `surround-from-upper-left' + ( `enclosed' |
+	  ... ) when `surround-from-upper-left' is `几' or `門'.
+	- Treat `above' + `sandwiched-from-above-and-below' + `below' as
+	  the same as `above' + `enclosed' + `below'.
+	(manage_OCR_for_glyph_image): Use `retry_flag'.
+
 2026-07-06  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (prompt_E): Abolished.
