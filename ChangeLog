@@ -5,6 +5,31 @@
 	(component_examples_of_right): Likewise.
 	(component_examples_of_above): Likewise.
 	(component_examples_of_below): Likewise.
+	(component_examples_of_surround_from_upper_left): Likewise.
+	(component_examples_of_surround_from_lower_left): Likewise.
+	(component_examples_of_surround_from_above): Likewise.
+	(component_examples_of_enclosed): Likewise.
+	(component_examples_of_upper_right): Likewise.
+	(component_examples_of_lower_right): Likewise.
+	(component_examples_of_lower_left): Likewise.
+	(component_examples_of_sandwiched_from_above_and_below): Likewise.
+	(component_examples_of_inserted_from_right): Likewise.
+	(retry_prompt3): New variable.
+	(run_VLM): Change `max_tokens' to 1024.
+	(detect_ids): Add special rule for `surround-from-lower-left' + (
+	`enclosed' | ... ) when the first component is `几' or `門'.
+	(run_OCR_for_glyph_image): Add code to check size when `upper-left' +
+	`upper-right' + `lower-left' + `lower-right'.
+	(manage_OCR_for_glyph_image): Add code to check size for some cases.
+	(<toplevel>): Add code to git commit & push.
+
+2026-07-07  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (component_examples_of_left): Add some
+	examples.
+	(component_examples_of_right): Likewise.
+	(component_examples_of_above): Likewise.
+	(component_examples_of_below): Likewise.
 	(component_examples_of_full_surround): Likewise.
 	(component_examples_of_upper_right): Likewise.
 	(component_examples_of_lower_right): Likewise.
