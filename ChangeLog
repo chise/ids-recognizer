@@ -1,3 +1,112 @@
+2026-07-16  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (component_examples_of_left): Add some
+	examples.
+	(component_examples_of_right): Add some examples.
+	(component_examples_of_above): Add some examples.
+	(component_examples_of_below): Add some examples.
+	(component_examples_of_surround_from_upper_left): Add some
+	examples.
+	(component_examples_of_surround_from_lower_right): Add some
+	examples.
+	(component_examples_of_surround_from_upper_right): Add some
+	examples.
+	(component_examples_of_enclosed): Add some examples.
+	(component_examples_of_inserted_from_below): Add some examples.
+	(component_examples_of_upper_right): Add some examples.
+	(component_examples_of_lower_right): Add some examples.
+	(component_examples_of_lower_left): Add some examples.
+	(component_examples_of_upper_left): Add some examples.
+	(component_examples_of_sandwiched_from_left_and_right): Add some
+	examples.
+	(component_examples_of_sandwiched_from_above_and_below): Add some
+	examples.
+	(component_examples_of_inserted_from_right): Add some examples.
+	(position_prompt_en): Add `surround-from-lower-right' and
+	`inserted-from-below'.
+	(position_prompt_ja): Likewise.
+	(position_prompt_L2R_ja): Modified.
+	(position_prompt_A2B_ja): Modified.
+	(position_prompt_zh_TW): Add `surround-from-lower-right' and
+	`inserted-from-below'.
+	(position_prompt_en_p): Likewise.
+	(position_prompt_ja_p): Likewise.
+	(position_prompt_ja_p_s): Add `inserted-from-below'.
+	(detect_ids): Modified.
+	- Add a fallback rule for `relative' + `relative'.
+	- Add special rule for `above'(一) + ( `enclosed' |
+	  `sandwiched-from-above-and-below' )(厶) + `below'.
+	- Add special rule for `above' + ( `enclosed' |
+	  `sandwiched-from-above-and-below' )(目) + `below'(八).
+	- Add special rule for `above' + ( `enclosed' |
+	  `sandwiched-from-above-and-below' )(二) + `below'(厶).
+	- Add special rule for `above'(艹) + `below' + `lower-left'(十) +
+	  `lower-right'(十).
+	- Add rule for `above' + `below' + `lower-left' + `lower-right'.
+	- Add rule for `surround' + `enclosed' + `enclosed' + `enclosed'.
+	(merge_left_and_right): Modified condition.
+	(merge_below_left_and_right): Modified condition.
+	(merge_above_and_below): Modified condition.
+	(merge_right_above_and_below): Modified condition.
+	(manage_OCR_for_glyph_image): Modified conditions; select
+	`retry_prompt'.
+
+2026-07-13  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* - Add new argument `--git'.
+	(component_examples_of_left): Add some examples.
+	(component_examples_of_right): Likewise.
+	(component_examples_of_above): Likewise.
+	(component_examples_of_below): Likewise.
+	(component_examples_of_surround_from_upper_left): Likewise.
+	(component_examples_of_surround_from_lower_left): Likewise.
+	(component_examples_of_full_surround): Likewise.
+	(component_examples_of_surround_from_above): Likewise.
+	(component_examples_of_enclosed): Likewise.
+	(component_examples_of_upper_right): Likewise.
+	(component_examples_of_lower_right): Likewise.
+	(component_examples_of_lower_left): Likewise.
+	(component_examples_of_sandwiched_from_above_and_below): Likewise.
+	(position_prompt_L2R_ja): New variable.
+	(position_prompt_A2B_ja): New variable.
+	(position_prompt_ja_p): Use "構の中" instead of "構えの中" as the comment of `enclosed'.
+	(position_prompt_ja_p_s): New variable.
+	(prompt_L2R_ja): New variable.
+	(prompt_A2B_ja): New variable.
+	(prompt_ja6p_s): New variable.
+	(retry_prompt): Separated to `retry_prompt_default', `retry_prompt_L2R' and `retry_prompt_A2B'.
+	(retry_prompt_default): New variable.
+	(retry_prompt_L2R): New variable.
+	(retry_prompt_A2B): New variable.
+	(component_prompt): Use Japanese.
+	(character_prompt): Use Japanese.
+	(detect_ids):
+	- Add special rule for `surround'(門) + `middle'.
+	- Treat `full-surround'(咸) + ( `enclosed' | `middle' ) as the same as
+	  `full-surround'(戈) + ( `enclosed' | `middle' ).
+	- Add special rule for `surround-from-upper-left'(囗) + ( `enclosed' |
+	  `middle' | ... ).
+	- Add special rule for `surround-from-lower-left'(囗) + ( `enclosed' |
+	  `middle' | ... ).
+	- Add special rule for `above'(立) + `below'(日) + x.
+	- Add special rule for `above'(日) + `below'(共) + x.
+	- Add special rule for `above'(⺈) + `below'(目) + x.
+	- Add some special rules for `above' + ( `enclosed' |
+	  `sandwiched-from-above-and-below' ) + `below'.
+	- Add special rule for `upper-left'(耳) + `upper-right'(口) +
+	  ( `below' | `lower' | ... ).
+	(run_OCR_for_glyph_image):
+	- Add reject rule for `upper-right' + `lower-right'.
+	(manage_OCR_for_glyph_image):
+	- Eliminate some trailing symbols in `char_res'.
+	- Prefer Component_Text[0] as character response if
+	  Component_Position[0] is `full-surround' or `full'.
+	- When the first retry, switch prompt based on the first VLM result.
+	- Modify some retry conditions.
+	(<toplevel>): Use Git only if `--git' is specified.
+
+	M	
+
 2026-07-07  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (component_examples_of_left): Add some
