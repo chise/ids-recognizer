@@ -53,7 +53,8 @@
 
 2026-07-13  MORIOKA Tomohiko  <tomo.git@chise.org>
 
-	* - Add new argument `--git'.
+	* ids-recognizer.py:
+	- Add new argument `--git'.
 	(component_examples_of_left): Add some examples.
 	(component_examples_of_right): Likewise.
 	(component_examples_of_above): Likewise.
@@ -69,12 +70,14 @@
 	(component_examples_of_sandwiched_from_above_and_below): Likewise.
 	(position_prompt_L2R_ja): New variable.
 	(position_prompt_A2B_ja): New variable.
-	(position_prompt_ja_p): Use "構の中" instead of "構えの中" as the comment of `enclosed'.
+	(position_prompt_ja_p): Use "構の中" instead of "構えの中" as the
+	comment of `enclosed'.
 	(position_prompt_ja_p_s): New variable.
 	(prompt_L2R_ja): New variable.
 	(prompt_A2B_ja): New variable.
 	(prompt_ja6p_s): New variable.
-	(retry_prompt): Separated to `retry_prompt_default', `retry_prompt_L2R' and `retry_prompt_A2B'.
+	(retry_prompt): Separated to `retry_prompt_default',
+	`retry_prompt_L2R' and `retry_prompt_A2B'.
 	(retry_prompt_default): New variable.
 	(retry_prompt_L2R): New variable.
 	(retry_prompt_A2B): New variable.
@@ -82,12 +85,12 @@
 	(character_prompt): Use Japanese.
 	(detect_ids):
 	- Add special rule for `surround'(門) + `middle'.
-	- Treat `full-surround'(咸) + ( `enclosed' | `middle' ) as the same as
-	  `full-surround'(戈) + ( `enclosed' | `middle' ).
-	- Add special rule for `surround-from-upper-left'(囗) + ( `enclosed' |
-	  `middle' | ... ).
-	- Add special rule for `surround-from-lower-left'(囗) + ( `enclosed' |
-	  `middle' | ... ).
+	- Treat `full-surround'(咸) + ( `enclosed' | `middle' ) as the
+	  same as `full-surround'(戈) + ( `enclosed' | `middle' ).
+	- Add special rule for `surround-from-upper-left'(囗) +
+	  ( `enclosed' | `middle' | ... ).
+	- Add special rule for `surround-from-lower-left'(囗) +
+	  ( `enclosed' | `middle' | ... ).
 	- Add special rule for `above'(立) + `below'(日) + x.
 	- Add special rule for `above'(日) + `below'(共) + x.
 	- Add special rule for `above'(⺈) + `below'(目) + x.
@@ -101,11 +104,14 @@
 	- Eliminate some trailing symbols in `char_res'.
 	- Prefer Component_Text[0] as character response if
 	  Component_Position[0] is `full-surround' or `full'.
-	- When the first retry, switch prompt based on the first VLM result.
+	- When the first retry, switch prompt based on the first VLM
+	  result.
 	- Modify some retry conditions.
 	(<toplevel>): Use Git only if `--git' is specified.
 
-	M	
+2026-07-10  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* utils/ids-result-eval.el: New file.
 
 2026-07-07  MORIOKA Tomohiko  <tomo.git@chise.org>
 
