@@ -51,6 +51,13 @@
 	(manage_OCR_for_glyph_image): Modified conditions; select
 	`retry_prompt'.
 
+2026-07-15  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* utils/ids-result-eval.el (hanzi-normalize-char): Add some rules.
+	- Convert U+2EAF to U+7CF8 instead of U+7CF9.
+	- Don't convert U+4E36 + U+4E00.
+	- Convert U+4E3F to U+4E36 instead of U+4E00.
+
 2026-07-13  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py:
@@ -325,7 +332,7 @@
 	- Add rules for `surround' + x.
 	- Treat `surround-from-left' + `full' as the same as
 	  `surround-from-left' + `enclosed'; modify rules when the first
-	  component is '⻌' or '廴'.
+	  component is '辶' or '廴'.
 	- Add rule for `surround-from-left' + `right'.
 	- Add rule for `upper-left' + `right' + `below'.
 	- Add rule for `upper-left' + `middle' + `lower-right'.
