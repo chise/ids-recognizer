@@ -1,3 +1,50 @@
+2026-07-22  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (component_examples_of_*): Abolished.
+	(position_prompt_en): Abolished.
+	(position_prompt_en_s): Abolished.
+	(position_prompt_ja): Abolished.
+	(position_prompt_L2R_ja): Abolished.
+	(position_prompt_A2B_ja): Abolished.
+	(position_prompt_zh_TW): Abolished.
+	(position_prompt_en_p): Abolished.
+	(position_prompt_ja_p): Abolished.
+	(position_prompt_ja_p_s): Abolished.
+	(prompt_E6p): Abolished.
+	(prompt_E5): Abolished.
+	(prompt_E5s): Abolished.
+	(prompt_cE): Abolished.
+	(prompt_C6p): Abolished.
+	(prompt_C): Abolished.
+	(prompt_cC): Abolished.
+	(prompt_J6p): Abolished.
+	(prompt_J): Abolished.
+	(prompt_cJ): Abolished.
+	(prompt_JcE): Abolished.
+	(prompt_ja): New implementation.
+	(prompt_L2R_ja): Abolished.
+	(prompt_A2B_ja): Abolished.
+	(prompt_ja6p): Abolished.
+	(prompt_ja6p_s): Abolished.
+	(prompt_zh_TW): Abolished.
+	(retry_prompt): Abolished.
+	(retry_prompt2): Abolished.
+	(simpler_prompt): Abolished.
+	(component_prompt): Abolished.
+	(character_prompt): Abolished.
+	(detect_ids): New implementation.
+	(merge_left_and_right): Abolished.
+	(merge_below_left_and_right): Abolished.
+	(merge_above_and_below): Abolished.
+	(merge_right_above_and_below): Abolished.
+	(merge_enclosed_vertical3): Abolished.
+	(merge_enclosed_vertical4): Abolished.
+	(merge_below_vertical3): Abolished.
+	(merge_below_left_and_vertical2): Abolished.
+	(run_OCR_for_glyph_image): Abolish code to merge components.
+	(manage_OCR_for_glyph_image): Modify for new result format;
+	abolish code to check and retry.
+
 2026-07-16  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (component_examples_of_left): Add some
