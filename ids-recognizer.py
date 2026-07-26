@@ -30,8 +30,41 @@ model_name = model_path[model_separator_pos + 1:]
 model, processor = load(model_path)
 config = load_config(model_path)
 
+simple_examples_ja = '''
+例:「保」
+------------------------------------------------------------
+0	0	999	999	保	root	---
+0	0	499	999	亻	left	保
+500	0	999	999	呆	right	保
+------------------------------------------------------------
+
+例:「允」
+--------------------------------------------------------------------------
+10	10	980	980	允	root	---
+10	10	980	490	厶	above	允
+10	490	980	980	儿	below	允
+--------------------------------------------------------------------------
+
+例:「柔」
+--------------------------------------------------------------------------
+10	10	980	980	柔	root	---
+10	10	980	600	矛	above	柔
+10	600	980	980	木	below	柔
+--------------------------------------------------------------------------
+
+例:「盪」
+--------------------------------------------------------------------------
+10	10	980	980	盪	root	---
+10	10	980	490	湯	above	盪
+10	490	980	980	皿	below	盪
+10	10	490	490	氵	left	湯
+490	10	980	490	昜	right	湯
+--------------------------------------------------------------------------
+'''
+
 prompt_ja = f'''画像にある漢字を構成する全ての部品を見つけてください。
 [注意] 闕字や異体字に注意してください。また、単純な字は無理に分解しなくても大丈夫です。
+また、各部品や文字はなるべく正字化せず、一番似た字体の文字を使って出力してください。
 見つかった各部品は矩形座標とともに下記のような TSV 形式で出力してください：
 
 X0	Y0	X1	Y1	親	root	---
@@ -40,18 +73,11 @@ X0	Y0	X1	Y1	部品2	相対位置	親
 X0	Y0	X1	Y1	部品3	相対位置	部品2
 X0	Y0	X1	Y1	部品4	相対位置	部品2
 
-例:「保」
-------------------------------------------------------------
-0	0	999	999	保	root	---
-0	0	499	999	亻	left	保
-500	0	999	999	呆	right	保
-------------------------------------------------------------
-
 例:「匵」
 -------------------------------------------------------------------
 10	10	980	980	匵	root	---
 10	10	980	980	匚	surround-from-left	匵
-180	100	820	920	𧶠	enclosed-from-left	匵
+180	100	820	920	𧶠	inserted-from-right	匵
 -------------------------------------------------------------------
 
 例:「亭」
@@ -68,7 +94,7 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 ------------------------------------------------------------------
 0	0	1000	1000	凶	root	---
 0	0	1000	1000	凵	surround-from-below	凶
-100	0	900	900	㐅	enclosed-from-below	凶
+100	0	900	900	㐅	inserted-from-above	凶
 ------------------------------------------------------------------
 
 例:「具」
@@ -100,25 +126,18 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 --------------------------------------------------------------------------
 10	10	980	980	修	root	---
 10	10	980	980	攸	surround-from-upper-left	修
-490	490	980	980	彡	enclosed-from-upper-left	修
+490	490	980	980	彡	inserted-from-lower-right	修
 10	10	490	980	〓	left	攸
 490	10	490	490	攵	right-above	攸
 10	10	250	980	亻	right-above	〓
 250	10	490	980	丨	right-above	〓
 --------------------------------------------------------------------------
 
-例:「允」
---------------------------------------------------------------------------
-10	10	980	980	允	root	---
-10	10	980	490	厶	above	允
-10	490	980	980	儿	below	允
---------------------------------------------------------------------------
-
 例:「勉」
 --------------------------------------------------------------------------
 10	10	980	980	勉	root	---
 10	10	980	980	免	surround-from-lower-left	勉
-490	20	980	900	力	enclosed-from-lower-left	勉
+490	20	980	900	力	inserted-from-upper-right	勉
 --------------------------------------------------------------------------
 
 例:「卓」
@@ -139,14 +158,14 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 --------------------------------------------------------------------------
 10	10	980	980	向	root	---
 10	10	980	980	𰃦	surround-from-above	向
-90	200	900	900	口	enclosed-from-above	向
+90	200	900	900	口	inserted-from-below	向
 --------------------------------------------------------------------------
 
 例:「后」
 --------------------------------------------------------------------------
 10	10	980	980	后	root	---
 10	10	980	980	𠂋	surround-from-upper-left	后
-490	490	980	980	口	enclosed-from-upper-left	后
+490	490	980	980	口	inserted-from-lower-right	后
 --------------------------------------------------------------------------
 
 例:「嘉」
@@ -158,7 +177,7 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 
 例:「壽」
 --------------------------------------------------------------------------
-10	10	980	980	嘉	root	---
+10	10	980	980	壽	root	---
 10	10	980	400	士	above	壽
 10	400	980	700	〓	middle	壽
 10	700	980	980	吋	below	壽
@@ -187,7 +206,7 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 --------------------------------------------------------------------------
 10	10	980	980	寶	root	---
 10	10	980	980	𡪓	surround-from-left	寶
-490	300	980	500	缶	enclosed-from-left	寶
+490	300	980	500	缶	inserted-from-right	寶
 --------------------------------------------------------------------------
 
 例:「寒」
@@ -224,14 +243,14 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 --------------------------------------------------------------------------
 10	10	980	980	應	root	---
 10	10	980	950	䧹	surround-from-upper-left	應
-490	490	980	980	心	enclosed-from-upper-left	應
+490	490	980	980	心	inserted-from-lower-right	應
 --------------------------------------------------------------------------
 
 例:「戎」
 --------------------------------------------------------------------------
 10	10	980	980	戎	root	---
 10	10	980	950	戈	surround-from-upper-right	戎
-10	100	800	980	十	enclosed-from-upper-right	戎
+10	100	800	980	十	inserted-from-lower-left	戎
 --------------------------------------------------------------------------
 
 例:「撤」
@@ -254,7 +273,7 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 --------------------------------------------------------------------------
 10	10	980	980	旅	root	---
 10	10	980	950	𭤨	surround-from-upper-left	旅
-490	490	980	980	𧘇	enclosed-from-upper-left	旅
+490	490	980	980	𧘇	inserted-from-lower-right	旅
 --------------------------------------------------------------------------
 
 例:「膠」
@@ -265,13 +284,6 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 400	10	980	490	羽	above	翏
 400	490	980	980	㐱	below	翏
 ----------------------------------------------------------------
-
-例:「柔」
---------------------------------------------------------------------------
-10	10	980	980	柔	root	---
-10	10	980	600	矛	above	柔
-10	600	980	980	木	below	柔
---------------------------------------------------------------------------
 
 例:「梁」
 --------------------------------------------------------------------------
@@ -306,7 +318,7 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 0	0	499	999	𡱒	left	殿
 500	0	999	999	殳	right	殿
 0	0	499	999	尸	surround-from-upper-left	𡱒
-100	100	499	999	共	enclosed-from-upper-left	𡱒
+100	100	499	999	共	inserted-from-lower-right	𡱒
 500	0	499	499	几	above	殳
 500	500	999	999	又	below	殳
 --------------------------------------------------------------------------
@@ -325,7 +337,7 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 --------------------------------------------------------------------------
 10	10	980	980	滕	root	---
 10	10	980	980	𰮤	surround-from-upper-left	滕
-490	490	980	980	氺	enclosed-from-upper-left	滕
+490	490	980	980	氺	inserted-from-lower-right	滕
 10	10	490	980	月	left	𰮤
 490	10	490	490	龹	right	𰮤
 --------------------------------------------------------------------------
@@ -341,13 +353,13 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 --------------------------------------------------------------------------
 
 例:「牖」
---------------------------------------------------------------------------
+----------------------------------------------------------------------------
 10	10	980	980	牖	root	---
 10	10	490	980	片	left	牖
 490	10	980	980	〓	right	牖
 490	10	980	980	戸	surround-from-upper-left	〓
-600	400	980	980	甫	enclosed-from-upper-left	〓
---------------------------------------------------------------------------
+600	400	980	980	甫	inserted-from-lower-right	〓
+----------------------------------------------------------------------------
 
 例:「犂」
 --------------------------------------------------------------------------
@@ -394,15 +406,6 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 490	290	980	490	一	below	〓
 --------------------------------------------------------------------------
 
-例:「盪」
---------------------------------------------------------------------------
-10	10	980	980	盪	root	---
-10	10	980	490	湯	above	盪
-10	490	980	980	皿	below	盪
-10	10	490	490	氵	left	湯
-490	10	980	490	昜	right	湯
---------------------------------------------------------------------------
-
 例:「繫」
 --------------------------------------------------------------------------
 10	10	980	980	繫	root	---
@@ -416,7 +419,7 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 --------------------------------------------------------------------------
 10	10	980	980	布	root	---
 10	10	980	600	𠂇	surround-from-upper-left	布
-200	300	980	980	巾	enclosed-from-upper-left	布
+200	300	980	980	巾	inserted-from-lower-right	布
 --------------------------------------------------------------------------
 
 例:「圉」
@@ -430,7 +433,7 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 -------------------------------------------------------------------
 10	10	980	980	匿	root	---
 10	10	980	980	匚	surround-from-left	匿
-180	100	820	920	若	enclosed-from-left	匿
+180	100	820	920	若	inserted-from-right	匿
 -------------------------------------------------------------------
 
 例:「僕」
@@ -457,8 +460,9 @@ X0	Y0	X1	Y1	部品4	相対位置	部品2
 例:「亟」
 --------------------------------------------------------------------------
 10	10	980	980	亟	root	---
-10	10	980	980	〓	sandwiched-from-left-and-right	亟
-60	60	920	920	叹	sandwich-from-left-and-right	亟
+10	10	980	980	〓	surround-from-center	亟
+60	60	400	920	口	inserted-from-left	亟
+540	60	920	920	又	inserted-from-right	亟
 10	10	980	980	二	full-surround	〓
 60	60	920	920	亻	full-enclosed	〓
 --------------------------------------------------------------------------
@@ -506,7 +510,8 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
                     if ( number_of_components >= 5 ):
-                        if ( ( Component_Text[1] == '〓' )
+                        if ( ( ( Component_Text[1] == '〓' ) or
+                               ( len(Component_Text[1]) >= 2 ) )
                              and
                              ( Component_Text[1] == Mother[3] ) and
                              ( Component_Text[1] == Mother[4] ) ):
@@ -514,11 +519,13 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                                  ( Component_Position[4] == 'below' ) ):
                                 return f'⿰⿱{Component_Text[3]}{Component_Text[4]}{Component_Text[2]}'
                             elif ( ( Component_Position[3] == 'surround-from-upper-left' ) and
-                                   ( Component_Position[4] == 'enclosed-from-upper-left' ) ):
+                                   ( ( Component_Position[4] == 'enclosed-from-upper-left' ) or
+                                     ( Component_Position[4] == 'inserted-from-lower-right' ) ) ):
                                 return f'⿰⿸{Component_Text[3]}{Component_Text[4]}{Component_Text[2]}'
                             else:
                                 return f'⿰{Component_Text[1]}{Component_Text[2]}'
-                        elif ( ( ( Component_Text[2] == '〓' )
+                        elif ( ( ( ( Component_Text[2] == '〓' ) or
+                                   ( len(Component_Text[2]) >= 2 ) )
                                  or
                                  ( ( Component_Text[2] == '青' ) and
                                    ( Component_Text[4] == '円' ) ) )
@@ -529,7 +536,8 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                                  ( Component_Position[4] == 'below' ) ):
                                 return f'⿰{Component_Text[1]}⿱{Component_Text[3]}{Component_Text[4]}'
                             elif ( ( Component_Position[3] == 'surround-from-upper-left' ) and
-                                   ( Component_Position[4] == 'enclosed-from-upper-left' ) ):
+                                   ( ( Component_Position[4] == 'enclosed-from-upper-left' ) or
+                                     ( Component_Position[4] == 'inserted-from-lower-right' ) ) ):
                                 return f'⿰{Component_Text[1]}⿸{Component_Text[3]}{Component_Text[4]}'
                             else:
                                 return f'⿰{Component_Text[1]}{Component_Text[2]}'
@@ -542,7 +550,9 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                 if ( ( Component_Position[2] == 'below' ) and
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
-                    if ( ( Component_Text[1] == '〓' ) and
+                    if ( ( ( Component_Text[1] == '〓' ) or
+                           ( len(Component_Text[1]) >= 2 ) )
+                         and
                          ( number_of_components >= 5 ) and
                          ( Component_Text[1] == Mother[3] ) and
                          ( Component_Text[1] == Mother[4] ) ):
@@ -557,7 +567,9 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                             else:
                                 return f'⿱⿱{Component_Text[3]}{Component_Text[4]}{Component_Text[2]}'
                         elif ( ( number_of_components >= 7 ) and
-                               ( Component_Text[4] == '〓' ) and
+                               ( ( Component_Text[4] == '〓' ) or
+                                 ( len(Component_Text[4]) >= 2 ) )
+                               and
                                ( Component_Position[5] == 'above' ) and
                                ( Component_Position[6] == 'below' ) and
                                ( Component_Text[4] == Mother[5] ) and
@@ -566,6 +578,7 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                         else:
                             return f'⿱⿰{Component_Text[3]}{Component_Text[4]}{Component_Text[2]}'
                     elif ( ( ( Component_Text[2] == '〓' ) or
+                             ( len(Component_Text[2]) >= 2 ) or
                              ( Component_Text[2] == '弄' ) )
                            and
                            ( number_of_components >= 5 ) and
@@ -579,7 +592,9 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                        ( Component_Text[0] == Mother[1] ) and
                        ( Component_Text[0] == Mother[2] ) and
                        ( Component_Text[0] == Mother[3] ) ):
-                    if ( ( Component_Text[2] == '〓' ) and
+                    if ( ( ( Component_Text[2] == '〓' ) or
+                           ( len(Component_Text[2]) >= 2 ) )
+                         and
                          ( number_of_components >= 7 ) and
                          ( Component_Text[2] == Mother[4] ) and
                          ( Component_Text[2] == Mother[5] ) and
@@ -594,10 +609,14 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                         return f'⿳{Component_Text[1]}{Component_Text[2]}{Component_Text[3]}'
 
             case 'surround-from-upper-left':
-                if ( ( Component_Position[2] == 'enclosed-from-upper-left' ) and
+                if ( ( ( Component_Position[2] == 'enclosed-from-upper-left' ) or
+                       ( Component_Position[2] == 'inserted-from-lower-right' ) )
+                     and
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
-                    if ( ( Component_Text[2] == '〓' ) and
+                    if ( ( ( Component_Text[2] == '〓' ) or
+                           ( len(Component_Text[2]) >= 2 ) )
+                         and
                          ( number_of_components >= 5 ) and
                          ( Component_Text[2] == Mother[3] ) and
                          ( Component_Text[2] == Mother[4] ) ):
@@ -609,19 +628,25 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                         return f'⿸{Component_Text[1]}{Component_Text[2]}'
 
             case 'surround-from-lower-left':
-                if ( ( Component_Position[2] == 'enclosed-from-lower-left' ) and
+                if ( ( ( Component_Position[2] == 'enclosed-from-lower-left' ) or
+                       ( Component_Position[2] == 'inserted-from-upper-right' ) )
+                     and
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
                     return f'⿺{Component_Text[1]}{Component_Text[2]}'
 
             case 'surround-from-left':
-                if ( ( Component_Position[2] == 'enclosed-from-left' ) and
+                if ( ( ( Component_Position[2] == 'enclosed-from-left' ) or
+                       ( Component_Position[2] == 'inserted-from-right' ) )
+                     and
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
                     return f'⿷{Component_Text[1]}{Component_Text[2]}'
 
             case 'surround-from-above':
-                if ( ( Component_Position[2] == 'enclosed-from-above' ) and
+                if ( ( ( Component_Position[2] == 'enclosed-from-above' ) or
+                       ( Component_Position[2] == 'inserted-from-below' ) )
+                     and
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
                     if ( ( number_of_components >= 4 ) and
@@ -629,7 +654,9 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                          ( Component_Position[3] == 'below' ) ):
                         return f'⿱⿵{Component_Text[1]}{Component_Text[2]}{Component_Text[3]}'
                     elif ( ( number_of_components >= 6 ) and
-                           ( Component_Text[2] == '〓' ) and
+                           ( ( Component_Text[2] == '〓' ) or
+                             ( len(Component_Text[2]) >= 2 ) )
+                           and
                            ( Component_Text[2] == Mother[3] ) and
                            ( Component_Text[2] == Mother[4] ) and
                            ( Component_Text[2] == Mother[5] ) and
@@ -644,7 +671,9 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                         return f'⿵{Component_Text[1]}{Component_Text[2]}'
 
             case 'surround-from-upper-right':
-                if ( ( Component_Position[2] == 'enclosed-from-upper-right' ) and
+                if ( ( ( Component_Position[2] == 'enclosed-from-upper-right' ) or
+                       ( Component_Position[2] == 'inserted-from-lower-left' ) )
+                     and
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
                     return f'⿹{Component_Text[1]}{Component_Text[2]}'
@@ -654,6 +683,18 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
                     return f'⿴{Component_Text[1]}{Component_Text[2]}'
+
+            case 'surround-from-center':
+                if ( ( Component_Position[2] == 'inserted-from-left' ) and
+                     ( Component_Position[3] == 'inserted-from-right' ) ):
+                    if ( ( ( Component_Text[1] == '〓' ) or
+                           ( len(Component_Text[1]) >= 2 ) ) and
+                         ( Component_Text[1] == Mother[4] ) and
+                         ( Component_Text[1] == Mother[5] ) ):
+                        if ( Component_Position[4] == 'full-surround' ):
+                            return f'&U-i001+2FFB;⿴{Component_Text[4]}{Component_Text[5]}⿰{Component_Text[2]}{Component_Text[3]}'
+                    else:                    
+                        return f'&U-i001+2FFB;⿴{Component_Text[1]}⿰{Component_Text[2]}{Component_Text[3]}'
 
     elif ( number_of_components >= 2 ):
         match Component_Position[0]:
