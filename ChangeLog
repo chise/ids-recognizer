@@ -1,3 +1,15 @@
+2026-07-25  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (prompt_ja): Modified.
+	(character_prompt): New variable.
+	(detect_ids):
+	- Add rule for `above' + `middle'(`enclosed' + `left' + `right') +
+	  x.
+	- Add rule for `surround-from-above' +
+	  `enclosed-from-above'(`left' + `right' + `below').
+	(manage_OCR_for_glyph_image): Use OCR result for single character
+	as a fallback when IDS is not detected.
+
 2026-07-22  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (component_examples_of_*): Abolished.
