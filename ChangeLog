@@ -1,3 +1,26 @@
+2026-07-26  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (simple_examples_ja): New variable [separated
+	from `prompt_ja'].
+	(prompt_ja):
+	- Modified.
+	- Separate some examples to `simple_examples_ja'.
+	- Use `inserted-from-right' instead of `enclosed-from-left'.
+	- Use `inserted-from-above' instead of `enclosed-from-below'.
+	- Use `inserted-from-lower-right' instead of
+	  `enclosed-from-upper-left'.
+	- Use `inserted-from-upper-right' instead of
+	  `enclosed-from-lower-left'.
+	- Use `inserted-from-below' instead of `enclosed-from-above'.
+	- Use `surround-from-center' instead of
+	  `sandwiched-from-left-and-right'.
+	- Use `inserted-from-left' and `inserted-from-right' instead of
+	  `sandwich-from-left-and-right'.
+	(detect_ids):
+	- Support combined-(non-UCS)component.
+	- Support `inserted-*'.
+	- Support `surround-from-center'.
+
 2026-07-25  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (prompt_ja): Modified.
