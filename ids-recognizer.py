@@ -641,7 +641,14 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                      and
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
-                    return f'⿷{Component_Text[1]}{Component_Text[2]}'
+                    if ( Component_Text[1] == '門' ):
+                        return f'⿵{Component_Text[1]}{Component_Text[2]}'
+                    elif ( Component_Text[1] == '勹' ):
+                        return f'⿹{Component_Text[1]}{Component_Text[2]}'
+                    elif ( Component_Text[1] == '辶' ):
+                        return f'⿺{Component_Text[1]}{Component_Text[2]}'
+                    else:
+                        return f'⿷{Component_Text[1]}{Component_Text[2]}'
 
             case 'surround-from-above':
                 if ( ( ( Component_Position[2] == 'enclosed-from-above' ) or
@@ -667,6 +674,8 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                             return f'⿱{Component_Text[1]}⿱⿰{Component_Text[3]}{Component_Text[4]}{Component_Text[5]}'
                         else:
                             return f'⿵{Component_Text[1]}⿱⿰{Component_Text[3]}{Component_Text[4]}{Component_Text[5]}'
+                    elif ( Component_Text[1] == '宀' ):
+                        return f'⿱{Component_Text[1]}{Component_Text[2]}'
                     else:
                         return f'⿵{Component_Text[1]}{Component_Text[2]}'
 
@@ -676,7 +685,10 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                      and
                      ( Component_Text[0] == Mother[1] ) and
                      ( Component_Text[0] == Mother[2] ) ):
-                    return f'⿹{Component_Text[1]}{Component_Text[2]}'
+                    if ( Component_Text[1] == '戌' ):
+                        return f'⿵{Component_Text[1]}{Component_Text[2]}'
+                    else:
+                        return f'⿹{Component_Text[1]}{Component_Text[2]}'
 
             case 'full-surround':
                 if ( ( Component_Position[2] == 'full-enclosed' ) and
@@ -685,7 +697,8 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                     return f'⿴{Component_Text[1]}{Component_Text[2]}'
 
             case 'surround-from-center':
-                if ( ( Component_Position[2] == 'inserted-from-left' ) and
+                if ( ( len(Component_Text[1]) >= 4 ) and
+                     ( Component_Position[2] == 'inserted-from-left' ) and
                      ( Component_Position[3] == 'inserted-from-right' ) ):
                     if ( ( ( Component_Text[1] == '〓' ) or
                            ( len(Component_Text[1]) >= 2 ) ) and
