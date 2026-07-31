@@ -1,3 +1,12 @@
+2026-07-29  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (detect_ids):
+	- Add special code for `surround-from-left'(門|勹|辶).
+	- Add special code for `surround-from-above'(宀).
+	- Add special code for `surround-from-upper-right'(戌).
+	- Add length check code for `surround-from-center'(`full-surround'
+	  + x) + `inserted-from-left' + `inserted-from-right'.
+
 2026-07-26  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (simple_examples_ja): New variable [separated
