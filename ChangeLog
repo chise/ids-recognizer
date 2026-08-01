@@ -1,3 +1,44 @@
+2026-07-31  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* stage2.py: New file.
+
+2026-07-31  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* stage1.py: New file.
+
+	* ids-recognizer.py:
+	- Import vlm_ocr, stage1 and stage2.
+	- Use `froggeric/Qwen3.6-27B-Uncensored-Heretic-v2-MLX-8bit'
+	  instead of `mlx-community/Qwen3.5-27B-heretic-8bit' as the
+	  default value of `--model'.
+	(component_prompt): Moved to stage1.py.
+	(run_VLM): Moved to vlm_ocr.py.
+	(detect_ids): Moved to stage1.py.
+	(merge_left_and_right): Ditto.
+	(merge_below_left_and_right): Ditto.
+	(merge_above_and_below): Ditto.
+	(merge_right_above_and_below): Ditto.
+	(merge_enclosed_vertical3): Ditto.
+	(merge_enclosed_vertical4): Ditto.
+	(merge_below_vertical3): Ditto.
+	(merge_below_left_and_vertical2): Ditto.
+	(run_OCR_for_glyph_image): Ditto.
+	(manage_OCR_for_glyph_image):
+	- Use `vlm_ocr.run_VLM' instead of `run_VLM'.
+	- Accept 「.」 as a response of character recognition.
+	- Use `stage1.run_OCR_for_glyph_image' instead of
+	  `run_OCR_for_glyph_image'.
+	- Use `stage2.run_OCR_for_glyph_image' for retry process.
+	- Use `stage1.detect_ids' instead of `detect_ids' for stage1.
+	- Use `stage2.detect_ids' for stage2.
+	- Abolish "Retry(3)" process.
+	(stage1_CID): Renamed from `IPFS_CID'.
+	(stage2_CID): New variable.
+	(OUTPUT_PATH): New definition.
+	(TSV_OUTPUT_PATH): Likewise.
+
+	* vlm_ocr.py: New file.
+
 2026-07-16  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (component_examples_of_left): Add some
