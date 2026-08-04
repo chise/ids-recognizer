@@ -96,26 +96,7 @@ X0	Y0	X1	Y1	部品	{position_prompt_ja_p_s}
 # retry_prompt2 = prompt_zh_TW
 # retry_prompt3 = prompt_E5
 
-# prompt = prompt_ja6p
-# retry_prompt_default = prompt_ja
-# retry_prompt_L2R = prompt_L2R_ja
-# retry_prompt_A2B = prompt_A2B_ja
-# retry_prompt2 = prompt_E5
-# retry_prompt3 = prompt_zh_TW
-
 prompt = prompt_ja6p_s
-#retry_prompt_default = prompt_ja6p
-#retry_prompt_L2R = prompt_L2R_ja
-#retry_prompt_A2B = prompt_A2B_ja
-#retry_prompt2 = prompt_ja
-#retry_prompt3 = prompt_zh_TW
-
-# prompt = prompt_E6p
-# retry_prompt_default = prompt_E5
-# retry_prompt_L2R = prompt_L2R_ja
-# retry_prompt_A2B = prompt_A2B_ja
-# retry_prompt2 = prompt_ja
-# retry_prompt3 = prompt_zh_TW
 
 # prompt = prompt_E6p
 # retry_prompt = prompt_ja
@@ -136,6 +117,10 @@ X0	Y0	X1	Y1	component	position (left/right/above/below/surround/upper-left/lower
 # '''
 character_prompt = '''<image> 漢字用 OCR を実行し、結果の文字を返してください。
 '''
+
+retry_prompt_L2R = stage2.L2R_prompt_ja
+retry_prompt_A2B = stage2.A2B_prompt_ja
+retry_prompt_default = stage2.prompt_ja
 
 def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH):
     basename = os.path.splitext(os.path.basename(image_file))[0]
@@ -178,7 +163,7 @@ def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH
                                                                                          OUTPUT_PATH,
                                                                                          model, processor, config)
     retry_flag = False
-    #retry_prompt = retry_prompt_default
+    retry_prompt = retry_prompt_default
     if ( ( len(char_response) == 1 ) and
          ( any ( comp == char_response for comp in Component_Text ) ) and
          ( ( len(Component_Text) < 2 ) or
@@ -207,29 +192,29 @@ def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH
              ( X2[0] == X2[1] ) and
              ( Y2[0] == Y2[1] ) ):
             retry_flag = True
-            # if ( Component_Position[0] == 'above' ):
-            #     #retry_prompt = retry_prompt_A2B
-            # elif ( Component_Position[0] == 'left' ):
-            #     #retry_prompt = retry_prompt_L2R
-            # else:
-            #     #retry_prompt = retry_prompt_default
+            if ( Component_Position[0] == 'above' ):
+                retry_prompt = retry_prompt_A2B
+            elif ( Component_Position[0] == 'left' ):
+                retry_prompt = retry_prompt_L2R
+            else:
+                retry_prompt = retry_prompt_default
 
         elif ( ( max ( X2[0] - X1[0], X2[1] - X1[1] ) < image_width * 0.7 ) and
                ( max ( Y2[0] - Y1[0], Y2[1] - Y1[1] ) < image_height * 0.7 ) ):
             retry_flag = True
-            # if ( Component_Position[0] == 'above' ):
-            #     retry_prompt = retry_prompt_A2B
-            # elif ( Component_Position[0] == 'left' ):
-            #     retry_prompt = retry_prompt_L2R
-            # else:
-            #     retry_prompt = retry_prompt_default
+            if ( Component_Position[0] == 'above' ):
+                retry_prompt = retry_prompt_A2B
+            elif ( Component_Position[0] == 'left' ):
+                retry_prompt = retry_prompt_L2R
+            else:
+                retry_prompt = retry_prompt_default
 
         else:
             match Component_Position[0]:
                 case 'left':
                     if Component_Position[1] == 'surround-from-above':
                         retry_flag = True
-                        #retry_prompt = retry_prompt_L2R
+                        retry_prompt = retry_prompt_L2R
                     elif ( Component_Position[1] == 'right' ):
                         if ( ( Component_Text[0] == '刂' ) or
                              ( Component_Text[0] == '力' ) or
@@ -247,22 +232,22 @@ def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH
                              ( Component_Text[1] == '侯' ) or
                              ( Component_Text[1] == '頁' ) ):
                             retry_flag = True
-                            #retry_prompt = retry_prompt_L2R
+                            retry_prompt = retry_prompt_L2R
                     elif ( Component_Position[1] == 'below' ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_default
+                        retry_prompt = retry_prompt_default
                     elif ( ( Component_Text[1] == '夊' ) or
                            ( Component_Text[1] == '冂' ) or
                            ( Component_Text[1] == '攸') or
                            ( Component_Text[0] == '饣') or
                            ( Component_Text[0] == '𠂉') ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_L2R
+                        retry_prompt = retry_prompt_L2R
                     elif ( ( Component_Text[0] == '亻' ) and
                            ( ( Component_Text[1] == '優' ) or
                              ( Component_Text[1] == '偶' ) ) ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_L2R
+                        retry_prompt = retry_prompt_L2R
 
                 case 'above':
                     if ( ( Component_Text[0] == '⺌' ) or
@@ -275,59 +260,59 @@ def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH
                          ( Component_Text[1] == '八' ) or
                          ( Component_Text[1] == '十' ) ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_A2B
+                        retry_prompt = retry_prompt_A2B
                     elif ( Component_Position[1] == 'below' ):
                         if ( ( Component_Text[1] == '由' ) or
                              ( Component_Text[1] == '木' ) or
                              ( Component_Text[0] == '羊' ) ):
                             retry_flag = True
-                            #retry_prompt = retry_prompt_A2B
+                            retry_prompt = retry_prompt_A2B
                         elif ( Component_Text[1] == '弄' ):
                             retry_flag = True
-                            #retry_prompt = retry_prompt_A2B
+                            retry_prompt = retry_prompt_A2B
                     # elif ( Component_Position[1] == 'enclosed' ):
                     #     retry_flag = True
-                    #     retry_prompt = retry_prompt_A2B                        
+                    #     retry_prompt = retry_prompt_A2B
 
                 case 'upper-left':
                     if ( ( Component_Text[0] == '亠' ) or
                          ( Component_Text[0] == '宀' ) ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_A2B
+                        retry_prompt = retry_prompt_A2B
                     elif ( ( Component_Position[1] == 'lower-right' ) and
                            ( Component_Text[1] == '支' ) ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_default
+                        retry_prompt = retry_prompt_default
                     elif ( ( Component_Position[1] == 'upper-right' ) and
                            ( Component_Text[0] == '立' ) ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_A2B
+                        retry_prompt = retry_prompt_A2B
 
                 case 'lower-left':
                     if Component_Text[0] == '口':
                         retry_flag = True
-                        #retry_prompt = retry_prompt_default
+                        retry_prompt = retry_prompt_default
                     elif ( ( Component_Text[0] == '辶' ) and
                            ( Component_Text[1] == '止' ) ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_default
+                        retry_prompt = retry_prompt_default
 
                 case 'full-surround':
                     if Component_Text[0] == '儿':
                         retry_flag = True
-                        #retry_prompt = retry_prompt_default
+                        retry_prompt = retry_prompt_default
 
                 case 'surround-from-lower-left':
                     if ( ( Component_Text[0] == '勹' ) or
                          ( Component_Text[0] == '門' ) or
                          ( Component_Text[0] == '冂' ) ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_default
+                        retry_prompt = retry_prompt_default
 
                 case 'surround':
                     if ( Component_Text[0] == '𠁣' ):
                         retry_flag = True
-                        #retry_prompt = retry_prompt_default
+                        retry_prompt = retry_prompt_default
 
     elif len(Component_Text) == 3:
         if ( ( Component_Position[0] == 'above' ) and
@@ -339,7 +324,7 @@ def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH
                ( ( Component_Text[1] == '十' ) and
                  ( Component_Text[2] == '十' ) ) ) ):
             retry_flag = True
-            #retry_prompt = retry_prompt_A2B
+            retry_prompt = retry_prompt_A2B
         elif ( ( Component_Position[0] == 'left' ) and
                ( Component_Position[1] == 'upper-right' ) and
                ( Component_Position[2] == 'lower-right' ) and
@@ -349,21 +334,21 @@ def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH
                  ( ( Component_Text[1] == '又' ) and
                    ( Component_Text[2] == '又' ) ) ) ):
             retry_flag = True
-            #retry_prompt = retry_prompt_L2R
+            retry_prompt = retry_prompt_L2R
         elif ( ( Component_Position[0] == 'below' ) and
                ( Component_Position[1] == 'left' ) and
                ( Component_Position[2] == 'surround' ) ):
             retry_flag = True
-            #retry_prompt = retry_prompt_A2B
+            retry_prompt = retry_prompt_A2B
 
     elif len(Component_Text) > 7:
         retry_flag = True
-        # if ( Component_Position[0] == 'above' ):
-        #     retry_prompt = retry_prompt_A2B
-        # elif ( Component_Position[0] == 'left' ):
-        #     retry_prompt = retry_prompt_L2R
-        # else:
-        #     retry_prompt = retry_prompt_default
+        if ( Component_Position[0] == 'above' ):
+            retry_prompt = retry_prompt_A2B
+        elif ( Component_Position[0] == 'left' ):
+            retry_prompt = retry_prompt_L2R
+        else:
+            retry_prompt = retry_prompt_default
 
     if retry_flag:
         print ('Retry')
@@ -378,12 +363,22 @@ def manage_OCR_for_glyph_image (image_file, prompt, TSV_OUTPUT_PATH, OUTPUT_PATH
         ids = stage1.detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position)
         print ('Retry')
         X1, Y1, X2, Y2, Component_Text, Component_Position, Mother = stage2.run_OCR_for_glyph_image (image_file_name,
-                                                                                                     stage2.prompt,
+                                                                                                     retry_prompt,
                                                                                                      TSV_OUTPUT_PATH,
                                                                                                      OUTPUT_PATH,
                                                                                                      model, processor,
                                                                                                      config)
-        ids = stage2.detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position, Mother)
+        if ( ( len(Component_Text) > 2 ) and
+             ( Component_Position[1] == 'left') and
+             ( Component_Text[1] == '皿' ) ):
+            ids = None
+        elif ( ( len(Component_Text) > 2 ) and
+               ( Component_Position[2] == 'below') and
+               ( Component_Text[2] == '⺘' ) ):
+            ids = None
+        else:
+            ids = stage2.detect_ids(X1, Y1, X2, Y2, Component_Text, Component_Position, Mother)
+
     if ids:
         with open(ids_file_name, 'w', encoding = 'utf-8') as ids_destfile:
             print(ids, file=ids_destfile)
