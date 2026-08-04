@@ -1,3 +1,62 @@
+2026-08-02  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* ids-recognizer.py (component_examples_of_left): Abolished.
+	(component_examples_of_right): Abolished.
+	(component_examples_of_above): Abolished.
+	(component_examples_of_below): Abolished.
+	(component_examples_of_surround_from_upper_left): Abolished.
+	(component_examples_of_surround_from_lower_left): Abolished.
+	(component_examples_of_surround_from_lower_right): Abolished.
+	(component_examples_of_full_surround): Abolished.
+	(component_examples_of_surround_from_above): Abolished.
+	(component_examples_of_surround_from_left): Abolished.
+	(component_examples_of_surround_from_upper_right): Abolished.
+	(component_examples_of_surround_from_below): Abolished.
+	(component_examples_of_enclosed): Abolished.
+	(component_examples_of_inserted_from_below): Abolished.
+	(component_examples_of_upper_right): Abolished.
+	(component_examples_of_lower_right): Abolished.
+	(component_examples_of_lower_left): Abolished.
+	(component_examples_of_upper_left): Abolished.
+	(component_examples_of_sandwiched_from_left_and_right): Abolished.
+	(component_examples_of_sandwiched_from_above_and_below):
+	Abolished.
+	(component_examples_of_inserted_from_left): Abolished.
+	(component_examples_of_inserted_from_right): Abolished.
+	(position_prompt_en): Abolished.
+	(position_prompt_en_s): Abolished.
+	(position_prompt_ja): Abolished.
+	(position_prompt_L2R_ja): Abolished.
+	(position_prompt_A2B_ja): Abolished.
+	(position_prompt_zh_TW): Abolished.
+	(prompt_E5): Abolished.
+	(prompt_E5s): Abolished.
+	(prompt_cE): Abolished.
+	(prompt_C): Abolished.
+	(prompt_cC): Abolished.
+	(prompt_J): Abolished.
+	(prompt_ja): Abolished.
+	(prompt_L2R_ja): Abolished.
+	(prompt_A2B_ja): Abolished.
+	(prompt_zh_TW): Abolished.
+	(retry_prompt_default): Abolished.
+	(retry_prompt_L2R): Abolished.
+	(retry_prompt_A2B): Abolished.
+	(retry_prompt2): Abolished.
+	(retry_prompt3): Abolished.
+	(manage_OCR_for_glyph_image): Don't use `retry_prompt_A2B',
+	`retry_prompt_L2R' and `retry_prompt_default'.
+	(OUTPUT_PATH): Fixed.
+	(TSV_OUTPUT_PATH): Fixed.
+
+2026-08-02  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* stage2.py (prompt_ja): Add some examples.
+	(detect_ids):
+	- Add special rule for `surround-from-upper-left'(勹).
+	- Add rule for `surround-from-above' +
+	  `inserted-from-below'(`above' + `below').
+
 2026-07-31  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* stage2.py: New file.
