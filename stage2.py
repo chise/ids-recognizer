@@ -826,7 +826,7 @@ def detect_ids (X1, Y1, X2, Y2, Component_Text, Component_Position, Mother):
                          ( len(Component_Text) >= 5 ) and
                          ( Component_Text[2] == Mother[3] ) and
                          ( Component_Text[2] == Mother[4] ) ):
-                        if ( Component_Position[2] == 'above' ):
+                        if ( Component_Position[3] == 'above' ):
                             return f'⿴{Component_Text[1]}⿱{Component_Text[3]}{Component_Text[4]}'
                         else:
                             return f'⿴{Component_Text[1]}{Component_Text[2]}'
