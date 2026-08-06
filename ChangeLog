@@ -1,3 +1,27 @@
+2026-08-04  MORIOKA Tomohiko  <tomo.git@chise.org>
+
+	* stage2.py (structure_examples_L2R_ja): New variable [separated
+	from `prompt_ja'].
+	(structure_examples_A2B_ja): Likewise.
+	(L2R_prompt_ja): New variable [use `structure_examples_L2R_ja'].
+	(A2B_prompt_ja): New variable [use `structure_examples_A2B_ja'].
+	(prompt_ja): Separate some examples; use
+	`structure_examples_L2R_ja' and `structure_examples_A2B_ja'.
+	(detect_ids):
+	- Treat `above'(`above' + `middle' + `below') + `below' as the
+	  same as `above'(`above' + `enclosed' + `below') + `below'.
+	- Add special rule for 'above'(ナ | 𠂇) + `below'.
+	- Add special rule for 'above'(气) + `below'.
+	- Add rule for `full-surround' + `full-enclosed'(`above' + x).
+
+	* ids-recognizer.py (retry_prompt_L2R): Revival; use
+	`stage2.L2R_prompt_ja'.
+	(retry_prompt_A2B): Revival; use `stage2.A2B_prompt_ja'.
+	(retry_prompt_default): Revival; use `stage2.prompt_ja'.
+	(manage_OCR_for_glyph_image): Use `retry_prompt',
+	`retry_prompt_L2R', `retry_prompt_A2B' and `retry_prompt_default'
+	again; add code to check stage2 result.
+
 2026-08-02  MORIOKA Tomohiko  <tomo.git@chise.org>
 
 	* ids-recognizer.py (component_examples_of_left): Abolished.
